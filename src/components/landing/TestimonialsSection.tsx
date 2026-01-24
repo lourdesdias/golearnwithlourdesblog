@@ -42,8 +42,8 @@ const TestimonialsSection = () => {
               {/* Video Placeholder */}
               <div className="aspect-video bg-gradient-to-br from-cyan-800 to-cyan-900 flex items-center justify-center relative">
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur rounded-full flex items-center justify-center border-2 border-white/40">
-                    <Video className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center border-2 border-white/40 hover:bg-white/30 transition-colors cursor-pointer">
+                    <Play className="w-8 h-8 text-white ml-1" />
                   </div>
                   <p className="text-white font-bold text-lg">VIDEO TESTIMONIAL</p>
                   <p className="text-cyan-200 text-sm">Embed video here</p>
@@ -55,7 +55,13 @@ const TestimonialsSection = () => {
                 <p className="font-bold text-foreground mb-2">
                   {testimonial.name}
                 </p>
-                <p className="text-2xl font-extrabold metallic-gold mb-4">
+                <p 
+                  className="text-2xl font-extrabold mb-4"
+                  style={{
+                    color: '#c7a043',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(199,160,67,0.3)'
+                  }}
+                >
                   {testimonial.result}
                 </p>
                 <p className="text-muted-foreground text-sm italic leading-relaxed">

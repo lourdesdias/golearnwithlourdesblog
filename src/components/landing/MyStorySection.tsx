@@ -25,9 +25,12 @@ const MyStorySection = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-12">
             {/* Image Placeholder */}
             <div className="flex-shrink-0 mx-auto md:mx-0">
-              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-cyan-100 to-gold-100 border-4 border-gold-400 flex flex-col items-center justify-center shadow-xl gap-3">
-                <Camera className="w-12 h-12 text-gold-500" />
-                <span className="text-lg font-bold text-gold-600">YOUR PHOTO</span>
+              <div className="w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-cyan-100 to-amber-100 border-4 border-amber-400 flex flex-col items-center justify-center shadow-2xl gap-3">
+                <Camera className="w-14 h-14 text-amber-500" />
+                <span 
+                  className="text-xl font-bold"
+                  style={{ color: '#c7a043' }}
+                >YOUR PHOTO</span>
                 <span className="text-sm text-muted-foreground">Upload headshot</span>
                 <span className="text-xs text-muted-foreground">600x600px min</span>
               </div>
