@@ -2,18 +2,18 @@ import { Shield, Award, Heart } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-teal-900 text-teal-200 py-12">
+    <footer className="bg-gradient-to-b from-teal-900 to-black text-teal-200 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Icons */}
           <div className="flex justify-center gap-6 mb-6">
-            <Shield className="w-8 h-8" />
-            <Award className="w-8 h-8" />
-            <Heart className="w-8 h-8" />
+            <Shield className="w-8 h-8 text-gold-400" />
+            <Award className="w-8 h-8 text-gold-400" />
+            <Heart className="w-8 h-8 text-gold-400" />
           </div>
 
           {/* Copyright */}
-          <p className="text-sm mb-4">
+          <p className="text-sm mb-4 text-teal-100">
             © 2026 LearnWithLourdes.com. All rights reserved.
           </p>
           <p className="text-xs text-teal-300 mb-6 max-w-2xl mx-auto">
@@ -24,21 +24,21 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <a
               href="#"
-              className="hover:text-white transition-colors duration-200"
+              className="hover:text-gold-400 transition-colors duration-200"
             >
               Privacy Policy
             </a>
             <span className="text-teal-500">•</span>
             <a
               href="#"
-              className="hover:text-white transition-colors duration-200"
+              className="hover:text-gold-400 transition-colors duration-200"
             >
               Terms of Service
             </a>
             <span className="text-teal-500">•</span>
             <a
               href="#"
-              className="hover:text-white transition-colors duration-200"
+              className="hover:text-gold-400 transition-colors duration-200"
             >
               Income Disclosure
             </a>

@@ -2,22 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Roca font for headers */
-@font-face {
-  font-family: 'Roca';
-  src: url('https://fonts.cdnfonts.com/s/22056/RocaOne.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Roca';
-  src: url('https://fonts.cdnfonts.com/s/22056/RocaOneBold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Import Fredoka font - similar to Roca with rounded, friendly look */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -139,13 +125,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roca', system-ui, -apple-system, sans-serif;
+    font-family: 'Fredoka', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
   }
 }
 
 @layer components {
   .font-heading {
-    font-family: 'Roca', system-ui, -apple-system, sans-serif;
+    font-family: 'Fredoka', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
   }
 
   .gradient-hero {
@@ -153,7 +141,11 @@
   }
 
   .gradient-dark {
-    background: linear-gradient(180deg, hsl(180, 50%, 15%) 0%, hsl(180, 60%, 8%) 100%);
+    background: linear-gradient(135deg, hsl(180, 100%, 20%) 0%, hsl(180, 80%, 12%) 50%, hsl(45, 50%, 15%) 100%);
+  }
+
+  .gradient-dark-teal {
+    background: linear-gradient(180deg, hsl(180, 100%, 25%) 0%, hsl(180, 100%, 18%) 100%);
   }
 
   .gradient-light {

@@ -25,7 +25,7 @@ const stats = [
 
 const TrustBar = () => {
   return (
-    <section className="bg-primary-light border-y-2 border-teal-200 py-8">
+    <section className="bg-gradient-to-r from-teal-500 via-teal-600 to-teal-500 py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
@@ -33,11 +33,11 @@ const TrustBar = () => {
               key={index}
               className="flex flex-col items-center text-center gap-2"
             >
-              <stat.icon className="w-8 h-8 text-primary" />
-              <span className="text-2xl md:text-3xl font-bold text-teal-900">
+              <stat.icon className="w-8 h-8 text-gold-400" />
+              <span className="text-2xl md:text-3xl font-bold text-white">
                 {stat.number}
               </span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-teal-100">
                 {stat.label}
               </span>
             </div>

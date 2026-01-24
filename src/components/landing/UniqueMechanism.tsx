@@ -35,11 +35,11 @@ const mechanisms = [
 
 const UniqueMechanism = () => {
   return (
-    <section className="py-16 md:py-20 gradient-dark text-white">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900 text-white">
       <div className="container mx-auto px-4">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
             How Is This Different From Every Other 'Travel Membership' You've Seen?
           </h2>
           <p className="text-lg md:text-xl text-teal-100 max-w-3xl mx-auto">
@@ -52,14 +52,14 @@ const UniqueMechanism = () => {
           {mechanisms.map((mechanism, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-6 hover:bg-white/15 transition-all duration-300"
+              className="bg-white/10 backdrop-blur border border-gold-400/30 rounded-xl p-6 hover:bg-white/15 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <mechanism.icon className="w-8 h-8 text-accent" />
+                  <mechanism.icon className="w-8 h-8 text-gold-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-accent mb-2">
+                  <h3 className="text-xl font-bold text-gold-400 mb-2">
                     {mechanism.title}
                   </h3>
                   <p className="text-teal-100 text-sm leading-relaxed">
@@ -72,11 +72,11 @@ const UniqueMechanism = () => {
         </div>
 
         {/* Contrarian Truth Box */}
-        <div className="bg-accent text-foreground p-6 md:p-8 rounded-xl text-center max-w-3xl mx-auto">
+        <div className="bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 text-black p-6 md:p-8 rounded-xl text-center max-w-3xl mx-auto shadow-lg">
           <h3 className="text-xl md:text-2xl font-bold mb-4">
             The Contrarian Truth:
           </h3>
-          <p className="text-accent-foreground leading-relaxed">
+          <p className="leading-relaxed font-medium">
             Most people think you need to choose between family time and financial success. We've discovered that the opposite is true: when you align your business with biblical principles of stewardship and service, you can have both — and bless others in the process. This isn't about scheming or hustling. It's about simple, faithful obedience that produces supernatural results.
           </p>
         </div>

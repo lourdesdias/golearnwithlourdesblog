@@ -64,11 +64,11 @@ const bonuses = [
 
 const FinalCTA = () => {
   return (
-    <section className="py-16 md:py-20 gradient-dark text-white">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900 text-white">
       <div className="container mx-auto px-4">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-white">
             Your FREE Webinar Training Is Waiting
           </h2>
           <p className="text-lg md:text-xl text-teal-100 max-w-3xl mx-auto">
@@ -81,11 +81,11 @@ const FinalCTA = () => {
           {webinarContent.map((item, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-6 flex items-start gap-4"
+              className="bg-white/10 backdrop-blur border border-gold-400/30 rounded-xl p-6 flex items-start gap-4"
             >
-              <Check className="w-6 h-6 text-accent flex-shrink-0" />
+              <Check className="w-6 h-6 text-gold-400 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-white mb-1">{item.title}</h3>
+                <h3 className="font-bold text-gold-400 mb-1">{item.title}</h3>
                 <p className="text-teal-100 text-sm">{item.content}</p>
               </div>
             </div>
@@ -125,7 +125,7 @@ const FinalCTA = () => {
                   <span className="text-muted-foreground line-through">
                     {bonus.value}
                   </span>
-                  <span className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
+                  <span className="bg-gradient-to-r from-gold-400 to-gold-500 text-black text-sm font-bold px-3 py-1 rounded-full">
                     FREE
                   </span>
                 </div>
@@ -134,7 +134,7 @@ const FinalCTA = () => {
           </div>
 
           {/* Total */}
-          <div className="border-t-4 border-accent pt-6 mb-6">
+          <div className="border-t-4 border-gold-500 pt-6 mb-6">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
               <div>
                 <p className="text-lg text-muted-foreground">TOTAL VALUE:</p>
@@ -142,24 +142,24 @@ const FinalCTA = () => {
               </div>
               <div>
                 <p className="text-lg text-muted-foreground">YOUR INVESTMENT TODAY:</p>
-                <p className="text-3xl font-bold text-accent">$0</p>
+                <p className="text-3xl font-bold text-gold-500">$0</p>
               </div>
             </div>
           </div>
 
           {/* Claim Box */}
-          <div className="bg-primary-light p-6 rounded-lg text-center">
+          <div className="bg-teal-50 p-6 rounded-lg text-center border border-teal-200">
             <p className="text-foreground">
               Click the button below to claim your bonuses and watch the free training now.
             </p>
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - Metallic Gold */}
         <div className="text-center mb-8">
           <a
             href="https://wanderpreneur.org/webinar"
-            className="inline-flex items-center gap-3 bg-accent hover:bg-accent-bright text-accent-foreground text-xl md:text-2xl px-12 md:px-16 py-5 md:py-6 rounded-full shadow-2xl hover:shadow-glow-accent transition-all duration-300 font-bold"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 hover:from-gold-500 hover:via-gold-400 hover:to-gold-500 text-black text-xl md:text-2xl px-12 md:px-16 py-5 md:py-6 rounded-full shadow-2xl hover:shadow-glow-accent transition-all duration-300 font-bold"
           >
             Watch The FREE Webinar Now
             <ArrowRight className="w-6 h-6" />
