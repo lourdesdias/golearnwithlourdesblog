@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Video } from "lucide-react";
 
 const testimonials = [
   {
@@ -20,14 +20,14 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 md:py-20 bg-card">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-card">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
             Lives Transformed: Hear From Our Thriving Community
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Real families. Real savings. Real freedom.
           </p>
         </div>
@@ -37,28 +37,28 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               {/* Video Placeholder */}
-              <div className="aspect-video bg-teal-900 flex items-center justify-center relative">
-                <div className="absolute inset-0 gradient-hero opacity-80" />
-                <button
-                  className="relative z-10 w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300"
-                  aria-label="Play testimonial video"
-                >
-                  <Play className="w-6 h-6 text-primary ml-1" fill="currentColor" />
-                </button>
+              <div className="aspect-video bg-gradient-to-br from-cyan-800 to-cyan-900 flex items-center justify-center relative">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur rounded-full flex items-center justify-center border-2 border-white/40">
+                    <Video className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-white font-bold text-lg">VIDEO TESTIMONIAL</p>
+                  <p className="text-cyan-200 text-sm">Embed video here</p>
+                </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <p className="font-semibold text-foreground mb-1">
+              <div className="p-8">
+                <p className="font-bold text-foreground mb-2">
                   {testimonial.name}
                 </p>
-                <p className="text-2xl font-bold text-accent mb-3">
+                <p className="text-2xl font-extrabold metallic-gold mb-4">
                   {testimonial.result}
                 </p>
-                <p className="text-muted-foreground text-sm italic">
+                <p className="text-muted-foreground text-sm italic leading-relaxed">
                   "{testimonial.quote}"
                 </p>
               </div>
@@ -70,7 +70,8 @@ const TestimonialsSection = () => {
         <div className="text-center">
           <a
             href="https://wanderpreneur.org/webinar"
-            className="inline-flex items-center gap-3 bg-gold-400 hover:bg-gold-500 text-black text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-bold"
+            className="btn-secondary-cta"
+            aria-label="See how you can achieve similar results"
           >
             See How You Can Be Next
             <ArrowRight className="w-5 h-5" />

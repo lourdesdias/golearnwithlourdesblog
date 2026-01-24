@@ -48,14 +48,14 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-card">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-card">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
             Your Path to Clarity
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Answers to your most important questions
           </p>
         </div>
@@ -65,20 +65,24 @@ const FAQSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-2 border-border rounded-lg hover:border-primary transition-colors duration-200 overflow-hidden"
+              className="overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full bg-muted hover:bg-primary-light px-6 py-4 text-left flex justify-between items-center transition-colors duration-200"
+                className={`w-full text-left px-8 py-6 bg-white hover:bg-cyan-50 transition-all duration-200 font-semibold text-lg text-foreground flex items-center justify-between group border-2 rounded-xl focus:ring-4 focus:ring-cyan-400/50 focus:outline-none ${
+                  openIndex === index 
+                    ? "border-cyan-500 shadow-lg rounded-b-none" 
+                    : "border-border hover:border-cyan-400 hover:shadow-lg"
+                }`}
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-semibold text-foreground pr-4">
+                <span className="pr-4 leading-relaxed">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-200 ${
-                    openIndex === index ? "rotate-180" : ""
+                  className={`w-6 h-6 text-cyan-500 flex-shrink-0 transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180" : "group-hover:text-cyan-600"
                   }`}
                 />
               </button>
@@ -88,7 +92,7 @@ const FAQSection = () => {
                   openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <div className="px-6 py-4 bg-card text-muted-foreground leading-relaxed">
+                <div className="px-8 py-6 bg-gradient-to-br from-cyan-50/50 to-white text-muted-foreground leading-relaxed border-x-2 border-b-2 border-cyan-500 rounded-b-xl">
                   {faq.answer}
                 </div>
               </div>

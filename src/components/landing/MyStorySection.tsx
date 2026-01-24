@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Camera } from "lucide-react";
 
 const webinarPoints = [
   "Exactly how the wholesale travel system works",
@@ -18,24 +18,27 @@ const bonuses = [
 
 const MyStorySection = () => {
   return (
-    <section className="py-16 md:py-20 bg-card">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-card">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-5xl mx-auto">
           {/* Story Content */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-12">
             {/* Image Placeholder */}
             <div className="flex-shrink-0 mx-auto md:mx-0">
-              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full gradient-hero border-4 border-accent flex items-center justify-center shadow-xl">
-                <span className="text-6xl font-bold text-white">LD</span>
+              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-cyan-100 to-gold-100 border-4 border-gold-400 flex flex-col items-center justify-center shadow-xl gap-3">
+                <Camera className="w-12 h-12 text-gold-500" />
+                <span className="text-lg font-bold text-gold-600">YOUR PHOTO</span>
+                <span className="text-sm text-muted-foreground">Upload headshot</span>
+                <span className="text-xs text-muted-foreground">600x600px min</span>
               </div>
             </div>
 
             {/* Story Text */}
             <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8">
                 Why I Built This System
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
                   For years, my husband worked full-time while I juggled motherhood and various side hustles trying to create extra income. We dreamed of traveling the world with our kids, but between bills, debt, and the rising cost of everything, vacations felt like a luxury we couldn't afford.
                 </p>
@@ -56,20 +59,20 @@ const MyStorySection = () => {
           </div>
 
           {/* Transition Box */}
-          <div className="bg-card border-2 border-primary p-6 md:p-8 rounded-xl max-w-4xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 text-center">
+          <div className="bg-card border-2 border-cyan-500 p-8 md:p-10 rounded-xl max-w-4xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-8 text-center">
               Ready to See the Complete System?
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
-                <p className="font-semibold text-foreground mb-3">
+                <p className="font-bold text-foreground mb-4">
                   In the webinar, you'll discover:
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {webinarPoints.map((point, index) => (
-                    <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                      <Check className="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -77,13 +80,13 @@ const MyStorySection = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-foreground mb-3">
+                <p className="font-bold text-foreground mb-4">
                   Plus these exclusive bonuses:
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {bonuses.map((bonus, index) => (
-                    <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-accent">🎁</span>
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                      <span className="text-gold-500">🎁</span>
                       <span>{bonus}</span>
                     </li>
                   ))}
@@ -94,7 +97,8 @@ const MyStorySection = () => {
             <div className="text-center">
               <a
                 href="https://wanderpreneur.org/webinar"
-                className="inline-flex items-center gap-3 bg-gold-400 hover:bg-gold-500 text-black text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-bold"
+                className="btn-secondary-cta"
+                aria-label="Watch the free webinar training"
               >
                 Watch The FREE Webinar Now
                 <ArrowRight className="w-5 h-5" />

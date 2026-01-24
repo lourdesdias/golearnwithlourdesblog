@@ -20,34 +20,34 @@ const benefits = [
 
 const LegacyStory = () => {
   return (
-    <section className="py-16 md:py-20 gradient-light">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 gradient-light">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-5xl mx-auto">
           {/* Featured Box */}
-          <div className="bg-card border-2 border-accent rounded-2xl shadow-2xl overflow-hidden">
+          <div className="bg-card border-2 border-gold-400 rounded-2xl shadow-2xl overflow-hidden">
             {/* Header */}
-            <div className="gradient-hero p-8 md:p-12 text-white text-center">
-              <div className="flex justify-center mb-4">
-                <Trophy className="w-12 h-12" />
+            <div className="gradient-hero p-10 md:p-12 text-white text-center">
+              <div className="flex justify-center mb-6">
+                <Trophy className="w-14 h-14" />
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
                 "My Income Didn't Die With Me — It's Still Blessing My Grandchildren Today"
               </h2>
-              <p className="text-teal-100">Guy's Legacy Story</p>
+              <p className="text-cyan-100">Guy's Legacy Story</p>
             </div>
 
             {/* Body */}
             <div className="p-8 md:p-12">
-              <div className="flex flex-col md:flex-row gap-8 items-center mb-8">
+              <div className="flex flex-col md:flex-row gap-8 items-center mb-10">
                 {/* Image Placeholder */}
                 <div className="flex-shrink-0">
-                  <div className="w-48 h-48 rounded-full gradient-hero flex items-center justify-center border-4 border-accent shadow-lg">
-                    <Users className="w-20 h-20 text-white" />
+                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-100 to-gold-100 flex items-center justify-center border-4 border-gold-400 shadow-lg">
+                    <span className="text-6xl">👨‍👩‍👧‍👦</span>
                   </div>
                 </div>
 
                 {/* Story Text */}
-                <div className="flex-1 space-y-4 text-muted-foreground">
+                <div className="flex-1 space-y-5 text-muted-foreground leading-relaxed">
                   <p>
                     Guy was a retired pastor who joined our travel membership in his 70s. He wasn't looking to "get rich" — he just wanted to travel more affordably with his wife during retirement.
                   </p>
@@ -60,10 +60,10 @@ const LegacyStory = () => {
                 </div>
               </div>
 
-              {/* Amber Callout */}
-              <div className="bg-accent-light border-2 border-accent p-6 rounded-xl mb-8">
-                <p className="text-foreground font-semibold text-center">
-                  💰 A monthly income stream that CONTINUES TO GROW even after the founder has passed — now blessing his children and grandchildren every single month.
+              {/* Gold Callout */}
+              <div className="bg-gold-50 border-2 border-gold-400 p-8 rounded-xl mb-10">
+                <p className="text-foreground font-bold text-center text-lg leading-relaxed">
+                  💰 A monthly income stream that <span className="metallic-gold">CONTINUES TO GROW</span> even after the founder has passed — now blessing his children and grandchildren every single month.
                 </p>
               </div>
 
@@ -72,15 +72,15 @@ const LegacyStory = () => {
                 {benefits.map((benefit, index) => (
                   <div
                     key={index}
-                    className="bg-primary-light p-6 rounded-lg text-center"
+                    className="bg-cyan-50 p-8 rounded-xl text-center hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex justify-center mb-3">
-                      <benefit.icon className="w-8 h-8 text-primary" />
+                    <div className="flex justify-center mb-4">
+                      <benefit.icon className="w-10 h-10 text-cyan-600" />
                     </div>
-                    <h4 className="font-bold text-foreground mb-1">
+                    <h4 className="font-bold text-foreground mb-2">
                       {benefit.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>
@@ -90,10 +90,10 @@ const LegacyStory = () => {
 
             {/* Footer */}
             <div className="gradient-hero p-8 text-white text-center">
-              <p className="text-xl font-bold mb-2">
+              <p className="text-xl font-bold mb-3">
                 This Isn't 'Passive Income' — It's Generational Obedience.
               </p>
-              <p className="text-teal-100 italic">
+              <p className="text-cyan-100 italic">
                 "A good person leaves an inheritance for their children's children" — Proverbs 13:22
               </p>
             </div>

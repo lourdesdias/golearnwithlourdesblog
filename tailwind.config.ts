@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,10 +19,36 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Fredoka', 'system-ui', '-apple-system', 'sans-serif'],
-        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        heading: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {
+        // Cyan Teal Palette - new vibrant colors
+        cyan: {
+          50: "#e6fffc",
+          100: "#ccfff9",
+          200: "#a5f3ec",
+          300: "#5eead4",
+          400: "#2dd4bf",
+          500: "#2fe0d5",
+          600: "#1bc9be",
+          700: "#14b8a6",
+          800: "#0d9488",
+          900: "#0a756b",
+        },
+        // Metallic Gold Palette
+        gold: {
+          50: "#f9f5e8",
+          100: "#f3e6c7",
+          200: "#e8d49f",
+          300: "#dcc077",
+          400: "#d4af37",
+          500: "#c7a043",
+          600: "#a68635",
+          700: "#8a7029",
+          800: "#6e5a21",
+          900: "#524319",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -67,92 +98,25 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Extended teal palette - vibrant cyan-teal matching wanderpreneur.org
-        teal: {
-          50: "#e6ffff",
-          100: "#ccfcfc",
-          200: "#99f5f5",
-          300: "#5ceaea",
-          400: "#2dd9d9",
-          500: "#00a7a7",
-          600: "#008f8f",
-          700: "#007575",
-          800: "#005c5c",
-          900: "#003d3d",
-        },
-        // Metallic gold palette
-        gold: {
-          50: "#fefce8",
-          100: "#fef9c3",
-          200: "#fef08a",
-          300: "#fde047",
-          400: "#f5c542",
-          500: "#d4af37",
-          600: "#b8972e",
-          700: "#997826",
-          800: "#7a5f1e",
-          900: "#5c4716",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      boxShadow: {
-        glow: "0 0 40px -10px hsl(180, 100%, 33% / 0.3)",
-        "glow-accent": "0 0 40px -10px hsl(45, 89%, 61% / 0.4)",
-      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        "fade-in": {
-          from: {
-            opacity: "0",
-          },
-          to: {
-            opacity: "1",
-          },
-        },
-        "slide-up": {
-          from: {
-            opacity: "0",
-            transform: "translateY(20px)",
-          },
-          to: {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        pulse: {
-          "0%, 100%": {
-            opacity: "1",
-          },
-          "50%": {
-            opacity: "0.5",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out forwards",
-        "slide-up": "slide-up 0.5s ease-out forwards",
-        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },

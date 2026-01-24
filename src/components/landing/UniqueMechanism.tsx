@@ -35,14 +35,14 @@ const mechanisms = [
 
 const UniqueMechanism = () => {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900 text-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 gradient-dark-cyan text-white">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white">
             How Is This Different From Every Other 'Travel Membership' You've Seen?
           </h2>
-          <p className="text-lg md:text-xl text-teal-100 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed">
             Most travel programs focus on one thing: saving you money. We focus on something much bigger.
           </p>
         </div>
@@ -52,17 +52,17 @@ const UniqueMechanism = () => {
           {mechanisms.map((mechanism, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur border border-gold-400/30 rounded-xl p-6 hover:bg-white/15 transition-all duration-300"
+              className="bg-white/10 backdrop-blur border border-gold-400/30 rounded-xl p-8 hover:bg-white/15 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <mechanism.icon className="w-8 h-8 text-gold-400" />
+                  <mechanism.icon className="w-10 h-10 text-gold-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gold-400 mb-2">
+                  <h3 className="text-xl font-bold metallic-gold mb-3">
                     {mechanism.title}
                   </h3>
-                  <p className="text-teal-100 text-sm leading-relaxed">
+                  <p className="text-cyan-100 text-sm leading-relaxed">
                     {mechanism.description}
                   </p>
                 </div>
@@ -72,8 +72,8 @@ const UniqueMechanism = () => {
         </div>
 
         {/* Contrarian Truth Box */}
-        <div className="bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 text-black p-6 md:p-8 rounded-xl text-center max-w-3xl mx-auto shadow-lg">
-          <h3 className="text-xl md:text-2xl font-bold mb-4">
+        <div className="metallic-gold-bg text-gray-900 p-8 md:p-10 rounded-xl text-center max-w-3xl mx-auto shadow-2xl">
+          <h3 className="text-xl md:text-2xl font-bold mb-6">
             The Contrarian Truth:
           </h3>
           <p className="leading-relaxed font-medium">

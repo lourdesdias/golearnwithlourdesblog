@@ -41,14 +41,14 @@ const problems = [
 
 const ProblemSection = () => {
   return (
-    <section className="py-16 md:py-20 bg-card">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-card">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
             If You've Ever Felt Trapped by These Impossible Choices...
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             You're not alone. Thousands of families face these same painful dilemmas every year.
           </p>
         </div>
@@ -58,16 +58,16 @@ const ProblemSection = () => {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-destructive-light border-2 border-destructive-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+              className="bg-destructive-light border-2 border-destructive-border rounded-xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
-              <h3 className="text-lg md:text-xl font-bold text-destructive mb-4">
+              <h3 className="text-lg md:text-xl font-bold text-destructive mb-6">
                 {problem.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {problem.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                    className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed"
                   >
                     <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
@@ -79,8 +79,8 @@ const ProblemSection = () => {
         </div>
 
         {/* Bridge Copy */}
-        <div className="bg-primary-light border-l-4 border-primary p-6 md:p-8 rounded-lg max-w-3xl mx-auto">
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4">
+        <div className="bg-cyan-50 border-l-4 border-cyan-500 p-8 md:p-10 rounded-xl max-w-3xl mx-auto">
+          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
             What if there was a third way?
           </h3>
           <p className="text-muted-foreground leading-relaxed">

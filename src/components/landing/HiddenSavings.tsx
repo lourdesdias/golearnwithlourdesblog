@@ -41,14 +41,14 @@ const savingsCategories = [
 
 const HiddenSavings = () => {
   return (
-    <section className="py-16 md:py-20 gradient-light">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 gradient-light">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
             The Hidden Savings Most Travel Systems Don't Tell You About
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             This isn't just about hotels. Access wholesale pricing on your ENTIRE lifestyle.
           </p>
         </div>
@@ -58,21 +58,21 @@ const HiddenSavings = () => {
           {savingsCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-card rounded-xl shadow-lg p-8 md:p-10 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <div className="flex justify-center mb-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                  <category.icon className="w-7 h-7 text-primary" />
+                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center">
+                  <category.icon className="w-8 h-8 text-cyan-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-foreground text-center mb-6">
+              <h3 className="text-xl font-bold text-foreground text-center mb-8">
                 {category.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {category.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="text-muted-foreground text-sm md:text-base"
+                    className="text-muted-foreground text-sm md:text-base leading-relaxed"
                   >
                     {item}
                   </li>
@@ -83,11 +83,11 @@ const HiddenSavings = () => {
         </div>
 
         {/* Proof Box */}
-        <div className="bg-accent-light border-2 border-accent p-6 md:p-8 rounded-xl text-center max-w-4xl mx-auto">
-          <p className="text-xl md:text-2xl font-semibold text-foreground">
-            💰 <span className="text-accent-foreground">"$200-$500/month in daily expense savings"</span>
+        <div className="bg-gold-50 border-2 border-gold-400 p-8 md:p-10 rounded-xl text-center max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl font-bold text-foreground">
+            💰 <span className="metallic-gold">"$200-$500/month in daily expense savings"</span>
           </p>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-muted-foreground mt-3 leading-relaxed">
             — Average member savings beyond travel
           </p>
         </div>
