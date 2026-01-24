@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['Roca', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -63,31 +67,31 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Extended teal palette
+        // Extended teal palette - vibrant cyan-teal matching wanderpreneur.org
         teal: {
-          50: "#f0fdfa",
-          100: "#ccfbf1",
-          200: "#99f6e4",
-          300: "#5eead4",
-          400: "#2dd4bf",
-          500: "#14b8a6",
-          600: "#0d9488",
-          700: "#0f766e",
-          800: "#115e59",
-          900: "#134e4a",
+          50: "#e6ffff",
+          100: "#ccfcfc",
+          200: "#99f5f5",
+          300: "#5ceaea",
+          400: "#2dd9d9",
+          500: "#00a7a7",
+          600: "#008f8f",
+          700: "#007575",
+          800: "#005c5c",
+          900: "#003d3d",
         },
-        // Extended amber/gold palette
-        amber: {
-          50: "#fffbeb",
-          100: "#fef3c7",
-          200: "#fde68a",
-          300: "#fcd34d",
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-          700: "#b45309",
-          800: "#92400e",
-          900: "#78350f",
+        // Metallic gold palette
+        gold: {
+          50: "#fefce8",
+          100: "#fef9c3",
+          200: "#fef08a",
+          300: "#fde047",
+          400: "#f5c542",
+          500: "#d4af37",
+          600: "#b8972e",
+          700: "#997826",
+          800: "#7a5f1e",
+          900: "#5c4716",
         },
       },
       borderRadius: {
@@ -96,8 +100,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        glow: "0 0 40px -10px hsl(175, 100%, 25% / 0.3)",
-        "glow-accent": "0 0 40px -10px hsl(43, 74%, 49% / 0.4)",
+        glow: "0 0 40px -10px hsl(180, 100%, 33% / 0.3)",
+        "glow-accent": "0 0 40px -10px hsl(45, 89%, 61% / 0.4)",
       },
       keyframes: {
         "accordion-down": {
