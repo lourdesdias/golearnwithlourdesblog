@@ -159,7 +159,7 @@ const FinalCTA = () => {
         <div className="text-center mb-8">
           <a
             href="https://wanderpreneur.org/webinar"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 hover:from-gold-500 hover:via-gold-400 hover:to-gold-500 text-black text-xl md:text-2xl px-12 md:px-16 py-5 md:py-6 rounded-full shadow-2xl hover:shadow-glow-accent transition-all duration-300 font-bold"
+            className="inline-flex items-center gap-3 bg-gold-400 hover:bg-gold-500 text-black text-xl md:text-2xl px-12 md:px-16 py-5 md:py-6 rounded-full shadow-2xl hover:shadow-glow-accent transition-all duration-300 font-bold"
           >
             Watch The FREE Webinar Now
             <ArrowRight className="w-6 h-6" />
