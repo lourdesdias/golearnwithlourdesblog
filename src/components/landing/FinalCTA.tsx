@@ -104,28 +104,39 @@ const FinalCTA = () => {
           </div>
 
           {/* Bonus Items */}
-          <div className="space-y-5 mb-10">
+          <div className="space-y-4 mb-10">
             {bonuses.map((bonus, index) => (
               <div
                 key={index}
-                className="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gradient-to-r from-cyan-50/50 to-gold-50/50 border border-gold-200 rounded-xl p-5 gap-3"
+                className="group flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gradient-to-r from-white to-cyan-50/30 border-2 border-gray-200 hover:border-cyan-400 rounded-xl p-6 gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl">{bonus.emoji}</span>
+                <div className="flex items-start gap-4 flex-1">
+                  <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                    {bonus.emoji}
+                  </span>
                   <div>
-                    <p className="font-bold text-foreground text-lg">
+                    <p className="font-bold text-foreground text-lg md:text-xl group-hover:text-cyan-700 transition-colors">
                       {bonus.title}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                       {bonus.description}
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 ml-12 sm:ml-0">
-                  <span className="text-muted-foreground line-through text-lg">
-                    {bonus.value}
+                <div className="flex items-center gap-4 ml-14 sm:ml-0 flex-shrink-0">
+                  <span className="text-gray-400 text-base font-semibold relative">
+                    <span className="relative">
+                      {bonus.value}
+                      <span className="absolute inset-0 border-t-2 border-red-400 top-1/2"></span>
+                    </span>
                   </span>
-                  <span className="metallic-gold-bg text-gray-900 text-sm font-bold px-4 py-2 rounded-full shadow">
+                  <span 
+                    className="inline-block bg-gradient-to-r from-amber-100 to-amber-200 px-4 py-2 rounded-lg shadow-md font-black text-xl md:text-2xl"
+                    style={{
+                      color: '#c7a043',
+                      textShadow: '0 2px 4px rgba(0,0,0,0.15)'
+                    }}
+                  >
                     FREE
                   </span>
                 </div>
@@ -135,14 +146,30 @@ const FinalCTA = () => {
 
           {/* Total */}
           <div className="border-t-4 border-gold-400 pt-8 mb-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-8 text-center sm:text-left">
               <div>
-                <p className="text-lg text-muted-foreground font-semibold">TOTAL VALUE:</p>
-                <p className="text-4xl font-extrabold metallic-gold">$5,812</p>
+                <p className="text-xl text-muted-foreground font-bold mb-2">TOTAL VALUE:</p>
+                <p 
+                  className="text-5xl md:text-6xl font-black"
+                  style={{
+                    background: 'linear-gradient(to bottom, #f0d976, #c7a043)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 4px 8px rgba(199,160,67,0.6))'
+                  }}
+                >
+                  $5,812
+                </p>
               </div>
-              <div>
-                <p className="text-lg text-muted-foreground font-semibold">YOUR INVESTMENT TODAY:</p>
-                <p className="text-4xl font-extrabold text-cyan-500">$0</p>
+              <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-6 px-10 rounded-2xl shadow-2xl">
+                <p className="text-lg font-semibold mb-2 opacity-90">YOUR INVESTMENT TODAY:</p>
+                <p 
+                  className="text-5xl md:text-6xl font-black tracking-tight"
+                  style={{ textShadow: '0 4px 12px rgba(0,0,0,0.3)' }}
+                >
+                  $0
+                </p>
               </div>
             </div>
           </div>

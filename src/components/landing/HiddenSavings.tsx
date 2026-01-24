@@ -83,13 +83,21 @@ const HiddenSavings = () => {
         </div>
 
         {/* Proof Box */}
-        <div className="bg-gold-50 border-2 border-gold-400 p-8 md:p-10 rounded-xl text-center max-w-4xl mx-auto">
-          <p className="text-xl md:text-2xl font-bold text-foreground">
-            💰 <span className="metallic-gold">"$200-$500/month in daily expense savings"</span>
-          </p>
-          <p className="text-muted-foreground mt-3 leading-relaxed">
-            — Average member savings beyond travel
-          </p>
+        <div className="relative bg-gradient-to-br from-amber-50 to-amber-100/50 border-3 border-amber-400 p-10 rounded-2xl text-center max-w-4xl mx-auto shadow-xl overflow-hidden">
+          <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-amber-400/20 to-transparent rounded-br-full"></div>
+          <div className="relative z-10">
+            <p className="text-2xl md:text-3xl font-bold text-gray-900">
+              💰 <span 
+                style={{
+                  color: '#c7a043',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(199,160,67,0.4)'
+                }}
+              >"$200-$500/month in daily expense savings"</span>
+            </p>
+            <p className="text-muted-foreground mt-4 text-lg leading-relaxed">
+              — Average member savings beyond travel
+            </p>
+          </div>
         </div>
       </div>
     </section>

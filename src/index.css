@@ -169,11 +169,13 @@
   }
 
   .metallic-gold {
-    background: linear-gradient(135deg, #c7a043 0%, #f0d976 50%, #c7a043 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 4px rgba(199, 160, 67, 0.3));
+    color: #f0d976;
+    font-weight: 800;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(240, 217, 118, 0.5),
+      1px 1px 0 #d4af37,
+      -1px -1px 0 #a68635;
   }
 
   .metallic-gold-bg {

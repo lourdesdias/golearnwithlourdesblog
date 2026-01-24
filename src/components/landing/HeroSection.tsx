@@ -21,17 +21,34 @@ const HeroSection = () => {
       {/* Content Overlay */}
       <div className="relative z-10 container mx-auto px-4 py-24 text-center max-w-7xl">
         {/* Pre-headline */}
-        <p className="text-sm md:text-base uppercase tracking-widest mb-6 animate-fade-in font-semibold metallic-gold">
+        <p className="text-sm md:text-base uppercase tracking-widest mb-6 animate-fade-in font-semibold text-cyan-300">
           For Busy Parents, Entrepreneurs & Faith-Driven Families
         </p>
 
         {/* Main headline */}
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-8 leading-tight animate-slide-up max-w-5xl mx-auto">
-          <span className="text-white">Travel for 70% Less. </span>
-          <span className="metallic-gold">Earn Residual Income. </span>
+          <span className="text-white">Travel for </span>
+          <span className="text-cyan-300">70% Less</span>
+          <span className="text-white">. </span>
+          <br className="hidden lg:block" />
+          <span className="text-white">Earn </span>
+          <span 
+            className="font-black"
+            style={{
+              color: '#f0d976',
+              textShadow: '0 0 30px rgba(240,217,118,0.8), 0 4px 8px rgba(0,0,0,0.4)',
+            }}
+          >Residual Income</span>
+          <span className="text-white">. </span>
           <br className="hidden md:block" />
           <span className="text-white">Deduct Every Trip. </span>
-          <span className="metallic-gold">Build Generational Wealth.</span>
+          <span 
+            className="font-black"
+            style={{
+              color: '#f0d976',
+              textShadow: '0 0 30px rgba(240,217,118,0.8), 0 4px 8px rgba(0,0,0,0.4)',
+            }}
+          >Build Generational Wealth.</span>
         </h1>
 
         {/* Sub-headline */}

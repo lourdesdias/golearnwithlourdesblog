@@ -66,10 +66,10 @@ const PillarsSection = () => {
               {/* Icon */}
               <div className="flex justify-center mb-8">
                 <div
-                  className={`w-20 h-20 rounded-full flex items-center justify-center text-4xl ${
+                  className={`w-24 h-24 rounded-full flex items-center justify-center text-5xl shadow-lg ${
                     pillar.color === "gold"
-                      ? "bg-gold-400 text-white"
-                      : "bg-cyan-500 text-white"
+                      ? "bg-gradient-to-br from-amber-400 to-amber-600"
+                      : "bg-gradient-to-br from-cyan-400 to-cyan-600"
                   }`}
                 >
                   {pillar.icon}
@@ -100,16 +100,24 @@ const PillarsSection = () => {
         </div>
 
         {/* Proof Box */}
-        <div className="border-2 border-gold-400 p-8 md:p-10 rounded-xl text-center max-w-4xl mx-auto bg-card">
-          <div className="flex justify-center mb-6">
-            <Shield className="w-14 h-14 text-gold-500" />
+        <div className="relative max-w-4xl mx-auto bg-gradient-to-br from-amber-50 to-amber-100/50 border-3 border-amber-400 rounded-2xl p-10 shadow-2xl overflow-hidden">
+          {/* Decorative corner accent */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-transparent rounded-bl-full"></div>
+          
+          <div className="relative z-10">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Shield className="w-8 h-8 text-white" />
+            </div>
+            
+            <blockquote className="text-xl md:text-2xl text-gray-800 font-medium italic leading-relaxed text-center mb-6">
+              "In the last 24 months, our faith-driven community has saved over 
+              <strong className="text-cyan-600 font-bold"> $2.3 million</strong> in travel costs, 
+              funded <strong className="text-cyan-600 font-bold">500+ mission trips</strong> across 180 countries..."
+            </blockquote>
+            <p className="text-muted-foreground font-semibold text-center">
+              — Freedom Funding Blueprint Community Results
+            </p>
           </div>
-          <blockquote className="text-lg md:text-xl text-foreground italic mb-6 leading-relaxed">
-            "Together, our community has saved over $2.3 million on travel, funded 500+ mission trips, and created tax-advantaged businesses that are changing families' financial futures."
-          </blockquote>
-          <p className="text-muted-foreground font-semibold">
-            — Freedom Funding Blueprint Community Results
-          </p>
         </div>
       </div>
     </section>

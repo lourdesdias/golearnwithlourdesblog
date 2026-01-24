@@ -4,10 +4,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-4xl mx-auto text-center">
           {/* Icons */}
-          <div className="flex justify-center gap-6 mb-8">
-            <span className="text-3xl">🛡️</span>
-            <span className="text-3xl">🏆</span>
-            <span className="text-3xl">❤️</span>
+          <div className="flex justify-center gap-8 mb-8">
+            <span className="text-5xl md:text-6xl">🛡️</span>
+            <span className="text-5xl md:text-6xl">🏆</span>
+            <span className="text-5xl md:text-6xl">❤️</span>
           </div>
 
           {/* Copyright */}
