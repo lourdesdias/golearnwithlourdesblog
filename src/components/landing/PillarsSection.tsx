@@ -100,19 +100,40 @@ const PillarsSection = () => {
         </div>
 
         {/* Proof Box */}
-        <div className="relative max-w-4xl mx-auto bg-gradient-to-br from-amber-50 to-amber-100/50 border-3 border-amber-400 rounded-2xl p-10 shadow-2xl overflow-hidden">
-          {/* Decorative corner accent */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-transparent rounded-bl-full"></div>
+        <div 
+          className="max-w-4xl mx-auto rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #fffbf0 0%, #fff9e6 100%)',
+            border: '2px solid #c7a043'
+          }}
+        >
+          {/* Decorative corner glow */}
+          <div className="absolute top-0 right-0 w-32 h-32 opacity-20 pointer-events-none" style={{
+            background: 'radial-gradient(circle, #f0d976 0%, transparent 70%)'
+          }}></div>
           
           <div className="relative z-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            {/* Shield icon with gold gradient background */}
+            <div 
+              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
+              style={{
+                background: 'linear-gradient(135deg, #f0d976, #c7a043)',
+                boxShadow: '0 4px 15px rgba(199, 160, 67, 0.4)'
+              }}
+            >
               <Shield className="w-8 h-8 text-white" />
             </div>
             
-            <blockquote className="text-xl md:text-2xl text-gray-800 font-medium italic leading-relaxed text-center mb-6">
+            <blockquote className="text-lg md:text-xl text-gray-800 font-medium italic leading-relaxed text-center mb-6">
               "In the last 24 months, our faith-driven community has saved over 
-              <strong className="text-cyan-600 font-bold"> $2.3 million</strong> in travel costs, 
-              funded <strong className="text-cyan-600 font-bold">500+ mission trips</strong> across 180 countries..."
+              <strong className="font-bold" style={{
+                color: '#0d9488',
+                textShadow: '0 0 20px rgba(13, 148, 136, 0.3)'
+              }}> $2.3 million</strong> in travel costs, 
+              funded <strong className="font-bold" style={{
+                color: '#0d9488',
+                textShadow: '0 0 20px rgba(13, 148, 136, 0.3)'
+              }}>500+ mission trips</strong> across 180 countries..."
             </blockquote>
             <p className="text-muted-foreground font-semibold text-center">
               — Freedom Funding Blueprint Community Results

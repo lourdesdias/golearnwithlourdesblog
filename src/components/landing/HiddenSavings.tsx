@@ -83,18 +83,37 @@ const HiddenSavings = () => {
         </div>
 
         {/* Proof Box */}
-        <div className="relative bg-gradient-to-br from-amber-50 to-amber-100/50 border-3 border-amber-400 p-10 rounded-2xl text-center max-w-4xl mx-auto shadow-xl overflow-hidden">
-          <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-amber-400/20 to-transparent rounded-br-full"></div>
+        <div 
+          className="max-w-4xl mx-auto rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #fffbf0 0%, #fff9e6 100%)',
+            border: '2px solid #c7a043'
+          }}
+        >
+          {/* Decorative corner glow */}
+          <div className="absolute top-0 right-0 w-32 h-32 opacity-20 pointer-events-none" style={{
+            background: 'radial-gradient(circle, #f0d976 0%, transparent 70%)'
+          }}></div>
+          
           <div className="relative z-10">
-            <p className="text-2xl md:text-3xl font-bold text-gray-900">
-              💰 <span 
-                style={{
-                  color: '#c7a043',
-                  textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(199,160,67,0.4)'
-                }}
-              >"$200-$500/month in daily expense savings"</span>
+            {/* Shield icon with gold gradient background */}
+            <div 
+              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
+              style={{
+                background: 'linear-gradient(135deg, #f0d976, #c7a043)',
+                boxShadow: '0 4px 15px rgba(199, 160, 67, 0.4)'
+              }}
+            >
+              <span className="text-3xl filter drop-shadow-sm">💰</span>
+            </div>
+            
+            <p className="text-lg md:text-xl text-gray-800 font-medium italic leading-relaxed text-center">
+              <strong className="font-bold" style={{
+                color: '#0d9488',
+                textShadow: '0 0 20px rgba(13, 148, 136, 0.3)'
+              }}>"$200-$500/month in daily expense savings"</strong>
             </p>
-            <p className="text-muted-foreground mt-4 text-lg leading-relaxed">
+            <p className="text-muted-foreground mt-4 text-base text-center">
               — Average member savings beyond travel
             </p>
           </div>

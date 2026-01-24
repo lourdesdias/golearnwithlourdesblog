@@ -93,55 +93,83 @@ const FinalCTA = () => {
         </div>
 
         {/* Bonus Box */}
-        <div className="bg-card rounded-2xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl text-foreground mb-12">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">
-              🎁 Your FREE Bonus Package
-            </h3>
-            <p className="text-muted-foreground">
-              Yours to keep just for watching the training...
-            </p>
-          </div>
+        <div 
+          className="rounded-2xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl text-foreground mb-12 relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(to bottom right, #ffffff, #fffbf5)',
+            border: '3px solid transparent',
+            backgroundImage: 'linear-gradient(to bottom right, #ffffff, #fffbf5), linear-gradient(135deg, #f0d976, #c7a043, #a68635, #c7a043, #f0d976)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box'
+          }}
+        >
+          {/* Subtle corner accent */}
+          <div className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none" style={{
+            background: 'radial-gradient(circle, #f0d976 0%, transparent 70%)'
+          }}></div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                🎁 Your FREE Bonus Package
+              </h3>
+              <p className="text-muted-foreground">
+                Yours to keep just for watching the training...
+              </p>
+            </div>
 
-          {/* Bonus Items */}
-          <div className="space-y-4 mb-10">
-            {bonuses.map((bonus, index) => (
-              <div
-                key={index}
-                className="group flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gradient-to-r from-white to-cyan-50/30 border-2 border-gray-200 hover:border-cyan-400 rounded-xl p-6 gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className="flex items-start gap-4 flex-1">
-                  <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                    {bonus.emoji}
-                  </span>
-                  <div>
-                    <p className="font-bold text-foreground text-lg md:text-xl group-hover:text-cyan-700 transition-colors">
-                      {bonus.title}
-                    </p>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {bonus.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 ml-14 sm:ml-0 flex-shrink-0">
-                  <span className="text-gray-400 text-base font-semibold relative">
-                    <span className="relative">
-                      {bonus.value}
-                      <span className="absolute inset-0 border-t-2 border-red-400 top-1/2"></span>
-                    </span>
-                  </span>
-                  <span 
-                    className="inline-block bg-gradient-to-r from-amber-100 to-amber-200 px-4 py-2 rounded-lg shadow-md font-black text-xl md:text-2xl"
+            {/* Bonus Items */}
+            <div className="space-y-4 mb-10">
+              {bonuses.map((bonus, index) => (
+                <div
+                  key={index}
+                  className="group relative"
+                >
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-2 border-gray-200 hover:border-gold-400 rounded-xl p-6 gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                     style={{
-                      color: '#c7a043',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.15)'
+                      background: 'linear-gradient(to right, #ffffff 0%, #fffbf5 100%)'
                     }}
                   >
-                    FREE
-                  </span>
+                    {/* Subtle gold glow on hover */}
+                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{
+                      background: 'radial-gradient(circle at top right, rgba(240, 217, 118, 0.15) 0%, transparent 70%)'
+                    }}></div>
+                    
+                    <div className="flex items-start gap-4 flex-1 relative z-10">
+                      <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform filter group-hover:drop-shadow-lg">
+                        {bonus.emoji}
+                      </span>
+                      <div>
+                        <p className="font-bold text-foreground text-lg md:text-xl group-hover:text-cyan-700 transition-colors">
+                          {bonus.title}
+                        </p>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          {bonus.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 ml-14 sm:ml-0 flex-shrink-0 relative z-10">
+                      <p className="text-base md:text-lg font-semibold text-gray-400 line-through decoration-2 decoration-gray-400 mb-0">
+                        {bonus.value}
+                      </p>
+                      <div 
+                        className="inline-block px-5 py-2 rounded-xl shadow-lg transform group-hover:scale-105 transition-all"
+                        style={{
+                          background: 'linear-gradient(135deg, #f0d976 0%, #c7a043 50%, #a68635 100%)',
+                          boxShadow: '0 4px 15px rgba(199, 160, 67, 0.4), inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.3)'
+                        }}
+                      >
+                        <p className="font-black text-xl md:text-2xl text-white tracking-wide" style={{
+                          textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                        }}>
+                          FREE
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Total */}
@@ -149,20 +177,26 @@ const FinalCTA = () => {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-8 text-center sm:text-left">
               <div>
                 <p className="text-xl text-muted-foreground font-bold mb-2">TOTAL VALUE:</p>
-                <p 
-                  className="text-5xl md:text-6xl font-black"
+                <span 
+                  className="text-5xl md:text-7xl font-black block"
                   style={{
-                    background: 'linear-gradient(to bottom, #f0d976, #c7a043)',
+                    background: 'linear-gradient(to bottom, #f0d976 0%, #c7a043 50%, #a68635 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                    filter: 'drop-shadow(0 4px 8px rgba(199,160,67,0.6))'
+                    filter: 'drop-shadow(0 0 20px rgba(240, 217, 118, 0.8)) drop-shadow(0 4px 8px rgba(199, 160, 67, 0.6))'
                   }}
                 >
                   $5,812
-                </p>
+                </span>
               </div>
-              <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white py-6 px-10 rounded-2xl shadow-2xl">
+              <div 
+                className="text-white py-6 px-10 rounded-2xl"
+                style={{
+                  background: 'linear-gradient(135deg, #22d3ee 0%, #14b8a6 100%)',
+                  boxShadow: '0 10px 40px rgba(34, 211, 238, 0.4)'
+                }}
+              >
                 <p className="text-lg font-semibold mb-2 opacity-90">YOUR INVESTMENT TODAY:</p>
                 <p 
                   className="text-5xl md:text-6xl font-black tracking-tight"
@@ -195,13 +229,22 @@ const FinalCTA = () => {
         </div>
 
         {/* Urgency Box */}
-        <div className="bg-destructive text-destructive-foreground p-8 md:p-10 rounded-xl max-w-3xl mx-auto text-center mb-10">
+        <div 
+          className="max-w-3xl mx-auto rounded-2xl p-8 md:p-10 text-center mb-10 text-white"
+          style={{
+            background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+            boxShadow: '0 10px 40px rgba(220, 38, 38, 0.4)'
+          }}
+        >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Clock className="w-7 h-7" />
-            <span className="text-xl font-bold">Founding Member Bonus Expires Soon</span>
+            <span className="text-4xl animate-pulse">⏰</span>
+            <p className="text-xl md:text-2xl font-bold">
+              Founding Member Bonus Expires Soon
+            </p>
           </div>
-          <p className="leading-relaxed">
-            The bonuses above are only available for a limited time. Plus, when you watch the full training, you'll learn about an exclusive $4,997 mentorship opportunity that's currently available at a significant discount for founding members.
+          <p className="text-base md:text-lg text-red-50 leading-relaxed">
+            Bonus 6 (Personal Mentorship - $4,997 value) is only available for founding members. 
+            Watch today to secure your access.
           </p>
         </div>
 

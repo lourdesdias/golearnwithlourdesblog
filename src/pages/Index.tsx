@@ -12,6 +12,7 @@ import SocialProofGrid from "@/components/landing/SocialProofGrid";
 import FAQSection from "@/components/landing/FAQSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
+import SectionDivider from "@/components/landing/SectionDivider";
 
 const Index = () => {
   return (
@@ -19,14 +20,23 @@ const Index = () => {
       <HeroSection />
       <TrustBar />
       <ProblemSection />
+      <SectionDivider />
       <HiddenSavings />
+      <SectionDivider />
       <VSLSection />
+      <SectionDivider />
       <MyStorySection />
+      <SectionDivider />
       <PillarsSection />
+      <SectionDivider />
       <UniqueMechanism />
+      <SectionDivider />
       <TestimonialsSection />
+      <SectionDivider />
       <LegacyStory />
+      <SectionDivider />
       <SocialProofGrid />
+      <SectionDivider />
       <FAQSection />
       <FinalCTA />
       <Footer />
