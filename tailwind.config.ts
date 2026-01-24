@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Roca', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Fredoka', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {

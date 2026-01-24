@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
         <div className="text-center">
           <a
             href="https://wanderpreneur.org/webinar"
-            className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-primary-foreground text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 hover:from-gold-500 hover:via-gold-400 hover:to-gold-500 text-black text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-bold"
           >
             See How You Can Be Next
             <ArrowRight className="w-5 h-5" />
