@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-cyan-900 via-cyan-950 to-black text-cyan-200 py-12">
@@ -24,29 +26,26 @@ const Footer = () => {
 
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
               className="hover:text-gold-400 transition-colors duration-200 focus:ring-2 focus:ring-cyan-400 focus:outline-none rounded px-2 py-1"
-              rel="noopener noreferrer"
             >
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-cyan-600">•</span>
-            <a
-              href="#"
+            <Link
+              to="/terms-of-service"
               className="hover:text-gold-400 transition-colors duration-200 focus:ring-2 focus:ring-cyan-400 focus:outline-none rounded px-2 py-1"
-              rel="noopener noreferrer"
             >
               Terms of Service
-            </a>
+            </Link>
             <span className="text-cyan-600">•</span>
-            <a
-              href="#"
+            <Link
+              to="/income-disclosure"
               className="hover:text-gold-400 transition-colors duration-200 focus:ring-2 focus:ring-cyan-400 focus:outline-none rounded px-2 py-1"
-              rel="noopener noreferrer"
             >
               Income Disclosure
-            </a>
+            </Link>
           </div>
         </div>
       </div>
