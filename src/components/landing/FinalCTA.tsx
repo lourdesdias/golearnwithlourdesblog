@@ -68,7 +68,7 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-8 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-8 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
             Your FREE Webinar Training Is Waiting
           </h2>
           <p className="text-lg md:text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed">

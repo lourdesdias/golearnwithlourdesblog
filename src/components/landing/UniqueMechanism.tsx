@@ -39,7 +39,7 @@ const UniqueMechanism = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
             How Is This Different From Every Other 'Travel Membership' You've Seen?
           </h2>
           <p className="text-lg md:text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed">

@@ -9,8 +9,9 @@ const HeroSection = () => {
         {/* Show hero image if available, otherwise show placeholder */}
         <img
           src={heroImage}
-          alt="Luxury tropical destination with overwater bungalows"
-          className="w-full h-full object-cover"
+          alt="Family enjoying luxury travel"
+          className="w-full h-full object-cover object-center md:object-top"
+          style={{ minHeight: '100vh' }}
           loading="eager"
         />
         
@@ -19,7 +20,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 container mx-auto px-4 py-24 text-center max-w-7xl">
+      <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 text-center max-w-7xl">
         {/* Pre-headline */}
         <p className="text-sm md:text-base uppercase tracking-widest mb-6 animate-fade-in font-semibold text-cyan-300">
           For Busy Parents, Entrepreneurs & Faith-Driven Families
