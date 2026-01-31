@@ -37,7 +37,7 @@ const MyStorySection = () => {
 
             {/* Story Text */}
             <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Why I Built This System
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">

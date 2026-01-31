@@ -1,4 +1,5 @@
 import { Trophy, Users, TrendingUp, Heart } from "lucide-react";
+import guyTaylorImage from "@/assets/guy-taylor.jpeg";
 
 const benefits = [
   {
@@ -30,7 +31,7 @@ const LegacyStory = () => {
               <div className="flex justify-center mb-6">
                 <Trophy className="w-14 h-14" />
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 "My Income Didn't Die With Me — It's Still Blessing My Grandchildren Today"
               </h2>
               <p className="text-cyan-100">Guy's Legacy Story</p>
@@ -39,10 +40,14 @@ const LegacyStory = () => {
             {/* Body */}
             <div className="p-8 md:p-12">
               <div className="flex flex-col md:flex-row gap-8 items-center mb-10">
-                {/* Image Placeholder */}
+                {/* Guy Taylor Image */}
                 <div className="flex-shrink-0">
-                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-100 to-gold-100 flex items-center justify-center border-4 border-gold-400 shadow-lg">
-                    <span className="text-6xl">👨‍👩‍👧‍👦</span>
+                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-4 border-gold-400 shadow-lg">
+                    <img 
+                      src={guyTaylorImage} 
+                      alt="Guy Taylor Legacy Story"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                 </div>
 

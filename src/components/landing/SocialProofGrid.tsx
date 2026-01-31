@@ -72,9 +72,25 @@ const SocialProofGrid = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Headlines */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-            Savings on Travel & Daily Expenses
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <span 
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #0d9488 0%, #2fe0d5 50%, #0d9488 100%)',
+              }}
+            >
+              Savings on Travel & Daily Expenses
+            </span>
           </h2>
+          {/* Decorative underline */}
+          <div className="flex justify-center mb-4">
+            <div 
+              className="h-1 w-32 rounded-full"
+              style={{
+                background: 'linear-gradient(to right, #f0d976, #c7a043, #f0d976)'
+              }}
+            />
+          </div>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Real screenshots from real members
           </p>
@@ -85,14 +101,19 @@ const SocialProofGrid = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              className="group rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #f0d976, #c7a043, #a68635, #c7a043, #f0d976)',
+                padding: '3px'
+              }}
             >
+              <div className="bg-card rounded-xl overflow-hidden h-full">
               {/* Image */}
-              <div className="aspect-square overflow-hidden relative">
+              <div className="aspect-square overflow-hidden relative bg-white p-2">
                 <img 
                   src={testimonial.image} 
                   alt={`${testimonial.name}'s savings testimonial`}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 {/* Savings Badge */}
@@ -107,13 +128,14 @@ const SocialProofGrid = () => {
                 </div>
               </div>
               
-              {/* Content */}
-              <div className="p-5">
-                <p className="font-bold text-foreground mb-1">{testimonial.name}</p>
-                <p className="text-sm font-semibold text-cyan-600 mb-2">{testimonial.hook}</p>
-                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                  {testimonial.caption}
-                </p>
+                {/* Content */}
+                <div className="p-5">
+                  <p className="font-bold text-foreground mb-1">{testimonial.name}</p>
+                  <p className="text-sm font-semibold text-cyan-600 mb-2">{testimonial.hook}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                    {testimonial.caption}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
