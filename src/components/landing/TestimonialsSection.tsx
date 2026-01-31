@@ -1,20 +1,23 @@
-import { ArrowRight, Play, Video } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
     name: "Giovanni B.",
     result: "$8,321 Saved",
     quote: "We used to spend $1,500 per night on hotels. Now we pay $300 for the same quality. This has completely changed how our family travels.",
+    videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/685df8235c72d2bd8430333f.mp4",
   },
   {
     name: "Elijah",
     result: "Earns $10K+/month",
     quote: "I was skeptical at first, but within 18 months I replaced my corporate income. Now I work from anywhere and travel with my family whenever we want.",
+    videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68fc556cd9a00d039973793b.mp4",
   },
   {
     name: "53-Year Travel Expert",
     result: "Industry Veteran",
     quote: "After 53 years in the travel industry, I've never seen wholesale access like this made available to everyday families. It's revolutionary.",
+    videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68fc556cd9a00d039973793b.mp4",
   },
 ];
 
@@ -39,15 +42,17 @@ const TestimonialsSection = () => {
               key={index}
               className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              {/* Video Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-cyan-800 to-cyan-900 flex items-center justify-center relative">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center border-2 border-white/40 hover:bg-white/30 transition-colors cursor-pointer">
-                    <Play className="w-8 h-8 text-white ml-1" />
-                  </div>
-                  <p className="text-white font-bold text-lg">VIDEO TESTIMONIAL</p>
-                  <p className="text-cyan-200 text-sm">Embed video here</p>
-                </div>
+              {/* Video Player */}
+              <div className="aspect-video bg-gradient-to-br from-cyan-800 to-cyan-900 relative">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={testimonial.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
 
               {/* Content */}
