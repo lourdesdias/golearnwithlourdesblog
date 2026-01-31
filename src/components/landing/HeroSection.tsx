@@ -1,5 +1,5 @@
-import { ArrowRight, Camera } from "lucide-react";
-import heroImage from "@/assets/hero-destination.jpg";
+import { ArrowRight } from "lucide-react";
+import heroImage from "@/assets/hero-family.png";
 
 const HeroSection = () => {
   return (
