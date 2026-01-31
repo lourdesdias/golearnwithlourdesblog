@@ -6,16 +6,19 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0">
-        {/* Show hero image if available, otherwise show placeholder */}
-        <img
-          src={heroImage}
-          alt="Family enjoying luxury travel"
-          className="w-full h-full object-cover object-center md:object-top"
-          style={{ minHeight: '100vh' }}
-          loading="eager"
+        {/* Show hero image - responsive positioning for all devices */}
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 20%',
+            backgroundRepeat: 'no-repeat',
+            minHeight: '100vh'
+          }}
         />
         
-        {/* Placeholder overlay for custom family photo */}
+        {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-cyan-900/80" />
       </div>
 

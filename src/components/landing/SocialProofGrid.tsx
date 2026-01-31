@@ -12,56 +12,56 @@ const testimonials = [
     image: pinkyImage,
     name: "Pinky",
     hook: "Stop overpaying for your family's rest and restoration.",
-    caption: "Why pay retail when you can access private rates? We saved over $900 on a single hotel stay, proving that luxury and stewardship can go hand in hand.",
+    caption: "Saved over $900 on a single hotel stay—luxury and stewardship go hand in hand.",
     savings: "$900+"
   },
   {
     image: tiffanyImage,
     name: "Tiffany",
     hook: "Financial freedom means never stressing when an appliance breaks.",
-    caption: "When the washer and dryer retired, we didn't have to break the bank. We found the exact same set for $1,140 less than the big-box stores.",
+    caption: "Found the exact same washer & dryer set for $1,140 less than big-box stores.",
     savings: "$1,140"
   },
   {
     image: cynthiaImage,
     name: "Cynthia",
     hook: "Reclaim your \"seed\" money from the big corporations.",
-    caption: "Imagine what your family could do with an extra $270 every single month. We slashed our phone bill from $420 to $146 just by checking our back office.",
+    caption: "Slashed our phone bill from $420 to $146/month—that's $270 back in our pocket!",
     savings: "$270/mo"
   },
   {
     image: sarahImage,
     name: "Sarah",
     hook: "Live more and create memories without the financial burden.",
-    caption: "From 8 NFL tickets to parking passes, we saved $1,490 in one go. This membership isn't just about travel; it's about enjoying life's best moments for less.",
+    caption: "8 NFL tickets plus parking—saved $1,490 in one go. Life's best moments for less.",
     savings: "$1,490"
   },
   {
     image: krystalImage,
     name: "Krystal",
     hook: "Be a good steward of your household's most frequent expense.",
-    caption: "Groceries are a necessity, but full price is optional. I saved on a $250 grocery credit today because every dollar saved is a dollar earned for our future.",
-    savings: "$12.50"
+    caption: "$250 grocery credit—every dollar saved is a dollar earned for our future.",
+    savings: "$250"
   },
   {
     image: laurieImage,
     name: "Laurie",
     hook: "A total lifestyle shift toward abundance.",
-    caption: "From all-inclusive trips to Punta Cana to auto insurance and dishwashers, we have saved over $2,200 in just a few months. It's more than travel; it's a better way to live.",
+    caption: "Trips to Punta Cana, auto insurance, dishwashers—$2,200+ saved in months.",
     savings: "$2,200+"
   },
   {
     image: deborahImage,
     name: "Deborah",
     hook: "Small wins lead to big freedom.",
-    caption: "We discovered a 70% discount on AAA that ended up being completely free for the year. The proof is in the portal—the savings are real and they are everywhere.",
+    caption: "70% off AAA—ended up completely FREE for the year. Savings are everywhere.",
     savings: "FREE"
   },
   {
     image: bunmiImage,
     name: "Bunmi",
     hook: "Convenience is the ultimate luxury for a busy family.",
-    caption: "We didn't just save money on tires; we saved time. Goodyear came right to our driveway for no extra charge, allowing us to focus on what matters most.",
+    caption: "Goodyear came to our driveway for free—saved money AND time.",
     savings: "$140+"
   },
 ];
@@ -132,7 +132,7 @@ const SocialProofGrid = () => {
                 <div className="p-5">
                   <p className="font-bold text-foreground mb-1">{testimonial.name}</p>
                   <p className="text-sm font-semibold text-cyan-600 mb-2">{testimonial.hook}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {testimonial.caption}
                   </p>
                 </div>

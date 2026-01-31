@@ -6,6 +6,7 @@ const testimonials = [
     result: "$8,321 Saved",
     quote: "We used to spend $1,500 per night on hotels. Now we pay $300 for the same quality. This has completely changed how our family travels.",
     videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/685df8235c72d2bd8430333f.mp4",
+    posterUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/685df8235c72d2bd8430333f.mp4#t=5",
   },
   {
     name: "Elijah",
@@ -17,7 +18,7 @@ const testimonials = [
     name: "53-Year Travel Expert",
     result: "Industry Veteran",
     quote: "After 53 years in the travel industry, I've never seen wholesale access like this made available to everyday families. It's revolutionary.",
-    videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68fc556cd9a00d039973793b.mp4",
+    videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68fc57bbf1ef98075802046a.mp4",
   },
 ];
 
@@ -48,7 +49,7 @@ const TestimonialsSection = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                   controls
                   preload="metadata"
-                  poster=""
+                  poster={testimonial.videoUrl + "#t=3"}
                 >
                   <source src={testimonial.videoUrl} type="video/mp4" />
                   Your browser does not support the video tag.

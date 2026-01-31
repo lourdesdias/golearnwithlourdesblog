@@ -42,19 +42,43 @@ const MyStorySection = () => {
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  For years, my husband worked full-time while I juggled motherhood and various side hustles trying to create extra income. We dreamed of traveling the world with our kids, but between bills, debt, and the rising cost of everything, vacations felt like a luxury we couldn't afford.
+                  For years, my husband worked full-time while I juggled motherhood and our family budget. We dreamed of traveling the world with our kids, but between bills and the rising cost of everything, luxury vacations felt completely out of reach. We were that family choosing between one "big trip" every few years or staying home.
                 </p>
                 <p>
-                  Everything changed when we discovered a travel membership that gave us access to wholesale pricing on hotels, cruises, and experiences. But what really transformed our lives wasn't just the savings — it was the business opportunity that came with it.
+                  As a homeschooling family, I watched our kids learn from textbooks and screens while I knew there was a bigger classroom waiting for them — the world itself. But "worldschooling" felt like something only wealthy families could afford.
                 </p>
                 <p>
-                  Within our first year, we had traveled to places we'd only seen in magazines. By year three, we'd paid off over $50,000 in debt. Today, we travel 4-6 times per year, often for free, while building an income stream that grows whether we're working or not.
+                  Everything changed when I discovered a wholesale travel system that wasn't just about saving money on hotels. This was different. It gave us access to luxury resorts, cruises, and experiences at 40-70% off retail — but more importantly, it showed me how to turn our family's travel into a tax-advantaged home-based business.
+                </p>
+                <p className="font-semibold text-foreground">
+                  Suddenly, the math completely shifted.
                 </p>
                 <p>
-                  But here's what matters most to me: this business is built on biblical principles of stewardship, service, and generational blessing. We're not just building wealth — we're funding missions, supporting ministries, and creating a legacy that will bless our children's children.
+                  Within our first year, we traveled to places we'd only dreamed about. Our kids stopped learning about ancient civilizations from books — they walked through them. They didn't just read about different cultures — they lived among them. Geography became real. History came alive. Language learning happened naturally.
                 </p>
                 <p>
-                  Now I help other faith-driven families do the same. If you're ready to stop choosing between family time and financial security, you're in the right place.
+                  But here's what changed everything for our family: I discovered that every trip we took could be legally deducted as a business expense. My husband still works his full-time job, but with this home-based travel business, we transformed from paying thousands in taxes to getting money back. Those tax savings alone funded multiple trips.
+                </p>
+                <p>
+                  Today, we're living what we call our "freedom lifestyle." We travel 3-4 times per year — not as a luxury, but as our children's education and our family's business strategy. Our kids are getting a world-class education that no classroom could ever provide. And we're building residual income that grows whether we're exploring a new country or at home.
+                </p>
+                <p className="font-semibold text-foreground">
+                  But here's what matters most to me:
+                </p>
+                <p>
+                  This business is built on biblical principles of stewardship, service, and generational blessing. We're not just building wealth — we're funding missions, supporting ministries, and teaching our children that faith, family, and financial freedom can coexist. We're creating a legacy that will bless our children's children (Proverbs 13:22).
+                </p>
+                <p>
+                  I started sharing this system with other parents — especially homeschooling families who, like us, wanted to give their kids experiential education without breaking the bank. I showed them the same wholesale access, the same tax advantages, the same freedom lifestyle we'd discovered.
+                </p>
+                <p className="font-semibold text-foreground">
+                  Now I help faith-driven families do the same.
+                </p>
+                <p>
+                  Whether you're a homeschooling parent who dreams of worldschooling, a busy professional who wants to deduct your family vacations, or an entrepreneur looking to maximize your tax benefits — this system works. You don't need to be a travel expert. You just need to be teachable and willing to think differently about travel, taxes, and building wealth.
+                </p>
+                <p>
+                  If you're ready to stop choosing between family experiences and financial security, you're in the right place.
                 </p>
               </div>
             </div>
