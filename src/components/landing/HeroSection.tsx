@@ -3,18 +3,15 @@ import heroImage from "@/assets/hero-family.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0">
         {/* Show hero image - responsive positioning for all devices */}
         <div 
-          className="w-full h-full"
+          className="w-full h-full bg-no-repeat bg-center bg-contain lg:bg-cover lg:bg-[position:center_20%]"
           style={{
             backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 20%',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh'
+            minHeight: '100svh',
           }}
         />
         
