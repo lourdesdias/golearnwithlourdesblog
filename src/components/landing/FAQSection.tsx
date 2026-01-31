@@ -88,12 +88,14 @@ const FAQSection = () => {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
+                className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                  openIndex === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                 }`}
               >
-                <div className="px-8 py-6 bg-gradient-to-br from-cyan-50/50 to-white text-muted-foreground leading-relaxed border-x-2 border-b-2 border-cyan-500 rounded-b-xl">
-                  {faq.answer}
+                <div className="overflow-hidden">
+                  <div className="px-8 py-6 bg-gradient-to-br from-cyan-50/50 to-white text-muted-foreground leading-relaxed border-x-2 border-b-2 border-cyan-500 rounded-b-xl">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             </div>
