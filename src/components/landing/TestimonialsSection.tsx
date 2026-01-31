@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Elijah",
     result: "Earns $10K+/month",
-    quote: "I was skeptical at first, but within 18 months I replaced my corporate income. Now I work from anywhere and travel with my family whenever we want.",
+    quote: "I was skeptical at first, but after years on the road as a long-haul truck driver, I finally found a way home. Within 18 months, I replaced my full-time income. Now I work from anywhere and travel with my family whenever we want.",
     videoUrl: "https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68fc556cd9a00d039973793b.mp4",
   },
   {
