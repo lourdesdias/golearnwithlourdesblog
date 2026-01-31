@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "Is this a legitimate business or a pyramid scheme?",
-    answer: "This is a 100% legitimate travel membership company with real products, real savings, and a legal business structure. The income opportunity comes from helping others access wholesale travel — not from recruiting. You earn commissions on travel bookings and memberships, just like any other referral-based business.",
+    answer: "This is a 100% legitimate lifestyle membership company centered on financial stewardship and wholesale savings. Unlike schemes that rely solely on recruitment, our value is found in real products that save families thousands on daily expenses and travel. The income opportunity is a referral-based reward system: once you share the savings with three others, your membership is free, and further referrals unlock monthly residual income. You are rewarded for expanding a community of people who want to live with purpose and financial freedom.",
   },
   {
     question: "How much does it cost to get started?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "How are the tax deductions legal?",
-    answer: "When you have a legitimate home-based business, you can deduct ordinary business expenses — including travel for business purposes. This is standard IRS practice. We recommend consulting with a tax professional about your specific situation, but the structure is completely legal and widely used.",
+    answer: "When you operate a legitimate home-based business, you can often deduct ordinary business expenses—including travel for business purposes. This is a standard practice in many tax jurisdictions worldwide. While specific regulations vary by country, the principle of deducting business-related costs is a global standard for entrepreneurs. We recommend consulting with a local tax professional about your specific situation, but the structure is completely legal and widely utilized by business owners globally.",
   },
   {
     question: "What if I'm not tech-savvy?",

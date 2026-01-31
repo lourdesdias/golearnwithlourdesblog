@@ -18,11 +18,12 @@ const pillars = [
     title: "Income as Ministry",
     color: "gold",
     items: [
-      "Earn commissions by sharing travel deals you love",
+      "Share the blessing and earn a free membership with just three referrals",
+      "Unlock recurring rewards by expanding our community of freedom",
       "Build residual income that grows monthly",
       "Work on your own schedule, from anywhere",
       "No inventory, shipping, or customer service headaches",
-      "Get paid while helping others save money",
+      "Generate income while helping families steward their resources",
     ],
   },
   {
