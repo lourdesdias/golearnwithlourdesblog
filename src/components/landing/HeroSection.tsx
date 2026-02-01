@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-family.png";
+import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
 
 const HeroSection = () => {
   return (
@@ -68,15 +68,10 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* CTA Button - Primary Cyan */}
-        <a
-          href="https://wanderpreneur.org/webinar"
-          className="btn-primary-cta mb-8"
-          aria-label="Watch the free training webinar"
-        >
-          Watch The FREE Training Now
-          <ArrowRight className="w-6 h-6" />
-        </a>
+        {/* Email Capture Form */}
+        <div className="mb-8">
+          <BeehiivSubscribeForm />
+        </div>
 
         {/* Trust line */}
         <p className="text-sm text-gray-300 flex flex-wrap items-center justify-center gap-4">

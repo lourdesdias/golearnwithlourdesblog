@@ -1,5 +1,6 @@
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import profilePhoto from "@/assets/profile-lourdes.png";
+import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
 
 const webinarPoints = [
   "Exactly how the wholesale travel system works",
@@ -120,15 +121,8 @@ const MyStorySection = () => {
               </div>
             </div>
 
-            <div className="text-center">
-              <a
-                href="https://wanderpreneur.org/webinar"
-                className="btn-secondary-cta"
-                aria-label="Watch the free webinar training"
-              >
-                Watch The FREE Webinar Now
-                <ArrowRight className="w-5 h-5" />
-              </a>
+            <div className="flex justify-center">
+              <BeehiivSubscribeForm />
             </div>
           </div>
         </div>

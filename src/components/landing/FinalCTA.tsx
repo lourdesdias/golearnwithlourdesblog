@@ -1,4 +1,5 @@
-import { ArrowRight, Check, Clock, Lock } from "lucide-react";
+import { Check, Lock } from "lucide-react";
+import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
 
 const webinarContent = [
   {
@@ -216,16 +217,9 @@ const FinalCTA = () => {
           </div>
         </div>
 
-        {/* CTA Button - Primary Cyan */}
-        <div className="text-center mb-10">
-          <a
-            href="https://wanderpreneur.org/webinar"
-            className="btn-primary-cta"
-            aria-label="Watch the free webinar and claim bonuses"
-          >
-            Watch The FREE Webinar Now
-            <ArrowRight className="w-6 h-6" />
-          </a>
+        {/* Email Capture Form */}
+        <div className="mb-10">
+          <BeehiivSubscribeForm />
         </div>
 
         {/* Urgency Box */}
