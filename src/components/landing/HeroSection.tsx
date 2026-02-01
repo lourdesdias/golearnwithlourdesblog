@@ -1,5 +1,5 @@
 import heroImage from "@/assets/hero-family.png";
-import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
+import WebinarSignupModal from "./WebinarSignupModal";
 
 const HeroSection = () => {
   return (
@@ -68,9 +68,9 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Email Capture Form */}
+        {/* CTA Button - Primary Cyan */}
         <div className="mb-8">
-          <BeehiivSubscribeForm />
+          <WebinarSignupModal variant="primary" buttonText="Watch The FREE Training Now" />
         </div>
 
         {/* Trust line */}

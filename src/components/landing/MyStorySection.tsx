@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import profilePhoto from "@/assets/profile-lourdes.png";
-import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
+import WebinarSignupModal from "./WebinarSignupModal";
 
 const webinarPoints = [
   "Exactly how the wholesale travel system works",
@@ -122,7 +122,7 @@ const MyStorySection = () => {
             </div>
 
             <div className="flex justify-center">
-              <BeehiivSubscribeForm />
+              <WebinarSignupModal variant="secondary" buttonText="Watch The FREE Webinar Now" />
             </div>
           </div>
         </div>
