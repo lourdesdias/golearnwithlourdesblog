@@ -1,5 +1,5 @@
-import { Check, Lock } from "lucide-react";
-import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
+import { ArrowRight, Check, Lock } from "lucide-react";
+import WebinarSignupModal from "./WebinarSignupModal";
 
 const webinarContent = [
   {
@@ -217,9 +217,9 @@ const FinalCTA = () => {
           </div>
         </div>
 
-        {/* Email Capture Form */}
-        <div className="mb-10">
-          <BeehiivSubscribeForm />
+        {/* CTA Button - Primary Cyan */}
+        <div className="text-center mb-10">
+          <WebinarSignupModal variant="primary" buttonText="Watch The FREE Webinar Now" />
         </div>
 
         {/* Urgency Box */}
