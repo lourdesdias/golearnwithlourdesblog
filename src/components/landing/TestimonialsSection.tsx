@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import WebinarSignupModal from "./WebinarSignupModal";
 
 const testimonials = [
   {
@@ -80,19 +80,7 @@ const TestimonialsSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <a
-            href="https://wanderpreneur.org/webinar"
-            className="inline-flex items-center gap-3 font-bold text-lg md:text-xl px-10 py-4 rounded-full shadow-xl transform hover:scale-105 transition-all duration-300 text-white"
-            style={{
-              background: 'linear-gradient(135deg, #f0d976 0%, #c7a043 50%, #a68635 100%)',
-              boxShadow: '0 8px 25px rgba(199, 160, 67, 0.4), inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.2)',
-              textShadow: '0 2px 4px rgba(0,0,0,0.3)'
-            }}
-            aria-label="See how you can achieve similar results"
-          >
-            See How You Can Be Next
-            <ArrowRight className="w-5 h-5" />
-          </a>
+          <WebinarSignupModal variant="secondary" buttonText="See How You Can Be Next" />
         </div>
       </div>
     </section>

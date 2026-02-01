@@ -28,8 +28,8 @@ const BeehiivSubscribeForm = () => {
         frameBorder="0"
         scrolling="no"
         style={{
-          width: "560px",
-          height: "339px",
+          width: "686px",
+          height: "487px",
           margin: 0,
           borderRadius: "0px",
           backgroundColor: "transparent",
