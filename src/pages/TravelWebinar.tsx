@@ -156,14 +156,16 @@ const TravelWebinar = () => {
       {/* SECTION 3: WEBINAR VIDEO EMBED */}
       <section className="pb-12">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="aspect-video rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-cyan-600 to-gold-600 relative">
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-              <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4">
-                <Play className="w-12 h-12 text-white fill-white" />
-              </div>
-              <p className="text-xl font-semibold">Webinar Video Goes Here</p>
-              <p className="text-sm opacity-80 mt-2">Add your video URL to display the training</p>
-            </div>
+          <div className="aspect-video rounded-2xl shadow-2xl overflow-hidden bg-gray-900">
+            <video 
+              className="w-full h-full"
+              controls
+              preload="metadata"
+              poster="https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68e8403afd24b5f1c7c8afec.mp4#t=3"
+            >
+              <source src="https://storage.googleapis.com/msgsndr/jl8KxwwRlu6AL9Saacdc/media/68e8403afd24b5f1c7c8afec.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
