@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Sparkles, ArrowRight, Heart, Zap, Users, Calendar } from 'lucide-react';
+import priyaImg from '@/assets/testimonials/priya-kapoor.jpg';
+import marcusImg from '@/assets/testimonials/marcus-chen.jpg';
+import sophiaImg from '@/assets/testimonials/sophia-reyes.jpg';
+import jamesImg from '@/assets/testimonials/james-okonkwo.jpg';
+import elenaImg from '@/assets/testimonials/elena-vasquez.jpg';
 
 export default function VisionArchitectLP() {
   const [email, setEmail] = useState('');
@@ -61,31 +66,31 @@ export default function VisionArchitectLP() {
     {
       name: "Priya Kapoor",
       role: "Digital Marketing Founder",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
+      image: priyaImg,
       quote: "I went through Vision Architect expecting a theory course. Instead, I got a system. My Vision Architect Mentor checks in DAILY. It's like having a business mentor + therapist + accountability coach all in one. Three weeks in, I've made decisions I would've delayed for MONTHS."
     },
     {
       name: "Marcus Chen",
       role: "Agency Owner & Father of 2",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=marcus",
+      image: marcusImg,
       quote: "The 6-day format is genius. I got clarity in less than a week. Not the vague 'find yourself' kind—ACTIONABLE clarity. My Vision Architect Mentor's daily feedback keeps me aligned to what ACTUALLY matters. My team noticed the difference in my leadership immediately."
     },
     {
       name: "Sophia Reyes",
       role: "Coach & Mom of 3",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=sophia",
+      image: sophiaImg,
       quote: "I've done countless life coaching programs. Vision Architect is different. The AI-powered Vision Architect Mentor is like having the best mentor from my past life available 24/7. It doesn't just check boxes—it understands my vision and keeps me from drifting when life gets chaotic."
     },
     {
       name: "James Okonkwo",
       role: "Entrepreneur & Fitness Coach",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=james",
+      image: jamesImg,
       quote: "First time in my life, all 7 F's are actually in motion. Vision Architect Mentor is the difference. It's not a one-time course—it's a recurring partner I use DAILY. My kids see me thriving (not just grinding). That alone was worth it."
     },
     {
       name: "Elena Vasquez",
       role: "Course Creator & Solopreneur",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=elena",
+      image: elenaImg,
       quote: "The perpetual feedback loop is life-changing. Every week, my Vision Architect Mentor shows me where I'm drifting and course-corrects BEFORE I waste months going the wrong direction. This is the accountability I've been searching for."
     }
   ];
@@ -340,7 +345,7 @@ export default function VisionArchitectLP() {
         <p>Vision Architect: Build the life you actually want. © 2026</p>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
 
         @keyframes slideIn {
