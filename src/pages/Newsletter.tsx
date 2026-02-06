@@ -249,7 +249,7 @@ export default function NewsletterLP() {
         <p>The Wealth Builder brought to you by Lourdes Dias. © 2026. All rights reserved.</p>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
 
         @keyframes slideIn {
