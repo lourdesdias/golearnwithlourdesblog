@@ -1,3 +1,7 @@
+import LinkInBio from "./pages/LinkInBio";
+import VisionArchitect from "./pages/VisionArchitect";
+import ViralEngine from "./pages/ViralEngine";
+import Newsletter from "./pages/Newsletter";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,9 +23,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/travelfreedom" replace />} />
+          <Route path="/" element={<LinkInBio />} />
           <Route path="/travelfreedom" element={<Index />} />
           <Route path="/travelwebinar" element={<TravelWebinar />} />
+          <Route path="/visionarchitect" element={<VisionArchitect />} />
+          <Route path="/viralengine" element={<ViralEngine />} />
+          <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/income-disclosure" element={<IncomeDisclosure />} />
