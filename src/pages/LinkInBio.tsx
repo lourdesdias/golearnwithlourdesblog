@@ -120,7 +120,7 @@ export default function LinkInBio() {
             Architect Freedom.
           </p>
           <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-            Hi, I'm <span className="font-semibold">Lourdes</span>—Mom. Entrepreneur. The one who said{" "}
+            Hi, I'm <span className="font-semibold">Lourdes</span>—Mom. Wife. Entrepreneur. The one who said{" "}
             <span className="italic">"I'm not choosing between my family and my goals."</span> <br />
             Now I'm showing YOU how to have both.
           </p>
