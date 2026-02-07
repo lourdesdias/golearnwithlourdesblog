@@ -66,7 +66,8 @@ export default function NewsletterLP() {
 
         {/* CTA */}
         <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-xl p-8 backdrop-blur-xl max-w-2xl mx-auto overflow-hidden">
-          <BeehiivSubscribeForm />
+          {/* Using Travel Freedom ID for now, pending dedicated Newsletter ID */}
+          <BeehiivSubscribeForm formId="36b5b9a4-7a5a-4056-b378-4d0e1f111dbc" />
         </div>
       </div>
 
