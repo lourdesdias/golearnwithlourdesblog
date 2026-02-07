@@ -1,10 +1,14 @@
+```javascript
 import React, { useState } from 'react';
-import { CheckCircle2, Zap, ArrowRight, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
+import BeehiivModal from "@/components/landing/BeehiivModal";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
-export default function ViralEngineLandingPage() {
+export default function ViralEngineLP() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const engines = [
     { name: "Viral Campaign Generator", power: "Create ready-to-post content for 14+ platforms with psychologically-optimized hooks", icon: "🎯" },
     { name: "Trend Intelligence", power: "Reverse-engineer what's WORKING RIGHT NOW on TikTok, Instagram, LinkedIn, YouTube, X", icon: "📊" },
@@ -27,11 +31,27 @@ export default function ViralEngineLandingPage() {
     { name: "Settings & Model Selection", power: "Choose your AI engine (Gemini 2.0, GPT-4o, etc.). Your choice.", icon: "⚙️" }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && fullName) {
-      // Logic for waitlist submission will go here
+    setIsSubmitting(true);
+    
+    try {
+      // Loops Form Submission
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('firstName', fullName);
+      
+      await fetch("https://app.loops.so/api/v1/deploy/cmlaaipaz0ayf0i1nq4o9tet0", {
+        method: "POST",
+        body: formData,
+        mode: 'no-cors' // Use no-cors for simple form submissions to avoid CORS issues
+      });
+      
       setIsSubmitted(true);
+    } catch (error) {
+      console.error("Submission error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -69,43 +89,66 @@ export default function ViralEngineLandingPage() {
           <span className="font-bold">No team. No chaos. No $5,000/month agencies.</span> 19 AI engines create a week of viral content in 10 minutes. <span className="text-yellow-400">Profitable revenue that aligns with your values.</span>
         </p>
 
-        {/* CTA Box */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-6 sm:p-8 backdrop-blur-xl max-w-md mx-auto">
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors text-base"
-                required
-              />
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors text-base"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all flex items-center justify-center gap-2 text-base sm:text-lg"
-              >
-                Get Founder Access Now <ArrowRight className="w-4 h-4" />
+        {/* Hero CTA */}
+        <div className="flex justify-center">
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-yellow-500 text-slate-950 font-bold rounded-full hover:shadow-lg hover:shadow-cyan-400/50 transition-all flex items-center justify-center gap-2 text-lg hover:scale-105">
+                Join the Waitlist <ArrowRight className="w-5 h-5" />
               </button>
-              <p className="text-xs sm:text-sm text-slate-400">⚡ Limited 100 founder spots. Lock in lifetime pricing.</p>
-            </form>
-          ) : (
-            <div className="space-y-4 text-center">
-              <div className="w-12 h-12 mx-auto bg-green-500/20 rounded-full flex items-center justify-center">
-                <CheckCircle2 className="w-6 h-6 text-green-400" />
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[500px] bg-slate-900 border-slate-800 text-white">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-yellow-400">
+                  Join the Viral Engine Waitlist
+                </DialogTitle>
+              </DialogHeader>
+              <div className="py-6">
+                {!isSubmitted ? (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-slate-300">Full Name</label>
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-slate-300">Email Address</label>
+                      <input
+                        type="email"
+                        placeholder="your@email.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                        required
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-yellow-400 text-slate-950 font-bold rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 mt-4"
+                    >
+                      {isSubmitting ? "Joining..." : "Lock in Founder Pricing"} <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <p className="text-xs text-slate-500 text-center">Final 100 spots remaining for founder pricing.</p>
+                  </form>
+                ) : (
+                  <div className="text-center space-y-4 py-8">
+                    <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="w-8 h-8 text-cyan-400" />
+                    </div>
+                    <h3 className="text-xl font-bold">You're on the list!</h3>
+                    <p className="text-slate-300">Success! You're on the list. Get ready to replace your agency team with AI.</p>
+                  </div>
+                )}
               </div>
-              <h3 className="text-lg font-bold">You're In!</h3>
-              <p className="text-slate-400 text-sm">Check your email for founder pricing + early Q1 2026 access.</p>
-            </div>
-          )}
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
 
@@ -242,28 +285,66 @@ export default function ViralEngineLandingPage() {
         <p className="text-slate-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
           7-day free trial. No credit card required. If it doesn't save you 10+ hours/week, just cancel.
         </p>
-        {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-grow px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors text-base"
-              required
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all text-base sm:text-lg whitespace-nowrap"
-            >
-              Start Your Free Trial
-            </button>
-          </form>
-        ) : (
-          <div className="p-4 bg-green-500/20 rounded-lg border border-green-500/30 max-w-md mx-auto">
-            <p className="text-green-400 font-bold">You're In! Check your email.</p>
-          </div>
-        )}
+        <div className="flex justify-center">
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-yellow-500 text-slate-950 font-bold rounded-full hover:shadow-lg hover:shadow-cyan-400/50 transition-all flex items-center justify-center gap-2 text-lg hover:scale-105">
+                Lock In Founder Pricing Now <ArrowRight className="w-5 h-5" />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[500px] bg-slate-900 border-slate-800 text-white">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-yellow-400">
+                  Join the Viral Engine Waitlist
+                </DialogTitle>
+              </DialogHeader>
+              <div className="py-6">
+                {!isSubmitted ? (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-slate-300">Full Name</label>
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-slate-300">Email Address</label>
+                      <input
+                        type="email"
+                        placeholder="your@email.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                        required
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-yellow-400 text-slate-950 font-bold rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 mt-4"
+                    >
+                      {isSubmitting ? "Joining..." : "Lock in Founder Pricing"} <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <p className="text-xs text-slate-500 text-center">Final 100 spots remaining for founder pricing.</p>
+                  </form>
+                ) : (
+                  <div className="text-center space-y-4 py-8">
+                    <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="w-8 h-8 text-cyan-400" />
+                    </div>
+                    <h3 className="text-xl font-bold">You're on the list!</h3>
+                    <p className="text-slate-300">Success! You're on the list. Get ready to replace your agency team with AI.</p>
+                  </div>
+                )}
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
         <p className="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6">
           Limited 100 founder spots. Lock in lifetime pricing. Q1 2026 access.
         </p>
@@ -274,8 +355,8 @@ export default function ViralEngineLandingPage() {
       </footer>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
-      `}</style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
+`}</style>
     </div>
   );
 }
