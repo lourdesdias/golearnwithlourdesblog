@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer className="bg-gradient-to-b from-cyan-900 via-cyan-950 to-black text-cyan-200 py-12">
+    <footer ref={ref} className="bg-gradient-to-b from-cyan-900 via-cyan-950 to-black text-cyan-200 py-12">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-4xl mx-auto text-center">
           {/* Icons */}
@@ -51,6 +52,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;
