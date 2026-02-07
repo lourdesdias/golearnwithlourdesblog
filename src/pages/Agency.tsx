@@ -91,7 +91,7 @@ export default function Agency() {
                 </p>
 
                 <a
-                    href="https://meetn.com/lourdesdias"
+                    href="https://calendar.app.google/ZbB95NdVGLPcH7kn9"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold text-lg uppercase tracking-wider transition-all duration-300 text-slate-950 bg-gradient-to-r from-yellow-400 to-cyan-400 hover:from-yellow-300 hover:to-cyan-300 shadow-lg hover:shadow-xl"
@@ -188,7 +188,7 @@ export default function Agency() {
                     Let's talk about your business, your vision, and how we can get you to your next level—without burning out or selling out.
                 </p>
                 <a
-                    href="https://meetn.com/lourdesdias"
+                    href="https://calendar.app.google/ZbB95NdVGLPcH7kn9"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold text-lg uppercase tracking-wider transition-all duration-300 text-slate-950 bg-gradient-to-r from-yellow-400 to-cyan-400 hover:from-yellow-300 hover:to-cyan-300 shadow-lg hover:shadow-xl"
