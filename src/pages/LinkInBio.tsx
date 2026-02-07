@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown } from "lucide-react";
 import profileImage from "@/assets/profile-linkinbio.png";
