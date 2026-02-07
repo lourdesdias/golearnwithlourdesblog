@@ -159,7 +159,7 @@ export default function VisionArchitectLP() {
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-10 h-10 rounded-full"
+                  className="w-10 h-10 rounded-full object-cover object-center"
                 />
                 <div>
                   <p className="font-bold text-sm text-white">{testimonial.name}</p>
