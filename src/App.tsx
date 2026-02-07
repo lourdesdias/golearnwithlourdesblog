@@ -17,12 +17,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+import PageViewTracker from "./components/PageViewTracker";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <Router>
+        <PageViewTracker />
         <Routes>
           <Route path="/" element={<LinkInBio />} />
           <Route path="/blog" element={<Index />} />
