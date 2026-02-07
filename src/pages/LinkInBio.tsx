@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import profileImage from "@/assets/profile-linkinbio.png";
 
@@ -89,6 +89,21 @@ export default function LinkInBio() {
       icon: Mail,
       highlight: "Free • Weekly",
       url: "/newsletter"
+    },
+    {
+      id: 5,
+      title: "Marketing Agency",
+      subtitle: "Websites, Funnels & Content That Convert—Built for Kingdom Businesses",
+      description: "Need a website that actually sells? A funnel that converts? Social content that grows your brand? We build high-converting marketing systems for Faith-Driven entrepreneurs who refuse to compromise their values for profit.",
+      cta: "Learn More",
+      subtext: "Custom projects. Done-for-you marketing. Book a free strategy call.",
+      color: "from-cyan-400 to-yellow-500",
+      bgGradient: "from-cyan-500/20 to-yellow-500/20",
+      borderColor: "border-cyan-400/50",
+      badgeTextColor: "text-white",
+      icon: Briefcase,
+      highlight: "Done-For-You",
+      url: "/agency"
     }
   ];
 

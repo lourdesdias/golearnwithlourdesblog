@@ -2,6 +2,7 @@ import LinkInBio from "./pages/LinkInBio";
 import VisionArchitect from "./pages/VisionArchitect";
 import ViralEngine from "./pages/ViralEngine";
 import Newsletter from "./pages/Newsletter";
+import Agency from "./pages/Agency";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/vision-architect" element={<VisionArchitect />} />
           <Route path="/viral-engine" element={<ViralEngine />} />
           <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/agency" element={<Agency />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/income-disclosure" element={<IncomeDisclosure />} />

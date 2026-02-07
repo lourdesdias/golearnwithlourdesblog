@@ -29,6 +29,8 @@ const PageViewTracker = () => {
             title = "Travel Webinar | Learn With Lourdes";
         } else if (path === "/blog") {
             title = "Blog | Learn With Lourdes";
+        } else if (path === "/agency") {
+            title = "Marketing Agency | Learn With Lourdes";
         }
 
         // 2. Update document title
