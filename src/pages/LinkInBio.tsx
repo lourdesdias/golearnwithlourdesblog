@@ -120,7 +120,7 @@ export default function LinkInBio() {
             Architect Freedom (The Kingdom Way).
           </p>
           <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-            Hi, I'm <span className="font-semibold">Lourdes</span>—Wife. Mom. Entrepreneur. Christian Business Builder. The one who said <span className="italic">"I'm not choosing between my kids, my faith, and my goals."</span> <br />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact. Now I'm showing YOU how to do the same.
+            Hi, I'm <span className="font-semibold">Lourdes</span>—Wife. Mom. Entrepreneur. Christian Business Builder. The one who said <span className="italic">"I'm not choosing between my family, my faith, and my goals."</span> <br />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact. Now I'm showing YOU how to do the same.
           </p>
           <p className="text-sm text-slate-600 mt-4 font-semibold italic text-center">
             📖 "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." — Colossians 3:23
