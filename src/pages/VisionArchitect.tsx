@@ -9,8 +9,6 @@ import jamesImage from "@/assets/testimonials/james-okonkwo.jpg";
 import elenaImage from "@/assets/testimonials/elena-vasquez.jpg";
 
 export default function VisionArchitectLP() {
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const modules = [
     {
       number: 1,
@@ -306,28 +304,9 @@ export default function VisionArchitectLP() {
           Your Breakthrough is 6 Days Away
         </h2>
         <p className="text-slate-300 text-lg mb-8">Pre-recorded course. Lifetime Vision Architect Mentor. Results starting day 1.</p>
-        {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-grow px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
-              required
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all whitespace-nowrap"
-            >
-              Join the Waitlist Now
-            </button>
-          </form>
-        ) : (
-          <div className="p-4 bg-green-500/20 rounded-lg border border-green-500/30 max-w-md mx-auto">
-            <p className="text-green-400 font-bold">Welcome, Future Architect! Check your email.</p>
-          </div>
-        )}
+        <div className="max-w-md mx-auto">
+          <BeehiivSubscribeForm formId="63916bdb-e3dd-47f6-b409-f357672f550b" />
+        </div>
       </div>
 
       <footer className="relative border-t border-slate-800/50 py-8 px-4 text-center text-slate-500 text-sm">
