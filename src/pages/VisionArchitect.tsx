@@ -98,7 +98,7 @@ export default function VisionArchitectLP() {
       name: "Assenuj Travelist",
       role: "Business Owner",
       image: junessaImage,
-      className: "object-right border-2 border-green-500", // Debug: Check if deploy updates & if face is on right
+      className: "object-right", // Fix for crop
       quote: "Vision Architect changed everything. It showed me why my personality was becoming a liability rather than an asset. By treating the AI as a Strategic Partner, I finally understood who I am and saw the rooms for change I couldn’t see alone. The Weekly Navigator has become my ultimate tool for time management—turning the 15 hours I used to waste drifting into a settled plan. For the first time, I am being true to myself and my 'Kingdom Wins' are showing up in my family, my career, and my faith."
     },
     {
@@ -177,7 +177,7 @@ export default function VisionArchitectLP() {
       <div className="relative px-4 sm:px-6 lg:px-8 py-16 max-w-5xl mx-auto">
         <div className="bg-gradient-to-br from-yellow-500/10 to-cyan-500/5 border border-yellow-500/20 rounded-2xl p-8 md:p-12">
           <p className="text-center text-slate-300 mb-8 italic text-lg">
-            "As a Christian entrepreneur and parent, you feel called to build something meaningful that honors God and strengthens your family. But you're exhausted trying to balance it all. <span className="font-bold">There's a better way.</span>"
+            "As a Faith-Driven entrepreneur and parent, you feel called to build something meaningful that honors God and strengthens your family. But you're exhausted trying to balance it all. <span className="font-bold">There's a better way.</span>"
           </p>
 
           <h2 className="text-3xl font-bold mb-6 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
