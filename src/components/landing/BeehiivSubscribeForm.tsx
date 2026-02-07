@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 
-const BeehiivSubscribeForm = () => {
+interface BeehiivSubscribeFormProps {
+  formId?: string;
+}
+
+const BeehiivSubscribeForm = ({ formId = "36b5b9a4-7a5a-4056-b378-4d0e1f111dbc" }: BeehiivSubscribeFormProps) => {
   useEffect(() => {
     // Load Beehiiv script
     const script = document.createElement("script");
@@ -22,7 +26,7 @@ const BeehiivSubscribeForm = () => {
   return (
     <div className="flex justify-center w-full">
       <iframe
-        src="https://subscribe-forms.beehiiv.com/36b5b9a4-7a5a-4056-b378-4d0e1f111dbc"
+        src={`https://subscribe-forms.beehiiv.com/${formId}`}
         className="beehiiv-embed"
         data-test-id="beehiiv-embed"
         frameBorder="0"

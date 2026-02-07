@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, Zap, Heart, TrendingUp } from 'lucide-react';
+import BeehiivSubscribeForm from '@/components/landing/BeehiivSubscribeForm';
 
 export default function NewsletterLP() {
-  const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-    }
-  };
+  // Note: We use the dynamic BeehiivSubscribeForm component here.
+  // The formId can be updated once the user provides the specific ID for the newsletter.
 
   const issues = [
-    { title: "The Hidden Tax Hack", desc: "One weird tax strategy that saves families $3k-$10k/year (legally)" },
-    { title: "Build While You Sleep", desc: "Automation systems that run on their own" },
-    { title: "Teach Your Kids Wealth", desc: "Money conversations that actually stick (tested with 8-18 year olds)" },
-    { title: "The Exit Strategy", desc: "How to scale yourself OUT of your business (so you're not a slave to it)" },
-    { title: "Family Money Meetings", desc: "Turn finances from scary to bonding time" },
-    { title: "The 7 F's Audit", desc: "Where you actually stand in all 7 areas (and what to fix first)" }
+    { title: "Proverbs-Based Business Decisions", desc: "Ancient wisdom for modern entrepreneurship. Building on Biblical principles." },
+    { title: "Generational Wealth God's Way", desc: "Create legacy wealth that honors God and serves your family's future." },
+    { title: "Faith + Finance Integration", desc: "How to align your business decisions with your spiritual convictions." },
+    { title: "Teach Your Kids Biblical Money Principles", desc: "Stewardship, giving, and wealth-building conversations with real impact." },
+    { title: "The Kingdom Business Model", desc: "Profit AND purpose. Building a business that glorifies God." },
+    { title: "Work As Worship", desc: "Seeing your entrepreneurial journey as an act of faith and service." }
   ];
 
   const testimonials = [
@@ -28,7 +24,7 @@ export default function NewsletterLP() {
       quote: "These aren't generic tips. Lourdes lives this stuff. I've made an extra $15k this year just from ONE strategy from her newsletter."
     },
     {
-      name: "Marcus T.",
+      name: "Marcus t.",
       role: "Entrepreneur",
       quote: "Finally found someone who gets that you can't choose between money and family. This newsletter makes that CLEAR."
     },
@@ -51,7 +47,7 @@ export default function NewsletterLP() {
       <div className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6">
           <Mail className="w-4 h-4 text-yellow-400" />
-          <span className="text-sm text-white font-medium">Builders & Parents Only</span>
+          <span className="text-sm text-white font-medium">Christian Builders & Parents</span>
         </div>
 
         <h1 className="text-6xl sm:text-7xl font-bold mb-6 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -60,43 +56,17 @@ export default function NewsletterLP() {
           </span>
           <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400">
-            Real Families.
+            Real Faith. Real Families.
           </span>
         </h1>
 
         <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-8 leading-relaxed">
-          The Wealth Builder is a weekly newsletter for parents who refuse to choose between money and family. Real business ideas. Real family strategies. Real results.
+          The Wealth Builder is a weekly newsletter for <span className="font-bold">Christian parents and entrepreneurs</span> who refuse to choose between building wealth and living out their faith. Real Kingdom business ideas. Real family strategies. Results that honor God and create generational impact.
         </p>
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-8 backdrop-blur-xl max-w-md mx-auto">
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-cyan-400 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all flex items-center justify-center gap-2"
-              >
-                Subscribe Free <ArrowRight className="w-4 h-4" />
-              </button>
-              <p className="text-xs text-slate-400">No credit card. Unsubscribe anytime. Weekly on Mondays.</p>
-            </form>
-          ) : (
-            <div className="space-y-4 text-center">
-              <div className="w-12 h-12 mx-auto bg-green-500/20 rounded-full flex items-center justify-center">
-                <CheckCircle2 className="w-6 h-6 text-green-400" />
-              </div>
-              <h3 className="text-lg font-bold">Welcome to the Circle!</h3>
-              <p className="text-slate-400 text-sm">Check your email for this week's issue + exclusive subscriber content.</p>
-            </div>
-          )}
+        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-xl p-8 backdrop-blur-xl max-w-2xl mx-auto overflow-hidden">
+          <BeehiivSubscribeForm />
         </div>
       </div>
 
@@ -151,7 +121,7 @@ export default function NewsletterLP() {
               className="bg-gradient-to-br from-slate-800/50 to-slate-800/20 border border-yellow-500/30 rounded-lg p-6 hover:border-cyan-500/30 transition-all group"
               style={{
                 animation: `slideIn 0.5s ease-out ${idx * 0.05}s both`
-              }}
+              } as React.CSSProperties}
             >
               <h3 className="font-bold text-lg group-hover:text-yellow-400 transition-colors mb-2 text-white">{issue.title}</h3>
               <p className="text-slate-400 text-sm">{issue.desc}</p>
@@ -163,26 +133,32 @@ export default function NewsletterLP() {
       {/* Why This Matters */}
       <div className="relative px-4 sm:px-6 lg:px-8 py-16 max-w-5xl mx-auto">
         <div className="bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-12">
+          <p className="text-center text-slate-300 mb-8 italic text-lg">
+            "God has called us to be stewards of what He's given us. That includes our talents, our resources, and our families. Building wealth in alignment with God's Kingdom isn't about greed—it's about obedience and generational blessing."
+          </p>
+
           <h2 className="text-3xl font-bold mb-6 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
-            The Problem Most Parents Face
+            The Problem Most Christian Parents Face
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-bold text-yellow-400 mb-3">The Trap</h3>
               <ul className="space-y-2 text-slate-300">
-                <li>✗ Work more, have less (and feel empty)</li>
-                <li>✗ Kids think money is complicated (or they don't care)</li>
-                <li>✗ No roadmap for generational wealth</li>
-                <li>✗ Guilt about "choosing" between ambition and presence</li>
+                <li>✗ Hustle without Kingdom purpose (just spinning)</li>
+                <li>✗ Kids don't see faith integrated with business</li>
+                <li>✗ No Biblical framework for wealth-building</li>
+                <li>✗ Guilt about pursuing profit while serving God</li>
+                <li>✗ Money decisions made without spiritual alignment</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-cyan-400 mb-3">What's Possible</h3>
+              <h3 className="font-bold text-cyan-400 mb-3">God's Way Works</h3>
               <ul className="space-y-2 text-slate-300">
-                <li>✓ Systems that work WITH family, not against it</li>
-                <li>✓ Teach your kids wealth in real-time</li>
-                <li>✓ A 5-10 year roadmap to generational wealth</li>
-                <li>✓ BUILD YOUR EMPIRE AND HAVE YOUR FAMILY. Choose both.</li>
+                <li>✓ Business as ministry + stewardship</li>
+                <li>✓ Teach your kids Kingdom-centered wealth principles</li>
+                <li>✓ Biblical roadmap to generational legacy</li>
+                <li>✓ HONOR GOD AND BUILD WEALTH. Both glorify Him.</li>
+                <li>✓ Decisions aligned with your faith convictions</li>
               </ul>
             </div>
           </div>
@@ -236,12 +212,9 @@ export default function NewsletterLP() {
           Ready to Build Your Wealth Legacy?
         </h2>
         <p className="text-slate-300 text-lg mb-8">Join founders and parents building intentionally. New issue every Monday.</p>
-        <a
-          href="#"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-cyan-400 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all"
-        >
-          Subscribe Free Now
-        </a>
+        <div className="max-w-2xl mx-auto overflow-hidden rounded-xl border border-yellow-500/40">
+          <BeehiivSubscribeForm />
+        </div>
         <p className="text-sm text-slate-500 mt-4">Unsubscribe anytime. No spam. Only value.</p>
       </div>
 

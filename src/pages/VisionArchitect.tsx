@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Sparkles, ArrowRight, Heart, Zap, Users, Calendar } from 'lucide-react';
-import priyaImg from '@/assets/testimonials/priya-kapoor.jpg';
-import marcusImg from '@/assets/testimonials/marcus-chen.jpg';
-import sophiaImg from '@/assets/testimonials/sophia-reyes.jpg';
-import jamesImg from '@/assets/testimonials/james-okonkwo.jpg';
-import elenaImg from '@/assets/testimonials/elena-vasquez.jpg';
 
 export default function VisionArchitectLP() {
   const [email, setEmail] = useState('');
@@ -66,38 +61,39 @@ export default function VisionArchitectLP() {
     {
       name: "Priya Kapoor",
       role: "Digital Marketing Founder",
-      image: priyaImg,
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
       quote: "I went through Vision Architect expecting a theory course. Instead, I got a system. My Vision Architect Mentor checks in DAILY. It's like having a business mentor + therapist + accountability coach all in one. Three weeks in, I've made decisions I would've delayed for MONTHS."
     },
     {
       name: "Marcus Chen",
       role: "Agency Owner & Father of 2",
-      image: marcusImg,
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=marcus",
       quote: "The 6-day format is genius. I got clarity in less than a week. Not the vague 'find yourself' kind—ACTIONABLE clarity. My Vision Architect Mentor's daily feedback keeps me aligned to what ACTUALLY matters. My team noticed the difference in my leadership immediately."
     },
     {
       name: "Sophia Reyes",
       role: "Coach & Mom of 3",
-      image: sophiaImg,
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=sophia",
       quote: "I've done countless life coaching programs. Vision Architect is different. The AI-powered Vision Architect Mentor is like having the best mentor from my past life available 24/7. It doesn't just check boxes—it understands my vision and keeps me from drifting when life gets chaotic."
     },
     {
       name: "James Okonkwo",
       role: "Entrepreneur & Fitness Coach",
-      image: jamesImg,
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=james",
       quote: "First time in my life, all 7 F's are actually in motion. Vision Architect Mentor is the difference. It's not a one-time course—it's a recurring partner I use DAILY. My kids see me thriving (not just grinding). That alone was worth it."
     },
     {
       name: "Elena Vasquez",
       role: "Course Creator & Solopreneur",
-      image: elenaImg,
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=elena",
       quote: "The perpetual feedback loop is life-changing. Every week, my Vision Architect Mentor shows me where I'm drifting and course-corrects BEFORE I waste months going the wrong direction. This is the accountability I've been searching for."
     }
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
+      // Logic for waitlist submission (e.g., Loop integration) will go here
       setIsSubmitted(true);
     }
   };
@@ -120,12 +116,12 @@ export default function VisionArchitectLP() {
         <h1 className="text-6xl sm:text-7xl font-bold mb-6 leading-tight text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
           Get UNSTUCK in 6 Days.
           <span className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400 mt-2">
-            Not 5 Years.
+            Build Your Kingdom Blueprint.
           </span>
         </h1>
 
         <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Stop waiting for "someday." In just 6 days, you'll have a CRYSTAL-CLEAR blueprint that ends the spinning. Your Vision Architect Mentor keeps you accountable 24/7—so you actually stick to it.
+          Stop waiting for "someday." In just 6 days, you'll have a CRYSTAL-CLEAR blueprint for the Kingdom life you're called to build. Your Vision Architect Mentor keeps you accountable 24/7—so you actually stick to it. <span className="font-bold text-yellow-400">Faith. Family. Finances. All thriving.</span>
         </p>
 
         {/* Hero CTA */}
@@ -166,13 +162,13 @@ export default function VisionArchitectLP() {
           What Architects Are Saying
         </h2>
         <p className="text-center text-slate-400 mb-12 max-w-2xl mx-auto">Real people. Real results. Real accountability through their Vision Architect Mentor.</p>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, idx) => (
             <div key={idx} className="bg-gradient-to-br from-slate-800/50 to-slate-800/20 border border-yellow-500/30 rounded-xl p-6 hover:border-cyan-500/30 transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img 
-                  src={testimonial.image} 
+                <img
+                  src={testimonial.image}
                   alt={testimonial.name}
                   className="w-10 h-10 rounded-full"
                 />
@@ -190,6 +186,10 @@ export default function VisionArchitectLP() {
       {/* The Problem Section */}
       <div className="relative px-4 sm:px-6 lg:px-8 py-16 max-w-5xl mx-auto">
         <div className="bg-gradient-to-br from-yellow-500/10 to-cyan-500/5 border border-yellow-500/20 rounded-2xl p-8 md:p-12">
+          <p className="text-center text-slate-300 mb-8 italic text-lg">
+            "As a Christian entrepreneur and parent, you feel called to build something meaningful that honors God and strengthens your family. But you're exhausted trying to balance it all. <span className="font-bold">There's a better way.</span>"
+          </p>
+
           <h2 className="text-3xl font-bold mb-6 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
             You're Trapped. And You Know It.
           </h2>
@@ -238,7 +238,7 @@ export default function VisionArchitectLP() {
               className="bg-gradient-to-br from-slate-800/50 to-slate-800/20 border border-yellow-500/30 rounded-xl p-6 hover:border-cyan-500/30 transition-all group"
               style={{
                 animation: `slideIn 0.5s ease-out ${idx * 0.05}s both`
-              }}
+              } as React.CSSProperties}
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="text-3xl">{module.icon}</div>
@@ -333,12 +333,28 @@ export default function VisionArchitectLP() {
           Your Breakthrough is 6 Days Away
         </h2>
         <p className="text-slate-300 text-lg mb-8">Pre-recorded course. Lifetime Vision Architect Mentor. Results starting day 1.</p>
-        <a
-          href="#"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all"
-        >
-          Join the Waitlist Now
-        </a>
+        {!isSubmitted ? (
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-grow px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
+              required
+            />
+            <button
+              type="submit"
+              className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all whitespace-nowrap"
+            >
+              Join the Waitlist Now
+            </button>
+          </form>
+        ) : (
+          <div className="p-4 bg-green-500/20 rounded-lg border border-green-500/30 max-w-md mx-auto">
+            <p className="text-green-400 font-bold">Welcome, Future Architect! Check your email.</p>
+          </div>
+        )}
       </div>
 
       <footer className="relative border-t border-slate-800/50 py-8 px-4 text-center text-slate-500 text-sm">
