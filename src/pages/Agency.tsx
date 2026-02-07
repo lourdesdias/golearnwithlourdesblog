@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, FileText, MessageSquare, Video, Pencil, Mail, TrendingUp, Search, BarChart3, Gift, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import logoImage from "@/assets/logo.png";
 
 export default function Agency() {
     const services = [
@@ -69,8 +70,15 @@ export default function Agency() {
                 <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
+            {/* Logo Header */}
+            <div className="relative pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <div className="flex justify-center">
+                    <img src={logoImage} alt="Learn With Lourdes" className="h-16 w-auto" />
+                </div>
+            </div>
+
             {/* Hero Section */}
-            <div className="relative pt-16 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+            <div className="relative pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6">
                     <Sparkles className="w-4 h-4 text-yellow-400" />
                     <span className="text-sm text-white font-medium">Faith-Driven Digital Marketing</span>

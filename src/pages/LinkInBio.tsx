@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import profileImage from "@/assets/profile-linkinbio.png";
+import logoImage from "@/assets/logo.png";
 
 interface Offering {
   id: number;
@@ -116,8 +117,15 @@ export default function LinkInBio() {
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-yellow-100/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
+      {/* Logo Header */}
+      <div className="relative pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="flex justify-center">
+          <img src={logoImage} alt="Learn With Lourdes" className="h-16 w-auto" />
+        </div>
+      </div>
+
       {/* Hero Section with Profile */}
-      <div className="relative pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+      <div className="relative pt-8 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         {/* Profile Image */}
         <div className="mb-8 animate-fadeInDown">
           <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 shadow-xl" style={{ borderColor: '#d1ad4f' }}>

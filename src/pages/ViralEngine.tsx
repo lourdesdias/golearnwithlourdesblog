@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
 import BeehiivModal from "@/components/landing/BeehiivModal";
+import logoImage from "@/assets/logo.png";
 
 export default function ViralEngineLP() {
   const [fullName, setFullName] = useState('');
@@ -38,8 +39,15 @@ export default function ViralEngineLP() {
         <div className="absolute bottom-1/3 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
       </div>
 
+      {/* Logo Header */}
+      <div className="relative pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="flex justify-center">
+          <img src={logoImage} alt="Learn With Lourdes" className="h-16 w-auto" />
+        </div>
+      </div>
+
       {/* Hero */}
-      <div className="relative pt-12 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+      <div className="relative pt-6 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-4 sm:mb-6 text-xs sm:text-sm">
           <Lock className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 flex-shrink-0" />
           <span className="text-white font-medium">19 Engines. 1 Dashboard. Q1 2026.</span>

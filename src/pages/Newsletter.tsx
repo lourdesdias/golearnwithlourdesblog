@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, Zap, Heart, TrendingUp } from 'lucide-react';
 import BeehiivModal from '@/components/landing/BeehiivModal';
+import logoImage from "@/assets/logo.png";
 
 export default function NewsletterLP() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -43,8 +44,15 @@ export default function NewsletterLP() {
         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
+      {/* Logo Header */}
+      <div className="relative pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="flex justify-center">
+          <img src={logoImage} alt="Learn With Lourdes" className="h-16 w-auto" />
+        </div>
+      </div>
+
       {/* Hero */}
-      <div className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+      <div className="relative pt-8 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6">
           <Mail className="w-4 h-4 text-yellow-400" />
           <span className="text-sm text-white font-medium">Christian Builders & Parents</span>
