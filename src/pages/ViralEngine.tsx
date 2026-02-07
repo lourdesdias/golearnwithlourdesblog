@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { CheckCircle2, Zap, ArrowRight, Lock } from 'lucide-react';
 
 export default function ViralEngineLandingPage() {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const engines = [
     { name: "Viral Campaign Generator", power: "Create ready-to-post content for 14+ platforms with psychologically-optimized hooks", icon: "🎯" },
     { name: "Trend Intelligence", power: "Reverse-engineer what's WORKING RIGHT NOW on TikTok, Instagram, LinkedIn, YouTube, X", icon: "📊" },
@@ -29,7 +29,7 @@ export default function ViralEngineLandingPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (email && fullName) {
       // Logic for waitlist submission will go here
       setIsSubmitted(true);
     }
@@ -73,6 +73,14 @@ export default function ViralEngineLandingPage() {
         <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-6 sm:p-8 backdrop-blur-xl max-w-md mx-auto">
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors text-base"
+                required
+              />
               <input
                 type="email"
                 placeholder="your@email.com"

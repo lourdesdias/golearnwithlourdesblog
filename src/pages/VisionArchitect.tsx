@@ -8,9 +8,9 @@ import jamesImage from "@/assets/testimonials/james-okonkwo.jpg";
 import elenaImage from "@/assets/testimonials/elena-vasquez.jpg";
 
 export default function VisionArchitectLP() {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const modules = [
     {
       number: 1,
@@ -98,7 +98,7 @@ export default function VisionArchitectLP() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (email && fullName) {
       // Logic for waitlist submission (e.g., Loop integration) will go here
       setIsSubmitted(true);
     }
@@ -134,6 +134,14 @@ export default function VisionArchitectLP() {
         <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-8 backdrop-blur-xl max-w-md mx-auto">
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
+                required
+              />
               <input
                 type="email"
                 placeholder="your@email.com"

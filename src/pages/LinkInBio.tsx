@@ -110,6 +110,7 @@ export default function LinkInBio() {
               src={profileImage}
               alt="Lourdes Dias"
               className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 20%' }}
             />
           </div>
 
