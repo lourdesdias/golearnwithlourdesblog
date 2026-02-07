@@ -214,7 +214,7 @@ export default function LinkInBio() {
 
                   {/* CTA Section */}
                   <div className="space-y-3">
-                    <a
+                    <a target="_blank" rel="noopener noreferrer"
                       href={offering.url}
                       className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
                       style={{
