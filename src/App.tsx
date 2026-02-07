@@ -24,8 +24,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LinkInBio />} />
-          <Route path="/travelfreedom" element={<Index />} />
-          <Route path="/travelwebinar" element={<TravelWebinar />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/" element={<TravelWebinar />} />
           <Route path="/visionarchitect" element={<VisionArchitect />} />
           <Route path="/viralengine" element={<ViralEngine />} />
           <Route path="/newsletter" element={<Newsletter />} />
