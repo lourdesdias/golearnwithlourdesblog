@@ -1,4 +1,4 @@
-```javascript
+
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
 import BeehiivModal from "@/components/landing/BeehiivModal";
@@ -66,7 +66,7 @@ export default function ViralEngineLP() {
 
         {/* Hero CTA */}
         <div className="flex justify-center">
-          <BeehiivModal 
+          <BeehiivModal
             formId="00000000-0000-0000-0000-000000000000" // Placeholder ID
             buttonText="Join the Waitlist Now"
             title="Viral Engine Waitlist"
@@ -208,7 +208,7 @@ export default function ViralEngineLP() {
           7-day free trial. No credit card required. If it doesn't save you 10+ hours/week, just cancel.
         </p>
         <div className="flex justify-center">
-          <BeehiivModal 
+          <BeehiivModal
             formId="555585ed-0d1f-4ab5-b90a-b3946e20c082" // Official ID
             buttonText="Lock In Founder Pricing Now"
             title="Viral Engine Waitlist"
@@ -223,9 +223,7 @@ export default function ViralEngineLP() {
         <p>Viral Engine: AI Content + Sales + Kingdom Impact. © 2026.</p>
       </footer>
 
-      <style>{`
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
-`}</style>
+
     </div>
   );
 }
