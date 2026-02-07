@@ -156,7 +156,8 @@ export default function LinkInBio() {
                 ></div>
 
                 {/* Card */}
-                <div
+                <Link
+                  to={offering.url}
                   className={`relative bg-white/80 backdrop-blur-xl rounded-2xl p-8 transition-all duration-500 h-full flex flex-col shadow-lg hover:shadow-2xl border`}
                   style={{ borderColor: offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f' }}
                 >
@@ -202,8 +203,7 @@ export default function LinkInBio() {
 
                   {/* CTA Section */}
                   <div className="space-y-3">
-                    <Link
-                      to={offering.url}
+                    <div
                       className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
                       style={{ background: `linear-gradient(135deg, ${offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f'}, ${offering.id === 2 || offering.id === 4 ? '#16b9a7' : '#aa8937'})` }}
                     >
@@ -212,12 +212,12 @@ export default function LinkInBio() {
                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                       </span>
                       <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
-                    </Link>
+                    </div>
                     <p className="text-xs text-slate-500 text-center">
                       {offering.subtext}
                     </p>
                   </div>
-                </div>
+                </Link>
               </div>
             );
           })}

@@ -212,8 +212,8 @@ export default function NewsletterLP() {
           Ready to Build Your Wealth Legacy?
         </h2>
         <p className="text-slate-300 text-lg mb-8">Join founders and parents building intentionally. New issue every Monday.</p>
-        <div className="max-w-2xl mx-auto overflow-hidden rounded-xl border border-yellow-500/40">
-          <BeehiivSubscribeForm />
+        <div className="max-w-md mx-auto overflow-hidden">
+          <BeehiivSubscribeForm formId="21ef0f03-f951-4638-8680-b26df65bbe16" />
         </div>
         <p className="text-sm text-slate-500 mt-4">Unsubscribe anytime. No spam. Only value.</p>
       </div>
