@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { ArrowRight } from "lucide-react";
 import {
   Dialog,
@@ -13,39 +13,39 @@ interface WebinarSignupModalProps {
   buttonText?: string;
 }
 
-const WebinarSignupModal = ({ 
-  variant = "primary", 
-  buttonText = "Watch The FREE Training Now" 
-}: WebinarSignupModalProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+const WebinarSignupModal = forwardRef<HTMLDivElement, WebinarSignupModalProps>(
+  ({ variant = "primary", buttonText = "Watch The FREE Training Now" }, ref) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-  const buttonClass = variant === "primary" 
-    ? "btn-primary-cta" 
-    : "btn-secondary-cta";
+    const buttonClass =
+      variant === "primary" ? "btn-primary-cta" : "btn-secondary-cta";
 
-  return (
-    <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className={buttonClass}
-        aria-label={buttonText}
-      >
-        {buttonText}
-        <ArrowRight className="w-6 h-6" />
-      </button>
+    return (
+      <div ref={ref}>
+        <button
+          onClick={() => setIsOpen(true)}
+          className={buttonClass}
+          aria-label={buttonText}
+        >
+          {buttonText}
+          <ArrowRight className="w-6 h-6" />
+        </button>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[620px] p-0 overflow-hidden bg-transparent border-none shadow-none">
-          <DialogHeader className="sr-only">
-            <DialogTitle>Sign Up for Free Webinar</DialogTitle>
-          </DialogHeader>
-          <div className="flex flex-col items-center">
-            <BeehiivSubscribeForm />
-          </div>
-        </DialogContent>
-      </Dialog>
-    </>
-  );
-};
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+          <DialogContent className="sm:max-w-[620px] p-0 overflow-hidden bg-transparent border-none shadow-none">
+            <DialogHeader className="sr-only">
+              <DialogTitle>Sign Up for Free Webinar</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col items-center">
+              <BeehiivSubscribeForm />
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+    );
+  }
+);
+
+WebinarSignupModal.displayName = "WebinarSignupModal";
 
 export default WebinarSignupModal;
