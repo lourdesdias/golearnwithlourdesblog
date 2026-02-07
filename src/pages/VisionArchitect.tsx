@@ -7,6 +7,8 @@ import marcusImage from "@/assets/testimonials/marcus-chen.jpg";
 import sophiaImage from "@/assets/testimonials/sophia-reyes.jpg";
 import jamesImage from "@/assets/testimonials/james-okonkwo.jpg";
 import elenaImage from "@/assets/testimonials/elena-vasquez.jpg";
+import junessaImage from "@/assets/testimonials/junessa-travelist.jpg";
+import marilenImage from "@/assets/testimonials/marilen-de-leon.jpg";
 
 export default function VisionArchitectLP() {
   const modules = [
@@ -91,6 +93,18 @@ export default function VisionArchitectLP() {
       role: "Course Creator & Solopreneur",
       image: elenaImage,
       quote: "The perpetual feedback loop is life-changing. Every week, my Vision Architect Mentor shows me where I'm drifting and course-corrects BEFORE I waste months going the wrong direction. This is the accountability I've been searching for."
+    },
+    {
+      name: "Assenuj Travelist",
+      role: "Business Owner",
+      image: junessaImage,
+      quote: "Vision Architect changed everything. It showed me why my personality was becoming a liability rather than an asset. By treating the AI as a Strategic Partner, I finally understood who I am and saw the rooms for change I couldn’t see alone. The Weekly Navigator has become my ultimate tool for time management—turning the 15 hours I used to waste drifting into a settled plan. For the first time, I am being true to myself and my 'Kingdom Wins' are showing up in my family, my career, and my faith."
+    },
+    {
+      name: "Marilen De Leon",
+      role: "Global Lifestyle Visionary",
+      image: marilenImage,
+      quote: "Before this journey, 'The Drift' was running my life. I stopped being intentional and let urgency run the show. I was stuck in an Old Loop that demanded too much of my life for too little return. I was always 'on,' yet I was reacting more than I was leading. Vision Architect shifted my entire world. AI moved from a productivity hack to a Perpetual Strategic Partner—a Chief of Staff that challenges my thinking and keeps me honest. The Weekly Navigator is incredibly grounding; instead of carrying heavy decisions all week, they are already settled before Monday starts. I’ve found true alignment—my work now supports my life instead of competing with it. Small-playing isn’t a character flaw; it’s just a sign you lack a clear design. This course showed me how to lead again without burning out."
     }
   ];
 
