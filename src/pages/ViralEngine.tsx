@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
 import BeehiivModal from "@/components/landing/BeehiivModal";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export default function ViralEngineLP() {
   const [fullName, setFullName] = useState('');
@@ -30,30 +29,6 @@ export default function ViralEngineLP() {
     { name: "Academy", power: "In-app education on how to use each feature like a pro", icon: "📖" },
     { name: "Settings & Model Selection", power: "Choose your AI engine (Gemini 2.0, GPT-4o, etc.). Your choice.", icon: "⚙️" }
   ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Loops Form Submission
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('firstName', fullName);
-      
-      await fetch("https://app.loops.so/api/v1/deploy/cmlaaipaz0ayf0i1nq4o9tet0", {
-        method: "POST",
-        body: formData,
-        mode: 'no-cors' // Use no-cors for simple form submissions to avoid CORS issues
-      });
-      
-      setIsSubmitted(true);
-    } catch (error) {
-      console.error("Submission error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
@@ -91,64 +66,11 @@ export default function ViralEngineLP() {
 
         {/* Hero CTA */}
         <div className="flex justify-center">
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-yellow-500 text-slate-950 font-bold rounded-full hover:shadow-lg hover:shadow-cyan-400/50 transition-all flex items-center justify-center gap-2 text-lg hover:scale-105">
-                Join the Waitlist <ArrowRight className="w-5 h-5" />
-              </button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px] bg-slate-900 border-slate-800 text-white">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-yellow-400">
-                  Join the Viral Engine Waitlist
-                </DialogTitle>
-              </DialogHeader>
-              <div className="py-6">
-                {!isSubmitted ? (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300">Full Name</label>
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300">Email Address</label>
-                      <input
-                        type="email"
-                        placeholder="your@email.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                        required
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-yellow-400 text-slate-950 font-bold rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 mt-4"
-                    >
-                      {isSubmitting ? "Joining..." : "Lock in Founder Pricing"} <ArrowRight className="w-4 h-4" />
-                    </button>
-                    <p className="text-xs text-slate-500 text-center">Final 100 spots remaining for founder pricing.</p>
-                  </form>
-                ) : (
-                  <div className="text-center space-y-4 py-8">
-                    <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto">
-                      <CheckCircle2 className="w-8 h-8 text-cyan-400" />
-                    </div>
-                    <h3 className="text-xl font-bold">You're on the list!</h3>
-                    <p className="text-slate-300">Success! You're on the list. Get ready to replace your agency team with AI.</p>
-                  </div>
-                )}
-              </div>
-            </DialogContent>
-          </Dialog>
+          <BeehiivModal 
+            formId="00000000-0000-0000-0000-000000000000" // Placeholder ID
+            buttonText="Join the Waitlist Now"
+            title="Viral Engine Waitlist"
+          />
         </div>
       </div>
 
@@ -286,64 +208,11 @@ export default function ViralEngineLP() {
           7-day free trial. No credit card required. If it doesn't save you 10+ hours/week, just cancel.
         </p>
         <div className="flex justify-center">
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-yellow-500 text-slate-950 font-bold rounded-full hover:shadow-lg hover:shadow-cyan-400/50 transition-all flex items-center justify-center gap-2 text-lg hover:scale-105">
-                Lock In Founder Pricing Now <ArrowRight className="w-5 h-5" />
-              </button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px] bg-slate-900 border-slate-800 text-white">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-yellow-400">
-                  Join the Viral Engine Waitlist
-                </DialogTitle>
-              </DialogHeader>
-              <div className="py-6">
-                {!isSubmitted ? (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300">Full Name</label>
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300">Email Address</label>
-                      <input
-                        type="email"
-                        placeholder="your@email.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                        required
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-yellow-400 text-slate-950 font-bold rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 mt-4"
-                    >
-                      {isSubmitting ? "Joining..." : "Lock in Founder Pricing"} <ArrowRight className="w-4 h-4" />
-                    </button>
-                    <p className="text-xs text-slate-500 text-center">Final 100 spots remaining for founder pricing.</p>
-                  </form>
-                ) : (
-                  <div className="text-center space-y-4 py-8">
-                    <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto">
-                      <CheckCircle2 className="w-8 h-8 text-cyan-400" />
-                    </div>
-                    <h3 className="text-xl font-bold">You're on the list!</h3>
-                    <p className="text-slate-300">Success! You're on the list. Get ready to replace your agency team with AI.</p>
-                  </div>
-                )}
-              </div>
-            </DialogContent>
-          </Dialog>
+          <BeehiivModal 
+            formId="00000000-0000-0000-0000-000000000000" // Placeholder ID
+            buttonText="Lock In Founder Pricing Now"
+            title="Viral Engine Waitlist"
+          />
         </div>
         <p className="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6">
           Limited 100 founder spots. Lock in lifetime pricing. Q1 2026 access.
