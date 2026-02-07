@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, Zap, Heart, TrendingUp } from 'lucide-react';
-import BeehiivSubscribeForm from '@/components/landing/BeehiivSubscribeForm';
+import BeehiivModal from '@/components/landing/BeehiivModal';
 
 export default function NewsletterLP() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -65,8 +65,12 @@ export default function NewsletterLP() {
         </p>
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-xl p-8 backdrop-blur-xl max-w-2xl mx-auto overflow-hidden">
-          <BeehiivSubscribeForm formId="21ef0f03-f951-4638-8680-b26df65bbe16" />
+        <div className="flex justify-center">
+          <BeehiivModal
+            formId="21ef0f03-f951-4638-8680-b26df65bbe16"
+            buttonText="Join The Wealth Builder"
+            title="Subscribe to The Wealth Builder"
+          />
         </div>
       </div>
 
@@ -212,8 +216,12 @@ export default function NewsletterLP() {
           Ready to Build Your Wealth Legacy?
         </h2>
         <p className="text-slate-300 text-lg mb-8">Join founders and parents building intentionally. New issue every Monday.</p>
-        <div className="max-w-md mx-auto overflow-hidden">
-          <BeehiivSubscribeForm formId="21ef0f03-f951-4638-8680-b26df65bbe16" />
+        <div className="flex justify-center">
+          <BeehiivModal
+            formId="21ef0f03-f951-4638-8680-b26df65bbe16"
+            buttonText="Build My Wealth Legacy"
+            title="Subscribe to The Wealth Builder"
+          />
         </div>
         <p className="text-sm text-slate-500 mt-4">Unsubscribe anytime. No spam. Only value.</p>
       </div>

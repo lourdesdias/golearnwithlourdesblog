@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Sparkles, ArrowRight, Heart, Zap, Users, Calendar } from 'lucide-react';
-import BeehiivSubscribeForm from "@/components/landing/BeehiivSubscribeForm";
+import BeehiivModal from "@/components/landing/BeehiivModal";
 
 import priyaImage from "@/assets/testimonials/priya-kapoor.jpg";
 import marcusImage from "@/assets/testimonials/marcus-chen.jpg";
@@ -122,8 +122,12 @@ export default function VisionArchitectLP() {
         </p>
 
         {/* Hero CTA */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-8 backdrop-blur-xl max-w-2xl mx-auto overflow-hidden">
-          <BeehiivSubscribeForm formId="63916bdb-e3dd-47f6-b409-f357672f550b" />
+        <div className="flex justify-center">
+          <BeehiivModal
+            formId="63916bdb-e3dd-47f6-b409-f357672f550b"
+            buttonText="Join the Waitlist Now"
+            title="Vision Architect Waitlist"
+          />
         </div>
       </div>
 
@@ -304,8 +308,12 @@ export default function VisionArchitectLP() {
           Your Breakthrough is 6 Days Away
         </h2>
         <p className="text-slate-300 text-lg mb-8">Pre-recorded course. Lifetime Vision Architect Mentor. Results starting day 1.</p>
-        <div className="max-w-md mx-auto">
-          <BeehiivSubscribeForm formId="63916bdb-e3dd-47f6-b409-f357672f550b" />
+        <div className="flex justify-center">
+          <BeehiivModal
+            formId="63916bdb-e3dd-47f6-b409-f357672f550b"
+            buttonText="Get Your Blueprint Now"
+            title="Vision Architect Waitlist"
+          />
         </div>
       </div>
 
