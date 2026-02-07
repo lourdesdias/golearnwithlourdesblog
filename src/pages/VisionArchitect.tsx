@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Sparkles, ArrowRight, Heart, Zap, Users, Calendar } from 'lucide-react';
+import BeehiivSubscribeForm from "@/components/landing/BeehiivSubscribeForm";
 
 import priyaImage from "@/assets/testimonials/priya-kapoor.jpg";
 import marcusImage from "@/assets/testimonials/marcus-chen.jpg";
@@ -8,7 +9,6 @@ import jamesImage from "@/assets/testimonials/james-okonkwo.jpg";
 import elenaImage from "@/assets/testimonials/elena-vasquez.jpg";
 
 export default function VisionArchitectLP() {
-  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const modules = [
