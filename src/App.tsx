@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { **HashRouter** as Router, Routes, Route ... } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TravelWebinar from "./pages/TravelWebinar";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -21,10 +21,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <<Router>
+      <Router>
         <Routes>
           <Route path="/" element={<LinkInBio />} />
-          <Route path="/" element={<Index />} />
+          <Route path="/blog" element={<Index />} />
+          <Route path="/travelfreedom" element={<Index />} />
           <Route path="/travelwebinar" element={<TravelWebinar />} />
           <Route path="/visionarchitect" element={<VisionArchitect />} />
           <Route path="/viralengine" element={<ViralEngine />} />

@@ -60,7 +60,7 @@ export default function LinkInBio() {
       badgeTextColor: "text-white",
       icon: Globe,
       highlight: "Lifetime Access",
-      url: "/",
+      url: "/travelfreedom",
     },
     {
       id: 4,
