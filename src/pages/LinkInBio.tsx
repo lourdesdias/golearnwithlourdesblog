@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import profileImage from "@/assets/profile-lourdes.png";
 
 interface Offering {
   id: number;
@@ -105,9 +106,11 @@ export default function LinkInBio() {
         {/* Profile Image */}
         <div className="mb-8 animate-fadeInDown">
           <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 shadow-xl" style={{ borderColor: '#d1ad4f' }}>
-            <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-yellow-100 to-teal-100 flex items-center justify-center text-5xl">
-              👩‍💼
-            </div>
+            <img
+              src={profileImage}
+              alt="Lourdes Dias"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <h1 className="text-5xl sm:text-6xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>
