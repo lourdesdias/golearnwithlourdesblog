@@ -28,7 +28,7 @@ export default function LinkInBio() {
       badgeTextColor: "text-white",
       icon: Sparkles,
       highlight: "Lifetime Updates",
-      url: "#vision-architect",
+      url: "/visionarchitect",
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ export default function LinkInBio() {
       badgeTextColor: "text-white",
       icon: Zap,
       highlight: "Q1 2026 Launch",
-      url: "#viral-engine",
+      url: "/viralengine",
     },
     {
       id: 3,
@@ -60,7 +60,7 @@ export default function LinkInBio() {
       badgeTextColor: "text-white",
       icon: Globe,
       highlight: "Lifetime Access",
-      url: "https://go.learnwithlourdes.blog/travelfreedom",
+      url: "/travelfreedom",
     },
     {
       id: 4,
@@ -76,7 +76,7 @@ export default function LinkInBio() {
       badgeTextColor: "text-slate-900",
       icon: Mail,
       highlight: "Free • Weekly",
-      url: "#newsletter",
+      url: "/newsletter",
     },
   ];
 
