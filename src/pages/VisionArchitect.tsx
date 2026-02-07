@@ -96,13 +96,6 @@ export default function VisionArchitectLP() {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email && fullName) {
-      // Logic for waitlist submission (e.g., Loop integration) will go here
-      setIsSubmitted(true);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
