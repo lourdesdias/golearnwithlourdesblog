@@ -221,8 +221,8 @@ export default function ViralEngineLandingPage() {
         </h2>
         <div className="bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-6 sm:p-8 md:p-12 text-center">
           <p className="text-slate-300 mb-3 sm:mb-4 text-sm sm:text-base">Replaces $3,126/month in tools</p>
-          <p className="text-4xl sm:text-5xl font-bold text-yellow-400 mb-2">$79-$499/mo</p>
-          <p className="text-lg sm:text-2xl font-bold text-cyan-400">That's 97% savings</p>
+          <p className="text-4xl sm:text-5xl font-bold text-yellow-400 mb-2">$29-$199/mo</p>
+          <p className="text-lg sm:text-2xl font-bold text-cyan-400">That's up to 99% savings</p>
         </div>
       </div>
 
