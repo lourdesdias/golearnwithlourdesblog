@@ -32,12 +32,12 @@ const BeehiivSubscribeForm = ({ formId = "36b5b9a4-7a5a-4056-b378-4d0e1f111dbc" 
         frameBorder="0"
         scrolling="no"
         style={{
-          width: "686px",
-          height: "487px",
+          width: "681px",
+          height: "429px",
           margin: 0,
           borderRadius: "0px",
           backgroundColor: "transparent",
-          boxShadow: "none",
+          boxShadow: "0 0 #0000",
           maxWidth: "100%",
         }}
       />
