@@ -81,7 +81,7 @@ export default function LinkInBio() {
       subtitle: "Biblical Wealth Strategies for Families Building God-Honoring Businesses",
       description: "Weekly Kingdom business principles that actually WORK. How to make an extra $1k-$5k monthly aligned with God's design. Teach your kids biblical money principles (not just consumerism). Integrate faith into every business decision. Stewardship + generational wealth.",
       cta: "Subscribe",
-      subtext: "Free every Monday. Unsubscribe anytime. Join Christian parents building Kingdom wealth.",
+      subtext: "Free every Monday. Unsubscribe anytime. Join Faith-Driven parents building Kingdom wealth.",
       color: "from-yellow-500 to-yellow-400",
       bgGradient: "from-yellow-600/20 to-yellow-500/20",
       borderColor: "border-yellow-500/50",
@@ -121,7 +121,7 @@ export default function LinkInBio() {
             Architect Freedom (The Kingdom Way).
           </p>
           <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-            Hi, I'm <span className="font-semibold">Lourdes</span>—Wife. Mom. Entrepreneur. Christian Business Builder. The one who said <span className="italic">"I'm not choosing between my family, my faith, and my goals."</span> <br />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact. Now I'm showing YOU how to do the same.
+            Hi, I'm <span className="font-semibold">Lourdes</span>—Wife. Mom. Entrepreneur. Faith-Driven Business Builder. The one who said <span className="italic">"I'm not choosing between my family, my faith, and my goals."</span> <br />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact. Now I'm showing YOU how to do the same.
           </p>
           <p className="text-sm text-slate-600 mt-4 font-semibold italic text-center">
             📖 "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." — Colossians 3:23
