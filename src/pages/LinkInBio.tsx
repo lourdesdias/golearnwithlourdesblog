@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import profileImage from "@/assets/profile-lourdes-v2.png";
+import profileImage from "@/assets/profile-linkinbio.png";
 
 interface Offering {
   id: number;
