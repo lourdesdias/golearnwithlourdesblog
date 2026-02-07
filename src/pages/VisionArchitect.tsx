@@ -124,42 +124,8 @@ export default function VisionArchitectLP() {
         </p>
 
         {/* Hero CTA */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-8 backdrop-blur-xl max-w-md mx-auto">
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
-                required
-              />
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 font-semibold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all flex items-center justify-center gap-2"
-              >
-                Join the Waitlist <ArrowRight className="w-4 h-4" />
-              </button>
-              <p className="text-xs text-slate-500">Pre-recorded course + lifetime Vision Architect Mentor + lifetime updates.</p>
-            </form>
-          ) : (
-            <div className="space-y-4 text-center">
-              <div className="w-12 h-12 mx-auto bg-green-500/20 rounded-full flex items-center justify-center">
-                <CheckCircle2 className="w-6 h-6 text-green-400" />
-              </div>
-              <h3 className="text-lg font-bold">Welcome, Future Architect!</h3>
-              <p className="text-slate-400 text-sm">Check your email for exclusive access + your login to the pre-recorded course.</p>
-            </div>
-          )}
+        <div className="bg-gradient-to-br from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-8 backdrop-blur-xl max-w-2xl mx-auto overflow-hidden">
+          <BeehiivSubscribeForm formId="63916bdb-e3dd-47f6-b409-f357672f550b" />
         </div>
       </div>
 
