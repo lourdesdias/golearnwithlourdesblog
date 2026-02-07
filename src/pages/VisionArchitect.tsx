@@ -98,7 +98,7 @@ export default function VisionArchitectLP() {
       name: "Assenuj Travelist",
       role: "Business Owner",
       image: junessaImage,
-      className: "object-left", // Fix for crop
+      className: "object-[25%_center]", // Adjusted crop
       quote: "Vision Architect changed everything. It showed me why my personality was becoming a liability rather than an asset. By treating the AI as a Strategic Partner, I finally understood who I am and saw the rooms for change I couldn’t see alone. The Weekly Navigator has become my ultimate tool for time management—turning the 15 hours I used to waste drifting into a settled plan. For the first time, I am being true to myself and my 'Kingdom Wins' are showing up in my family, my career, and my faith."
     },
     {
