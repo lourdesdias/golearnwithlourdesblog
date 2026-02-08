@@ -238,9 +238,7 @@ export default function LinkInBio() {
                       </span>
                       <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
                     </div>
-                    <p className="text-slate-300 max-w-2xl mx-auto mb-8">
-                      The all-in-one platform for Faith-Driven creators to reclaim time and multiply income.
-                    </p>
+
                     <p className="text-xs text-slate-500 text-center">
                       {offering.subtext}
                     </p>
