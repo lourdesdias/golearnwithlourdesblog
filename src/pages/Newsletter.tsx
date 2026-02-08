@@ -22,7 +22,7 @@ export default function NewsletterLP() {
     {
       name: "Sarah M.",
       role: "Course Creator & Mom of 2",
-      quote: "These aren't generic tips. Lourdes lives this stuff. I've made an extra $15k this year just from ONE strategy from her newsletter."
+      quote: "These aren't generic tips. Lourdes lives this stuff. I've seen a meaningful increase in my revenue just from ONE strategy from her newsletter."
     },
     {
       name: "Marcus t.",
@@ -102,7 +102,7 @@ export default function NewsletterLP() {
             {
               icon: Zap,
               title: "One Game-Changing Insight",
-              desc: "The 'aha' that makes everything click. Wisdom from 10+ years of building wealth while raising kids."
+              desc: "The 'aha' that makes everything click. Wisdom from over a decade of building wealth while raising kids."
             }
           ].map((item, idx) => {
             const Icon = item.icon;
@@ -207,7 +207,7 @@ export default function NewsletterLP() {
               <p className="text-sm text-slate-400">Real Ideas Delivered</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-cyan-400">100%</p>
+              <p className="text-4xl font-bold text-cyan-400">Always</p>
               <p className="text-sm text-slate-400">Honest & Transparent</p>
             </div>
             <div>

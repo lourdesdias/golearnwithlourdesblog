@@ -318,7 +318,7 @@ export default function VisionArchitectLP() {
               <p className="text-sm text-slate-400">Mentor Access</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-yellow-400">100%</p>
+              <p className="text-3xl font-bold text-yellow-400">Proven</p>
               <p className="text-sm text-slate-400">Real Results</p>
             </div>
           </div>
