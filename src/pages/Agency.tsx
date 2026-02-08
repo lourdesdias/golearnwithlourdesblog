@@ -57,8 +57,8 @@ export default function Agency() {
     ];
 
     const results = [
-        { metric: "Custom", label: "Funnels Built" },
-        { metric: "High-Value", label: "Landing Pages Delivered" },
+        { metric: "10+", label: "Funnels Built" },
+        { metric: "50+", label: "Landing Pages Delivered" },
         { metric: "Proven", label: "Client Satisfaction" }
     ];
 

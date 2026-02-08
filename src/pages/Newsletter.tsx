@@ -22,7 +22,7 @@ export default function NewsletterLP() {
     {
       name: "Sarah M.",
       role: "Course Creator & Mom of 2",
-      quote: "These aren't generic tips. Lourdes lives this stuff. I've seen a meaningful increase in my revenue just from ONE strategy from her newsletter."
+      quote: "These aren't generic tips. Lourdes lives this stuff. I've made an extra $15k this year just from ONE strategy from her newsletter."
     },
     {
       name: "Marcus t.",
@@ -69,7 +69,7 @@ export default function NewsletterLP() {
         </h1>
 
         <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-8 leading-relaxed">
-          Join a community of Faith-Driven entrepreneurs architecting their life and business with AI.
+          Join 1,000+ Faith-Driven entrepreneurs architecting their life and business with AI.
         </p>
 
         {/* CTA */}

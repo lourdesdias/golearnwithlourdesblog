@@ -69,7 +69,7 @@ export default function ViralEngineLP() {
         </p>
 
         <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-          <span className="font-bold">No team. No chaos. No expensive specialist agencies.</span> 19 AI engines create a week of viral content in minutes. <span className="text-yellow-400">Profitable revenue that aligns with your values.</span>
+          <span className="font-bold">No team. No chaos. No $5,000/month agencies.</span> 19 AI engines create a week of viral content in 10 minutes. <span className="text-yellow-400">Profitable revenue that aligns with your values.</span>
         </p>
 
         {/* Hero CTA */}
@@ -97,15 +97,15 @@ export default function ViralEngineLP() {
             <ul className="space-y-3 text-slate-300 text-sm sm:text-base">
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">Massive hours/week</span> scripting videos that get low views</span>
+                <span><span className="font-bold">5+ hours/week</span> scripting videos that get 100 views</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">Substantial revenue</span> bleeding across tools and VAs</span>
+                <span><span className="font-bold">$5,000+/month</span> bleeding across tools and VAs</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">Significant time/day</span> engaging on social media</span>
+                <span><span className="font-bold">2+ hours/day</span> engaging on social media</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
@@ -175,7 +175,7 @@ export default function ViralEngineLP() {
             Turn 1 Keyword Into 12 Digital Products. Enter ANY topic. Get eBooks, checklists, worksheets, video courses, email sequences, and bonus bundles—ready to sell.
           </p>
           <p className="text-yellow-400 font-bold text-sm sm:text-base md:text-lg">
-            💰 ROI Focus: Turn single content ideas into a complete library of sellable assets.
+            💰 ROI Focus: 1 Keyword = 12 Products × $47 = $564/customer. 100 customers = $56,400
           </p>
         </div>
       </div>
@@ -190,7 +190,7 @@ export default function ViralEngineLP() {
             Blog Posts Designed to RANK #1 in Google. Free traffic. Forever. SEO-optimized content that brings customers to you automatically.
           </p>
           <p className="text-cyan-400 font-bold text-sm sm:text-base md:text-lg">
-            📈 Compound Growth: Build an organic engine that brings customers to you 24/7.
+            📈 SEO Growth: 50 Articles × 500 Visitors × 1% Conversion = 250 Customers/Month
           </p>
         </div>
       </div>
@@ -201,9 +201,9 @@ export default function ViralEngineLP() {
           If You Built This Yourself...
         </h2>
         <div className="bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 border border-yellow-500/40 rounded-2xl p-6 sm:p-8 md:p-12 text-center">
-          <p className="text-slate-300 mb-3 sm:mb-4 text-sm sm:text-base">Replaces thousands in monthly subscription costs</p>
+          <p className="text-slate-300 mb-3 sm:mb-4 text-sm sm:text-base">Replaces $3,126/month in tools</p>
           <p className="text-4xl sm:text-5xl font-bold text-yellow-400 mb-2">$29-$199/mo</p>
-          <p className="text-lg sm:text-2xl font-bold text-cyan-400">Significant savings for your business</p>
+          <p className="text-lg sm:text-2xl font-bold text-cyan-400">That's up to 99% savings</p>
         </div>
       </div>
 
@@ -213,7 +213,7 @@ export default function ViralEngineLP() {
           Try It Free
         </h2>
         <p className="text-slate-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
-          7-day free trial. No credit card required. If it doesn't give you back significant time every week, just cancel.
+          7-day free trial. No credit card required. If it doesn't save you 10+ hours/week, just cancel.
         </p>
         <div className="flex justify-center">
           <BeehiivModal
