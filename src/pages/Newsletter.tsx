@@ -69,7 +69,7 @@ export default function NewsletterLP() {
         </h1>
 
         <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-8 leading-relaxed">
-          Join 8,400+ Faith-Driven entrepreneurs architecting their life and business with AI.
+          Join a community of Faith-Driven entrepreneurs architecting their life and business with AI.
         </p>
 
         {/* CTA */}

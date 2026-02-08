@@ -223,7 +223,7 @@ export default function ViralEngineLP() {
           />
         </div>
         <p className="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6">
-          Limited 100 founder spots. Lock in lifetime pricing. Q1 2026 access.
+          Limited founder spots. Lock in lifetime pricing. Q1 2026 access.
         </p>
       </div>
 

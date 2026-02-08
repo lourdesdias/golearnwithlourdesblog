@@ -130,7 +130,7 @@ export default function VisionArchitectLP() {
       <div className="relative pt-8 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6">
           <Sparkles className="w-4 h-4 text-yellow-400" />
-          <span className="text-sm text-yellow-300">Pre-Recorded Course • 50+ Beta Testers • Results in 6 Days</span>
+          <span className="text-sm text-yellow-300">Pre-Recorded Course • Founding Beta Testers • Results in 6 Days</span>
         </div>
 
         <h1 className="text-6xl sm:text-7xl font-bold mb-6 leading-tight text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
