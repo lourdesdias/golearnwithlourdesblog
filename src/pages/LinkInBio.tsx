@@ -181,6 +181,8 @@ export default function LinkInBio() {
                 {/* Card */}
                 <Link
                   to={offering.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`relative bg-white/80 backdrop-blur-xl rounded-2xl p-8 transition-all duration-500 h-full flex flex-col shadow-lg hover:shadow-2xl border`}
                   style={{ borderColor: offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f' }}
                 >
