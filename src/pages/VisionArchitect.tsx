@@ -308,7 +308,7 @@ export default function VisionArchitectLP() {
             You're Part of the Founding Generation
           </h2>
           <p className="text-slate-300 mb-8">The architects who said "no more waiting." The builders who're architecting their lives intentionally.</p>
-          <div className="grid grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 text-center">
             <div>
               <p className="text-3xl font-bold text-yellow-400">6 Days</p>
               <p className="text-sm text-slate-400">To Life-Changing Clarity</p>

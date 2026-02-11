@@ -201,7 +201,7 @@ export default function NewsletterLP() {
           <h2 className="text-3xl font-bold mb-8 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
             Join Parents & Builders Building Real Wealth
           </h2>
-          <div className="grid grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 text-center">
             <div>
               <p className="text-4xl font-bold text-yellow-400">Weekly</p>
               <p className="text-sm text-slate-400">Real Ideas Delivered</p>
