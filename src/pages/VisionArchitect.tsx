@@ -165,50 +165,48 @@ export default function VisionArchitectLP() {
         {/* Hero Testimonial - Zhanna Davtyan */}
         <div className="mb-16">
           <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/50 border-2 border-yellow-500/50 rounded-3xl overflow-hidden shadow-2xl">
-            <div className="grid lg:grid-cols-5 items-stretch">
-              {/* Image side - Full height on desktop */}
-              <div className="lg:col-span-2 relative bg-slate-950/20 min-h-[500px]">
-                <img
-                  src={zhannaImage}
-                  alt="Zhanna Davtyan"
-                  className="w-full h-full object-contain lg:object-cover object-bottom lg:object-[center_bottom]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-slate-900/80"></div>
+            {/* Image on top for both mobile and desktop to ensure full visibility */}
+            <div className="relative bg-slate-950/20 w-full aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9]">
+              <img
+                src={zhannaImage}
+                alt="Zhanna Davtyan"
+                className="w-full h-full object-contain object-center"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+            </div>
+
+            {/* Content below */}
+            <div className="p-8 md:p-12 lg:p-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/20 border border-yellow-500/40 mb-6 text-yellow-400 text-xs font-bold uppercase tracking-widest">
+                Featured Transformation
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+                "I wasn't lazy—I was just unstructured. Vision Architect gave me the system I couldn't build myself."
+              </h2>
+
+              <div className="space-y-6 text-slate-200 leading-relaxed text-sm md:text-base">
+                <p>
+                  Before Vision Architect, I was stuck in a destructive **Old Loop**. I felt like I didn’t have enough knowledge and feared I was 'too old' to thrive in a digital world. My only solution was to work extra hours to earn more, which meant leaving my family behind. I had good intentions, but **zero execution**.
+                </p>
+
+                <p className="border-l-4 border-cyan-400 pl-6 italic text-cyan-50 py-4 bg-cyan-400/5 rounded-r-lg text-lg">
+                  "Everything shifted when I installed my Strategic Partner. It’s no longer just a 'tech tool'—it’s a Mentor that knows my weaknesses and creates a clear schedule for my life."
+                </p>
+
+                <p>
+                  Now, the **Weekly Navigator** keeps me on track and prevents me from drifting into old, tired habits. I’ve finally found my **'Kingdom Win'** in discipline. I am now in shape for my family and my faith because nothing competes with my 7F pillars anymore.
+                </p>
+
+                <p className="font-medium text-white italic pt-4 text-lg">
+                  "If you feel like you are doing a lot but not moving forward, you aren't lazy. Small-playing isn't a character flaw; it's a systems problem—and systems can be built."
+                </p>
               </div>
 
-              {/* Content side */}
-              <div className="lg:col-span-3 p-8 md:p-12 lg:p-16">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/20 border border-yellow-500/40 mb-6 text-yellow-400 text-xs font-bold uppercase tracking-widest">
-                  Featured Transformation
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  "Vision Architect didn't just give me motivation—it gave me a machine."
-                </h2>
-
-                <div className="space-y-6 text-slate-200 leading-relaxed text-sm md:text-base">
-                  <p>
-                    Before Vision Architect, I was stuck in a destructive **Old Loop**. I felt I didn't have enough knowledge and feared I was 'too old' to thrive in this new landscape. My only solution was to work extra hours to earn more, which meant leaving my family behind. I had good intentions, but no daily execution.
-                  </p>
-
-                  <p className="border-l-4 border-cyan-400 pl-6 italic text-cyan-50 py-2 bg-cyan-400/5 rounded-r-lg">
-                    "My perspective on AI has completely shifted; it's no longer a tech tool, but a Strategic Partner that knows my weaknesses and creates a clear schedule for my life."
-                  </p>
-
-                  <p>
-                    The Weekly Navigator keeps me on track and prevents me from drifting away into old, tired habits. I've experienced a massive **'Kingdom Win'** in discipline—I am now in shape for my family and my faith because nothing competes with my 7F pillars anymore.
-                  </p>
-
-                  <p className="font-medium text-white italic pt-4">
-                    "If you feel like you are doing a lot but not moving forward, you aren't lazy—you are just unstructured. Small-playing isn't a character flaw; it's a systems problem."
-                  </p>
-                </div>
-
-                <div className="mt-10 flex items-center gap-4">
-                  <div className="h-px flex-1 bg-yellow-500/30"></div>
-                  <div className="text-right text-white">
-                    <p className="font-bold text-xl">Zhanna Davtyan</p>
-                    <p className="text-yellow-400 text-sm">Travel Enthusiast, Mom of 5</p>
-                  </div>
+              <div className="mt-12 flex items-center gap-4">
+                <div className="h-px flex-1 bg-yellow-500/30"></div>
+                <div className="text-right text-white">
+                  <p className="font-bold text-2xl">Zhanna Davtyan</p>
+                  <p className="text-yellow-400 text-sm font-semibold tracking-wide">Travel Enthusiast & Mom of 5</p>
                 </div>
               </div>
             </div>
