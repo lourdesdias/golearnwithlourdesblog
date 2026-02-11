@@ -186,7 +186,7 @@ export default function VisionArchitectLP() {
 
               <div className="space-y-6 text-slate-200 leading-relaxed text-sm md:text-base">
                 <p>
-                  Before Vision Architect, I was stuck in a destructive **Old Loop**. I felt like I didn’t have enough knowledge and feared I was 'too old' to thrive in a digital world. My only solution was to work extra hours to earn more, which meant leaving my family behind. I had good intentions, but **zero execution**.
+                  Before Vision Architect, I was stuck in a destructive <span className="text-white font-semibold">Old Loop</span>. I felt like I didn’t have enough knowledge and feared I was 'too old' to thrive in a digital world. My only solution was to work extra hours to earn more, which meant leaving my family behind. I had good intentions, but <span className="text-yellow-400 font-bold uppercase tracking-tight italic">zero execution</span>.
                 </p>
 
                 <p className="border-l-4 border-cyan-400 pl-6 italic text-cyan-50 py-4 bg-cyan-400/5 rounded-r-lg text-lg">
@@ -194,7 +194,7 @@ export default function VisionArchitectLP() {
                 </p>
 
                 <p>
-                  Now, the **Weekly Navigator** keeps me on track and prevents me from drifting into old, tired habits. I’ve finally found my **'Kingdom Win'** in discipline. I am now in shape for my family and my faith because nothing competes with my 7F pillars anymore.
+                  Now, the <span className="text-cyan-400 font-semibold underline decoration-cyan-400/30 underline-offset-4">Weekly Navigator</span> keeps me on track and prevents me from drifting into old, tired habits. I’ve finally found my <span className="text-white font-bold tracking-tight italic">'Kingdom Win'</span> in discipline. I am now in shape for my family and my faith because nothing competes with my 7F pillars anymore.
                 </p>
 
                 <p className="font-medium text-white italic pt-4 text-lg">
