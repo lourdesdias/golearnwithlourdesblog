@@ -114,18 +114,18 @@ export default function LinkInBio() {
   const vaultOfferings: Offering[] = [
     {
       id: 101,
-      title: "Kingdom Content Blueprint",
-      subtitle: "The 10-Minute Viral Workflow (Free PDF)",
-      description: "Download the exact blueprint I use to create a week of high-status, God-honoring social content in just 10 minutes. No more burnout. No more guessing. Start building your authority today.",
-      cta: "Download Free PDF",
-      subtext: "Instant download after email confirmation.",
+      title: "Pay Your Kids Legally (Canada)",
+      subtitle: "The 5-Step CRA Checklist for Business Owners",
+      description: "Stop leaving money on the table. Learn how to legally pay your children and lower your family tax bill using simple, CRA-compliant strategies. A must-have for Canadian entrepreneurs building Kingdom wealth.",
+      cta: "Download Checklist",
+      subtext: "Instant PDF download after email confirmation.",
       color: "from-yellow-500 to-cyan-400",
       bgGradient: "from-yellow-600/20 to-cyan-600/20",
       borderColor: "border-yellow-500/50",
       badgeTextColor: "text-white",
       icon: Mail,
-      highlight: "Free Guide",
-      url: "/kingdom-content-blueprint.pdf",
+      highlight: "Tax Guide",
+      url: "/Pay_Your_Kids_Legally_Canada.pdf",
       isFreebie: true
     }
   ];
