@@ -16,9 +16,8 @@ const EmailOctopusSubscribeForm = ({ formId }: EmailOctopusSubscribeFormProps) =
 
         // Load EmailOctopus script with a cache-buster to ensure it executes
         const script = document.createElement("script");
-        script.src = `https://eocampaign1.com/form/embed.js?v=${Date.now()}`;
+        script.src = `https://eomail5.com/form/${formId}.js?v=${Date.now()}`;
         script.async = true;
-        script.setAttribute("data-form", formId);
         document.body.appendChild(script);
 
         return () => {
