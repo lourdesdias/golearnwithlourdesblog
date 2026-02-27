@@ -10,25 +10,18 @@ export default function ViralEngineLP() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const engines = [
-    { name: "Viral Campaign Generator", power: "Create ready-to-post content for 14+ platforms with psychologically-optimized hooks", icon: "🎯" },
-    { name: "Trend Intelligence", power: "Reverse-engineer what's WORKING RIGHT NOW on TikTok, Instagram, LinkedIn, YouTube, X", icon: "📊" },
-    { name: "Viral Analyzer", power: "Drop ANY viral post URL → Get its psychological blueprint → Create YOUR version in seconds", icon: "🔍" },
-    { name: "Authority Matrix", power: "AI-generated carousel quote cards that position you as THE expert", icon: "🏛" },
-    { name: "Image Studio + Twin Mode", power: "Upload one selfie → Generate pro images of YOU in any scenario", icon: "🖼" },
-    { name: "Video Studio", power: "AI avatars. AI voiceovers in your voice. Unlimited video content in minutes", icon: "🎬" },
-    { name: "Rainmaker", power: "Sales copy that CONVERTS. Email campaigns, sales pages, DM scripts, closing sequences", icon: "💰" },
-    { name: "Product Forge", power: "Enter 1 keyword → Get 12 sell-ready digital products (eBooks, templates, courses)", icon: "🛠" },
-    { name: "SEO Writer", power: "Generate blog posts designed to RANK #1 in Google (organic traffic on autopilot)", icon: "📝" },
-    { name: "Bio Builder", power: "Platform-specific bios that convert profile visitors to followers", icon: "📋" },
-    { name: "Content Brainstorm", power: "Unlimited content ideas based on your niche. Never face blank page again", icon: "💡" },
-    { name: "Theme Calendar", power: "30-day content plan + themed days → Consistency = Growth", icon: "📆" },
-    { name: "Cliffhanger Generator", power: "Story-driven content with open loops that keep viewers watching", icon: "🪝" },
-    { name: "Expert Title Creator", power: "Generates positioning statements & expert titles → Premium pricing power", icon: "🏆" },
-    { name: "Affiliate Tracking", power: "Built-in referral system with commission tracking", icon: "💸" },
-    { name: "Ad Creative Generator", power: "Generate & test ad variations before you spend a single dollar", icon: "🎨" },
-    { name: "Content Library", power: "Save, organize, search all generated content. Nothing gets lost.", icon: "📚" },
-    { name: "Academy", power: "In-app education on how to use each feature like a pro", icon: "📖" },
-    { name: "Settings & Model Selection", power: "Choose your AI engine (Gemini 2.0, GPT-4o, etc.). Your choice.", icon: "⚙️" }
+    { name: "14-Platform Content Engine", power: "Native, zero-placeholder content for Instagram, TikTok, LinkedIn, YouTube, X, and 9 more platforms.", icon: "🎯" },
+    { name: "Live Data Intelligence", power: "Real-time trends pulled directly from Google Trends, YouTube v3, and Reddit APIs—not static AI guesses.", icon: "📊" },
+    { name: "Dynamic Niche Integration", power: "Weaves your Creator Identity, Authority Title, and Personal Bio into every piece of content seamlessly.", icon: "🧬" },
+    { name: "5-Step Campaign Wizard", power: "A high-status workflow: Discover, Identity, Context, Refine, and Draft. Zero overwhelm, maximum strategy.", icon: "🪄" },
+    { name: "AI Twin Image Studio", power: "Neural-powered 'Twin Mode'. Generate realistic lifestyles featuring your own face in high-status environments.", icon: "🖼" },
+    { name: "Rainmaker Conversion Hub", power: "14 integrated funnels, email sequences, VSL scripts, and DM/Comment strategies to monetize your attention.", icon: "💰" },
+    { name: "Virality X-Ray", power: "Drop any viral URL → Get the psychological blueprint (Status Signaling, Zeigarnik Effect) → Remix your version.", icon: "🔍" },
+    { name: "A/B Hook Engine", power: "Generates 5 strategic hooks based on live data with a scientific 'Virality Score' and Top-Scorer badge.", icon: "🪝" },
+    { name: "Millon-Dollar Product Forge", power: "Enter 1 keyword → Get 12 sell-ready digital products (eBooks, courses, templates) built in minutes.", icon: "🛠" },
+    { name: "SEO Authority Writer", power: "Native-sounding blog posts designed to rank #1 in the world's most competitive search engines.", icon: "📝" },
+    { name: "The Bio Architect", power: "Platform-specific bios that force profile visitors to convert into permanent followers and leads.", icon: "📋" },
+    { name: "Neural Model Selection", power: "Select from the world's most advanced neural engines. Whitelabeled, high-status outputs every time.", icon: "⚙️" }
   ];
 
   return (
@@ -58,18 +51,18 @@ export default function ViralEngineLP() {
             Finally: The AI Built For
           </span>
           <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400">
-            Kingdom Creators
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400 uppercase tracking-tighter">
+            Viral Engine
           </span>
-          <span className="text-white block text-2xl sm:text-3xl md:text-4xl mt-2">Profit + Purpose.</span>
+          <span className="text-white block text-2xl sm:text-3xl md:text-4xl mt-2 italic font-medium">Attention into Authority.</span>
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-3xl mx-auto mb-4 sm:mb-6 leading-relaxed font-semibold">
-          The <span className="text-yellow-400">ONLY</span> all-in-one AI platform designed for creators who want <span className="font-bold">Kingdom impact alongside profitable business</span>.
+        <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-3xl mx-auto mb-4 sm:mb-6 leading-relaxed">
+          The <span className="text-yellow-400 font-bold">ONLY</span> all-in-one platform built for creators who demand <span className="text-white underline decoration-cyan-400/50 underline-offset-4">LIVE Data Intelligence</span> over generic AI predictions.
         </p>
 
-        <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-          <span className="font-bold">No team. No chaos. No $5,000/month agencies.</span> 19 AI engines create a week of viral content in 10 minutes. <span className="text-yellow-400">Profitable revenue that aligns with your values.</span>
+        <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-medium">
+          Stop guessing. We pull real-time trends from <span className="text-white">Google, YouTube, and Reddit</span> to build a week of viral, high-status content in 10 minutes. <span className="text-yellow-400">Profit with total purpose.</span>
         </p>
 
         {/* Hero CTA */}
@@ -92,72 +85,74 @@ export default function ViralEngineLP() {
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           <div className="bg-gradient-to-br from-red-500/10 to-yellow-500/5 border border-red-500/30 rounded-xl p-6 sm:p-8">
             <h3 className="text-lg sm:text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5" /> Right Now
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5" /> The Content Trap
             </h3>
             <ul className="space-y-3 text-slate-300 text-sm sm:text-base">
-              <li className="flex gap-2">
+              <li className="flex gap-2 text-red-50/90">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">5+ hours/week</span> scripting videos that get 100 views</span>
+                <span><span className="font-bold">Generic AI</span> that sounds robotic and lacks your niche identity.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">$5,000+/month</span> bleeding across tools and VAs</span>
+                <span><span className="font-bold">Static Hook Lists</span> that worked in 2023, but fail today.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">2+ hours/day</span> engaging on social media</span>
+                <span><span className="font-bold">Disconnected Tools</span> forcing you to copy-paste all day.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">Zero system</span> to turn followers into customers</span>
+                <span><span className="font-bold">No Conversion Strategy</span>. Just posting for likes, not revenue.</span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/30 rounded-xl p-6 sm:p-8">
+          <div className="bg-gradient-to-br from-cyan-500/10 to-emerald-500/5 border border-cyan-500/30 rounded-xl p-6 sm:p-8">
             <h3 className="text-lg sm:text-xl font-bold text-cyan-400 mb-4 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" /> The Viral Engine Way
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" /> The Viral Engine Standard
             </h3>
             <ul className="space-y-3 text-slate-300 text-sm sm:text-base">
-              <li className="flex gap-2">
+              <li className="flex gap-2 text-cyan-50/90">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
-                <span><span className="font-bold">A WEEK of content</span> in just 10 MINUTES</span>
+                <span><span className="font-bold">Dynamic Niche Identity</span> woven into every script.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
-                <span><span className="font-bold">One dashboard</span> replaces $5k/month tools</span>
+                <span><span className="font-bold">Real-Time Data Integration</span> with Trending APIs.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
-                <span><span className="font-bold">Rainmaker turns attention</span> into REVENUE</span>
+                <span><span className="font-bold">Unified 14-Platform Engine</span> from one dashboard.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
-                <span><span className="font-bold">Values-aligned profit</span> that honors God</span>
+                <span><span className="font-bold">Rainmaker Hub</span> designed for maximum ROI.</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* The 19 Engines */}
+      {/* The Engines */}
       <div className="relative px-4 sm:px-6 lg:px-8 py-12 sm:py-20 max-w-5xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 sm:mb-4 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
-          19 Powerful Engines
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 sm:mb-4 text-white uppercase tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+          THE MILLION-DOLLAR SUITE
         </h2>
-        <p className="text-center text-slate-300 mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">Everything you need to go from content chaos to a revenue machine.</p>
+        <p className="text-center text-slate-300 mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">Every tool has been reverse-engineered from the highest-performing digital businesses on the planet.</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {engines.map((engine, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-br from-slate-800/50 to-slate-800/20 border border-yellow-500/30 rounded-lg p-4 sm:p-6 hover:border-cyan-500/30 transition-all"
+              className="bg-gradient-to-br from-slate-800/50 to-slate-900/40 border border-yellow-500/20 rounded-xl p-4 sm:p-6 hover:border-cyan-500/40 transition-all group"
             >
-              <div className="flex items-start gap-3 sm:gap-4">
-                <span className="text-2xl sm:text-3xl flex-shrink-0">{engine.icon}</span>
-                <div className="flex-grow min-w-0">
-                  <h3 className="font-bold text-sm sm:text-lg text-white mb-1 sm:mb-2">{engine.name}</h3>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">{engine.power}</p>
+              <div className="flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-950 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                  {engine.icon}
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-bold text-sm sm:text-base text-white mb-2">{engine.name}</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed">{engine.power}</p>
                 </div>
               </div>
             </div>
@@ -168,15 +163,17 @@ export default function ViralEngineLP() {
       {/* Product Forge Section */}
       <div className="relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-5xl mx-auto">
         <div className="bg-gradient-to-r from-yellow-500/20 to-cyan-500/10 border border-yellow-500/40 rounded-xl p-6 sm:p-8 md:p-12">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
-            🛠 Product Forge
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-white uppercase tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+            🛠 THE MILLION-DOLLAR Product Forge
           </h3>
           <p className="text-slate-200 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
-            Turn 1 Keyword Into 12 Digital Products. Enter ANY topic. Get eBooks, checklists, worksheets, video courses, email sequences, and bonus bundles—ready to sell.
+            Turn 1 Keyword Into 12 Digital Products. Our Zero-Placeholder Protocol ensures your eBooks, checklists, and video courses are ready to sell instantly. No team required.
           </p>
-          <p className="text-yellow-400 font-bold text-sm sm:text-base md:text-lg">
-            💰 ROI Focus: 1 Keyword = 12 Products × $47 = $564/customer. 100 customers = $56,400
-          </p>
+          <div className="bg-slate-950/40 p-4 rounded-lg border border-yellow-500/20">
+            <p className="text-yellow-400 font-bold text-sm sm:text-base md:text-lg italic">
+              💰 THE MATH: 1 Keyword = 12 Products × $47 = $564/customer. 100 customers = $56,400 Profit.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -209,26 +206,31 @@ export default function ViralEngineLP() {
 
       {/* Final CTA */}
       <div className="relative px-4 sm:px-6 lg:px-8 py-12 sm:py-20 max-w-4xl mx-auto text-center mb-8 sm:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
-          Try It Free
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white uppercase tracking-tighter" style={{ fontFamily: 'Playfair Display, serif' }}>
+          SECURE YOUR LIFETIME FOUNDER ACCESS
         </h2>
-        <p className="text-slate-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
-          7-day free trial. No credit card required. If it doesn't save you 10+ hours/week, just cancel.
+        <p className="text-slate-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
+          Built on world-class neural engines for creators who value speed and authority. Our <span className="text-white italic underline">"Unlimited Length"</span> video protocol puts you ahead of the competition.
         </p>
-        <div className="flex justify-center">
+        <div className="flex justify-center flex-col items-center gap-6">
           <BeehiivModal
             formId="555585ed-0d1f-4ab5-b90a-b3946e20c082" // Official ID
             buttonText="Lock In Founder Pricing Now"
             title="Viral Engine Waitlist"
           />
+          <div className="flex items-center gap-4 text-slate-500 text-xs">
+            <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> Zero Credit Card Required</span>
+            <span className="flex items-center gap-1"><Shield className="w-3 h-3" /> Whitelabeled Security</span>
+            <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> Real-Time Activation</span>
+          </div>
         </div>
-        <p className="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6">
-          Limited founder spots. Lock in lifetime pricing. Q1 2026 access.
-        </p>
       </div>
 
-      <footer className="relative border-t border-slate-800/50 py-6 sm:py-8 px-4 text-center text-slate-500 text-xs sm:text-sm">
-        <p>Viral Engine: AI Content + Sales + Kingdom Impact. © 2026.</p>
+      <footer className="relative border-t border-slate-800/50 py-12 px-4 text-center text-slate-500 text-xs sm:text-sm">
+        <p className="max-w-md mx-auto mb-4 italic">
+          Viral Engine: The Million-Dollar content machinery for creators who want profit without compromising purpose.
+        </p>
+        <p>© 2026 Viral Engine. All rights reserved.</p>
       </footer>
 
 
