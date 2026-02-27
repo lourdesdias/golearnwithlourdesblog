@@ -5,9 +5,9 @@ interface EmailOctopusSubscribeFormProps {
 }
 
 const EmailOctopusSubscribeForm = ({ formId }: EmailOctopusSubscribeFormProps) => {
-    // The base URL for EmailOctopus standalone forms is typically slightly different
-    // depending on the form ID prefix. Based on the eomail5.com domain seen in the script:
-    const iframeUrl = `https://eomail5.com/webform/${formId}`;
+    // We created an isolated HTML file in the public folder to perfectly render the script
+    // without React interfering with it.
+    const iframeUrl = `/emailoctopus.html?id=${formId}`;
 
     return (
         <div className="flex justify-center w-full min-h-[400px]">
