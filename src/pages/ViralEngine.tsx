@@ -72,8 +72,8 @@ export default function ViralEngineLP() {
           The <span className="text-yellow-400 font-bold">ONLY</span> all-in-one platform built for creators who demand <span className="text-white underline decoration-cyan-400/50 underline-offset-4">LIVE Data & Scraping Intelligence</span> over generic AI predictions.
         </p>
 
-        <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-medium">
-          Stop guessing. We pull real-time trends from <span className="text-white">Google, YouTube, Reddit, and Advanced Scraping Strategy</span> to build a week of viral, high-status content in 10 minutes. <span className="text-yellow-400">Profit with total purpose.</span>
+        <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-semibold italic">
+          No team. No chaos. No $5,000/month agencies. <span className="text-white">We pull real-time trends from Google, YouTube, Reddit, and Advanced Scraping Strategy</span> to build a week of viral content in 10 minutes.
         </p>
 
         {/* Hero CTA */}
@@ -101,7 +101,7 @@ export default function ViralEngineLP() {
             <ul className="space-y-3 text-slate-300 text-sm sm:text-base">
               <li className="flex gap-2 text-red-50/90">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">5+ hours/week</span> scripting videos that get zero traction.</span>
+                <span><span className="font-bold">5+ hours/week</span> scripting videos that get 100 views.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
@@ -109,7 +109,7 @@ export default function ViralEngineLP() {
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">2+ hours/day</span> manually engaging with no conversion strategy.</span>
+                <span><span className="font-bold">2+ hours/day</span> manually engaging on social media.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
@@ -117,7 +117,7 @@ export default function ViralEngineLP() {
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400 text-xl sm:text-2xl flex-shrink-0">🔴</span>
-                <span><span className="font-bold">Static Hook Lists</span> sourced from 2023 with zero real-time data.</span>
+                <span><span className="font-bold">Zero system</span> to turn followers into revenue-ready customers.</span>
               </li>
             </ul>
           </div>
@@ -141,7 +141,7 @@ export default function ViralEngineLP() {
               </li>
               <li className="flex gap-2">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
-                <span><span className="font-bold">Dynamic Niche Identity</span> woven into every single script.</span>
+                <span><span className="font-bold">Dynamic Niche Identity</span> woven into every script.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
