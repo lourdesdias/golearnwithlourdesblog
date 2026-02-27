@@ -35,6 +35,18 @@ export default function LinkInBio() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Load EmailOctopus popup script once on mount so it's ready to trigger on click
+  useEffect(() => {
+    const scriptId = 'eo-vault-script';
+    if (!document.getElementById(scriptId)) {
+      const s = document.createElement('script');
+      s.id = scriptId;
+      s.src = 'https://eomail5.com/form/a6a6a84a-1409-11f1-a407-514075e5d87e.js';
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  }, []);
+
   const offerings: Offering[] = [
     {
       id: 1,
@@ -279,29 +291,13 @@ export default function LinkInBio() {
                   {/* CTA Section */}
                   <div className="space-y-3 mt-auto">
                     {offering.isFreebie ? (
+                      // data-eo-form-toggle-id is the official EmailOctopus click trigger
                       <button
-                        onClick={() => {
-                          // Clear any cookies that hide the popup
-                          document.cookie.split(";").forEach(c => {
-                            const trimmed = c.trim();
-                            if (trimmed.startsWith("eo-") || trimmed.startsWith("__eo")) {
-                              document.cookie = trimmed.replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`);
-                            }
-                          });
-                          // Remove any existing script so it runs fresh
-                          const existing = document.getElementById("eo-form-script");
-                          if (existing) existing.remove();
-                          // Load the EmailOctopus script — it will open its own native popup
-                          const s = document.createElement("script");
-                          s.id = "eo-form-script";
-                          s.src = `https://eomail5.com/form/${offering.emailFormId}.js?t=${Date.now()}`;
-                          s.async = true;
-                          document.body.appendChild(s);
-                        }}
+                        data-eo-form-toggle-id={offering.emailFormId}
                         className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
                         style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}
                       >
-                        <span className="relative z-10 flex items-center gap-2">
+                        <span className="relative z-10 flex items-center gap-2 pointer-events-none">
                           {offering.cta}
                           <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                         </span>
