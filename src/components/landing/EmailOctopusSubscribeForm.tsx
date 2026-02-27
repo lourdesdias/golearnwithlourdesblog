@@ -6,21 +6,23 @@ interface EmailOctopusSubscribeFormProps {
 
 const EmailOctopusSubscribeForm = ({ formId }: EmailOctopusSubscribeFormProps) => {
     useEffect(() => {
-        // Load EmailOctopus script
+        // Remove existing script if any to force re-initialization
+        const removeExisting = () => {
+            const scripts = document.querySelectorAll('script[src^="https://eocampaign1.com/form/embed.js"]');
+            scripts.forEach(s => s.remove());
+        };
+
+        removeExisting();
+
+        // Load EmailOctopus script with a cache-buster to ensure it executes
         const script = document.createElement("script");
-        script.src = "https://eocampaign1.com/form/embed.js";
+        script.src = `https://eocampaign1.com/form/embed.js?v=${Date.now()}`;
         script.async = true;
         script.setAttribute("data-form", formId);
         document.body.appendChild(script);
 
         return () => {
-            // Cleanup script on unmount
-            const existingScript = document.querySelector(
-                'script[src="https://eocampaign1.com/form/embed.js"]'
-            );
-            if (existingScript) {
-                existingScript.remove();
-            }
+            removeExisting();
         };
     }, [formId]);
 
