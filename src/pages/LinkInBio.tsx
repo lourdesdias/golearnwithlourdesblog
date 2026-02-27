@@ -130,7 +130,7 @@ export default function LinkInBio() {
       url: "/Pay_Your_Kids_Legally_Canada.pdf",
       isFreebie: true,
       provider: "email-octopus",
-      emailFormId: "PASTE_YOUR_EMAIL_OCTOPUS_FORM_ID_HERE"
+      emailFormId: "a6a6a84a-1409-11f1-a407-514075e5d87e"
     }
   ];
 
