@@ -38,21 +38,18 @@ export default function LinkInBio() {
   const offerings: Offering[] = [
     {
       id: 1,
-      title: "Pay Your Kids Legally (Canada)",
-      subtitle: "The 5-Step CRA Checklist for Business Owners",
-      description: "Stop leaving money on the table. Learn how to legally pay your children and lower your family tax bill using simple, CRA-compliant strategies.",
-      cta: "Download Checklist",
-      subtext: "Instant PDF download after email confirmation.",
-      color: "from-yellow-500 to-yellow-400",
-      bgGradient: "from-yellow-600/20 to-yellow-500/20",
+      title: "Vision Architect",
+      subtitle: "Get CLARITY In 6 Days (Build Your Kingdom Blueprint)",
+      description: "Stop spinning in circles. In 6 days, you'll have a CRYSTAL-CLEAR blueprint for thriving in ALL 7 F's: Faith, Family, Finance, Fitness, Freedom, Fun & Fruitfulness. Your Vision Architect Mentor keeps you accountable 24/7—anchored to God's design for your life.",
+      cta: "Join Waitlist",
+      subtext: "Pre-recorded + lifetime Vision Architect Mentor + lifetime updates.",
+      color: "from-yellow-500 to-cyan-400",
+      bgGradient: "from-yellow-600/20 to-cyan-600/20",
       borderColor: "border-yellow-500/50",
-      badgeTextColor: "text-slate-900",
-      icon: Mail,
-      highlight: "Tax Guide",
-      url: "/Pay_Your_Kids_Legally_Canada.pdf",
-      isFreebie: true,
-      provider: "email-octopus",
-      emailFormId: "a6a6a84a-1409-11f1-a407-514075e5d87e"
+      badgeTextColor: "text-white",
+      icon: Sparkles,
+      highlight: "Lifetime Updates",
+      url: "/vision-architect"
     },
     {
       id: 2,
@@ -282,50 +279,13 @@ export default function LinkInBio() {
                   {/* CTA Section */}
                   <div className="space-y-3 mt-auto">
                     {offering.isFreebie ? (
-                      offering.provider === "email-octopus" ? (
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            const scriptId = `eo-popup-${offering.emailFormId}`;
-
-                            // Remove existing script if any to trigger fresh
-                            const existingScript = document.getElementById(scriptId);
-                            if (existingScript) existingScript.remove();
-
-                            // Clear EmailOctopus "viewed" cookies to ensure the popup can show again
-                            document.cookie.split(";").forEach((c) => {
-                              if (c.trim().startsWith("eo-form")) {
-                                document.cookie = c
-                                  .replace(/^ +/, "")
-                                  .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-                              }
-                            });
-
-                            const script = document.createElement("script");
-                            script.id = scriptId;
-                            script.src = `https://eomail5.com/form/${offering.emailFormId}.js?v=${Date.now()}`;
-                            script.async = true;
-                            script.dataset.form = offering.emailFormId;
-                            document.body.appendChild(script);
-                          }}
-                          className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
-                          style={{ background: `linear-gradient(135deg, ${offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f'}, ${offering.id === 2 || offering.id === 4 ? '#16b9a7' : '#aa8937'})` }}
-                        >
-                          <span className="relative z-10 flex items-center gap-2">
-                            {offering.cta}
-                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                          </span>
-                          <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
-                        </button>
-                      ) : (
-                        <SubscriptionModal
-                          provider={offering.provider || "beehiiv"}
-                          formId={offering.emailFormId || ""}
-                          buttonText={offering.cta}
-                          title={`Download ${offering.title}`}
-                          description="Enter your best email below. Once confirmed, I'll send the CRA checklist directly to your inbox so you can start paying your kids legally."
-                        />
-                      )
+                      <SubscriptionModal
+                        provider={offering.provider || "email-octopus"}
+                        formId={offering.emailFormId || ""}
+                        buttonText={offering.cta}
+                        title={`Download ${offering.title}`}
+                        description="Enter your best email below. Once confirmed, I'll send the CRA checklist directly to your inbox so you can start paying your kids legally."
+                      />
                     ) : (
                       <div
                         className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"

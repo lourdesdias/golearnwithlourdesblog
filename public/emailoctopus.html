@@ -40,6 +40,13 @@
         const formId = urlParams.get('id');
 
         if (formId) {
+            // Clear any eo-form cookies to bypass 'already shown' local limits
+            document.cookie.split(";").forEach((c) => {
+                if (c.trim().startsWith("eo-form")) {
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+                }
+            });
+
             // Create the container the script looks for
             const formContainer = document.getElementById('form-container');
             const targetDiv = document.createElement('div');
