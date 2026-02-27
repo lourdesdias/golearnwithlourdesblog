@@ -279,13 +279,34 @@ export default function LinkInBio() {
                   {/* CTA Section */}
                   <div className="space-y-3 mt-auto">
                     {offering.isFreebie ? (
-                      <SubscriptionModal
-                        provider={offering.provider || "email-octopus"}
-                        formId={offering.emailFormId || ""}
-                        buttonText={offering.cta}
-                        title={`Download ${offering.title}`}
-                        description="Enter your best email below. Once confirmed, I'll send the CRA checklist directly to your inbox so you can start paying your kids legally."
-                      />
+                      <button
+                        onClick={() => {
+                          // Clear any cookies that hide the popup
+                          document.cookie.split(";").forEach(c => {
+                            const trimmed = c.trim();
+                            if (trimmed.startsWith("eo-") || trimmed.startsWith("__eo")) {
+                              document.cookie = trimmed.replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`);
+                            }
+                          });
+                          // Remove any existing script so it runs fresh
+                          const existing = document.getElementById("eo-form-script");
+                          if (existing) existing.remove();
+                          // Load the EmailOctopus script — it will open its own native popup
+                          const s = document.createElement("script");
+                          s.id = "eo-form-script";
+                          s.src = `https://eomail5.com/form/${offering.emailFormId}.js?t=${Date.now()}`;
+                          s.async = true;
+                          document.body.appendChild(s);
+                        }}
+                        className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
+                        style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}
+                      >
+                        <span className="relative z-10 flex items-center gap-2">
+                          {offering.cta}
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </span>
+                        <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
+                      </button>
                     ) : (
                       <div
                         className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
