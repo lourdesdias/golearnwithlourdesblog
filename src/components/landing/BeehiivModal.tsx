@@ -12,6 +12,7 @@ interface BeehiivModalProps {
     formId: string;
     buttonText: string;
     title?: string;
+    description?: string;
     variant?: "primary" | "secondary";
 }
 
@@ -19,6 +20,7 @@ const BeehiivModal = ({
     formId,
     buttonText,
     title = "Join the Movement",
+    description,
     variant = "primary"
 }: BeehiivModalProps) => {
     return (
@@ -26,8 +28,8 @@ const BeehiivModal = ({
             <DialogTrigger asChild>
                 <button
                     className={`w-full sm:w-auto px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${variant === "primary"
-                            ? "bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 hover:scale-105"
-                            : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+                        ? "bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 hover:scale-105"
+                        : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
                         }`}
                 >
                     {buttonText}
@@ -39,6 +41,11 @@ const BeehiivModal = ({
                     <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400">
                         {title}
                     </DialogTitle>
+                    {description && (
+                        <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                            {description}
+                        </p>
+                    )}
                 </DialogHeader>
                 <div className="py-4">
                     <BeehiivSubscribeForm formId={formId} />

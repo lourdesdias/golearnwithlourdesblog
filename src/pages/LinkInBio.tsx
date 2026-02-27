@@ -281,6 +281,7 @@ export default function LinkInBio() {
                         formId="555585ed-0d1f-4ab5-b90a-b3946e20c082" // Use same form for now
                         buttonText={offering.cta}
                         title={`Download ${offering.title}`}
+                        description="Enter your best email below. Once confirmed, I'll send the CRA checklist directly to your inbox so you can start paying your kids legally."
                       />
                     ) : (
                       <div
