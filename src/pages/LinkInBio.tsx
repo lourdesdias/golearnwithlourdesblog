@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown, Briefcase } from '
 import { Link } from 'react-router-dom';
 import profileImage from "@/assets/profile-linkinbio.png";
 import logoImage from "@/assets/logo.png";
-import BeehiivModal from "@/components/landing/BeehiivModal";
+import SubscriptionModal from "@/components/landing/SubscriptionModal";
 
 interface Offering {
   id: number;
@@ -20,6 +20,8 @@ interface Offering {
   highlight: string;
   url: string;
   isFreebie?: boolean;
+  provider?: "beehiiv" | "email-octopus";
+  emailFormId?: string;
 }
 
 export default function LinkInBio() {
@@ -126,7 +128,9 @@ export default function LinkInBio() {
       icon: Mail,
       highlight: "Tax Guide",
       url: "/Pay_Your_Kids_Legally_Canada.pdf",
-      isFreebie: true
+      isFreebie: true,
+      provider: "email-octopus",
+      emailFormId: "PASTE_YOUR_EMAIL_OCTOPUS_FORM_ID_HERE"
     }
   ];
 
@@ -277,8 +281,9 @@ export default function LinkInBio() {
                   {/* CTA Section */}
                   <div className="space-y-3 mt-auto">
                     {offering.isFreebie ? (
-                      <BeehiivModal
-                        formId="555585ed-0d1f-4ab5-b90a-b3946e20c082" // Use same form for now
+                      <SubscriptionModal
+                        provider={offering.provider || "email-octopus"}
+                        formId={offering.emailFormId || ""}
                         buttonText={offering.cta}
                         title={`Download ${offering.title}`}
                         description="Enter your best email below. Once confirmed, I'll send the CRA checklist directly to your inbox so you can start paying your kids legally."
