@@ -54,7 +54,7 @@ export default function ViralEngineLP() {
       <div className="relative pt-6 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-4 sm:mb-6 text-xs sm:text-sm">
           <Lock className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 flex-shrink-0" />
-          <span className="text-white font-medium">19 Engines. 1 Dashboard. Q1 2026.</span>
+          <span className="text-white font-medium">23 Engines. 1 Dashboard. Q1 2026.</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
