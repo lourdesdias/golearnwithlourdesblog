@@ -38,18 +38,21 @@ export default function LinkInBio() {
   const offerings: Offering[] = [
     {
       id: 1,
-      title: "Vision Architect",
-      subtitle: "Get CLARITY In 6 Days (Build Your Kingdom Blueprint)",
-      description: "Stop spinning in circles. In 6 days, you'll have a CRYSTAL-CLEAR blueprint for thriving in ALL 7 F's: Faith, Family, Finance, Fitness, Freedom, Fun & Fruitfulness. Your Vision Architect Mentor keeps you accountable 24/7—anchored to God's design for your life.",
-      cta: "Join Waitlist",
-      subtext: "Pre-recorded + lifetime Vision Architect Mentor + lifetime updates.",
-      color: "from-yellow-500 to-cyan-400",
-      bgGradient: "from-yellow-600/20 to-cyan-600/20",
+      title: "Pay Your Kids Legally (Canada)",
+      subtitle: "The 5-Step CRA Checklist for Business Owners",
+      description: "Stop leaving money on the table. Learn how to legally pay your children and lower your family tax bill using simple, CRA-compliant strategies.",
+      cta: "Download Checklist",
+      subtext: "Instant PDF download after email confirmation.",
+      color: "from-yellow-500 to-yellow-400",
+      bgGradient: "from-yellow-600/20 to-yellow-500/20",
       borderColor: "border-yellow-500/50",
-      badgeTextColor: "text-white",
-      icon: Sparkles,
-      highlight: "Lifetime Updates",
-      url: "/vision-architect"
+      badgeTextColor: "text-slate-900",
+      icon: Mail,
+      highlight: "Tax Guide",
+      url: "/Pay_Your_Kids_Legally_Canada.pdf",
+      isFreebie: true,
+      provider: "email-octopus",
+      emailFormId: "a6a6a84a-1409-11f1-a407-514075e5d87e"
     },
     {
       id: 2,
