@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown, Briefcase } from '
 import { Link } from 'react-router-dom';
 import profileImage from "@/assets/profile-linkinbio.png";
 import logoImage from "@/assets/logo.png";
+import BeehiivModal from "@/components/landing/BeehiivModal";
 
 interface Offering {
   id: number;
@@ -18,11 +19,13 @@ interface Offering {
   icon: React.ElementType;
   highlight: string;
   url: string;
+  isFreebie?: boolean;
 }
 
 export default function LinkInBio() {
   const [scrollY, setScrollY] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<'featured' | 'vault'>('featured');
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -108,6 +111,27 @@ export default function LinkInBio() {
     }
   ];
 
+  const vaultOfferings: Offering[] = [
+    {
+      id: 101,
+      title: "Kingdom Content Blueprint",
+      subtitle: "The 10-Minute Viral Workflow (Free PDF)",
+      description: "Download the exact blueprint I use to create a week of high-status, God-honoring social content in just 10 minutes. No more burnout. No more guessing. Start building your authority today.",
+      cta: "Download Free PDF",
+      subtext: "Instant download after email confirmation.",
+      color: "from-yellow-500 to-cyan-400",
+      bgGradient: "from-yellow-600/20 to-cyan-600/20",
+      borderColor: "border-yellow-500/50",
+      badgeTextColor: "text-white",
+      icon: Mail,
+      highlight: "Free Guide",
+      url: "/kingdom-content-blueprint.pdf",
+      isFreebie: true
+    }
+  ];
+
+  const currentOfferings = activeTab === 'featured' ? offerings : vaultOfferings;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 text-slate-900 overflow-hidden">
       {/* Subtle background elements */}
@@ -157,10 +181,34 @@ export default function LinkInBio() {
         </div>
       </div>
 
+      {/* Tab Switcher */}
+      <div className="relative px-4 max-w-xl mx-auto mb-8">
+        <div className="bg-slate-200/50 backdrop-blur-md p-1.5 rounded-2xl flex border border-slate-300/50 shadow-inner">
+          <button
+            onClick={() => setActiveTab('featured')}
+            className={`flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 uppercase tracking-wider ${activeTab === 'featured'
+              ? 'bg-white text-slate-900 shadow-md'
+              : 'text-slate-500 hover:text-slate-700'
+              }`}
+          >
+            Featured
+          </button>
+          <button
+            onClick={() => setActiveTab('vault')}
+            className={`flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 uppercase tracking-wider ${activeTab === 'vault'
+              ? 'bg-white text-slate-900 shadow-md'
+              : 'text-slate-500 hover:text-slate-700'
+              }`}
+          >
+            The Free Vault 💎
+          </button>
+        </div>
+      </div>
+
       {/* Cards Grid */}
-      <div className="relative px-4 sm:px-6 lg:px-8 py-12 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {offerings.map((offering, index) => {
+      <div className="relative px-4 sm:px-6 lg:px-8 py-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 min-h-[400px]">
+          {currentOfferings.map((offering, index) => {
             const Icon = offering.icon;
             return (
               <div
@@ -227,17 +275,25 @@ export default function LinkInBio() {
                   </p>
 
                   {/* CTA Section */}
-                  <div className="space-y-3">
-                    <div
-                      className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
-                      style={{ background: `linear-gradient(135deg, ${offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f'}, ${offering.id === 2 || offering.id === 4 ? '#16b9a7' : '#aa8937'})` }}
-                    >
-                      <span className="relative z-10 flex items-center gap-2">
-                        {offering.cta}
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </span>
-                      <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
-                    </div>
+                  <div className="space-y-3 mt-auto">
+                    {offering.isFreebie ? (
+                      <BeehiivModal
+                        formId="555585ed-0d1f-4ab5-b90a-b3946e20c082" // Use same form for now
+                        buttonText={offering.cta}
+                        title={`Download ${offering.title}`}
+                      />
+                    ) : (
+                      <div
+                        className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
+                        style={{ background: `linear-gradient(135deg, ${offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f'}, ${offering.id === 2 || offering.id === 4 ? '#16b9a7' : '#aa8937'})` }}
+                      >
+                        <span className="relative z-10 flex items-center gap-2">
+                          {offering.cta}
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </span>
+                        <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
+                      </div>
+                    )}
 
                     <p className="text-xs text-slate-500 text-center">
                       {offering.subtext}
