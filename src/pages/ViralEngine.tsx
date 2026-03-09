@@ -11,23 +11,23 @@ export default function ViralEngineLP() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const engines = [
     { name: "14-Platform Content Engine", power: "Native, zero-placeholder content for Instagram, TikTok, LinkedIn, YouTube, X, and 9 more platforms.", icon: "🎯" },
-    { name: "Live Data & Scraping", power: "Real-time trends from Google, YouTube, Reddit, and Advanced Scraping Strategy—not static AI guesses.", icon: "📊" },
-    { name: "Global Arbitrage Advantage", power: "Native output in 10 major languages (Spanish, German, Japanese, etc.) to dominate non-English markets.", icon: "🌍" },
-    { name: "Dynamic Niche Integration", power: "Weaves your Creator Identity, Authority Title, and Personal Bio into every piece of content seamlessly.", icon: "🧬" },
+    { name: "Live Data & Scraping", power: "Real-time trends and precise engagement data from TikTok, YouTube, Instagram, and Twitter—not static AI guesses.", icon: "📊" },
+    { name: "Global Arbitrage Advantage", power: "Native output in 10 major languages (Spanish, German, Japanese, etc.) to dominate non-English markets with million-dollar quality.", icon: "🌍" },
+    { name: "Dynamic Niche Integration", power: "Weaves your Creator Identity, Authority Title, and Personal Bio (Dynamic Niche Integration) into every piece of content seamlessly.", icon: "🧬" },
     { name: "5-Step Campaign Wizard", power: "A high-status workflow: Discover, Identity, Context, Refine, and Draft. Zero overwhelm.", icon: "🪄" },
     { name: "AI Twin Image Studio", power: "Neural-powered 'Twin Mode'. Generate realistic lifestyles featuring your own face in high-status environments.", icon: "🖼" },
     { name: "Video Studio & Avatars", power: "AI avatars and voiceovers in your voice. Create professional video content in minutes.", icon: "🎬" },
-    { name: "Rainmaker Conversion Hub", power: "14 integrated funnels, email sequences, VSL scripts, and DM/Comment strategies.", icon: "💰" },
-    { name: "Virality X-Ray", power: "Drop any viral URL → Get the psychological blueprint (Zeigarnik Effect) → Remix your version.", icon: "🔍" },
+    { name: "Rainmaker Conversion Hub", power: "14 integrated funnels, email sequences, VSL scripts, and the new 'Profile Click' comment strategy.", icon: "💰" },
+    { name: "Scientific Remix (Viral DNA Cloning)", power: "Extract the structural and psychological 'DNA' of any viral post and automatically remap it to your own topic.", icon: "🔍" },
     { name: "A/B Hook Engine", power: "Generates 5 strategic hooks based on live data with a scientific 'Virality Score' and Top-Scorer badge.", icon: "🪝" },
     { name: "Millon-Dollar Product Forge", power: "Enter 1 keyword → Get 12 sell-ready digital products (eBooks, courses, templates) built in minutes.", icon: "🛠" },
     { name: "Authority Matrix", power: "AI-generated carousel quote cards and authority visual assets that position you as THE expert.", icon: "🏛" },
     { name: "SEO Authority Writer", power: "Native-sounding blog posts designed to rank #1 in the world's most competitive search engines.", icon: "📝" },
-    { name: "The Bio Architect", power: "Platform-specific bios that force profile visitors to convert into permanent followers and leads.", icon: "📋" },
+    { name: "The Bio Architect", power: "Platform-specific bios that force profile visitors to convert. NEW: Profile Import & Audit: Scrape and scientifically audit your current profile for conversion improvements.", icon: "📋" },
     { name: "Cliffhanger Generator", power: "Story-driven content with open loops that keep viewers glued to your content machine.", icon: "🪝" },
     { name: "Expert Title Creator", power: "Generates positioning statements and expert titles that command premium pricing power.", icon: "🏆" },
     { name: "Platform Tracking & Analytics", power: "Built-in referral systems and performance tracking to see what's actually driving revenue.", icon: "💸" },
-    { name: "Ad Creative Generator", power: "Generate and test ad variations for any platform before you spend a single dollar on spend.", icon: "🎨" },
+    { name: "Ad Creative Generator", power: "Generate and test high-converting ad variations and visual creative concepts for any platform before you spend a single dollar.", icon: "🎨" },
     { name: "Content Brainstorm", power: "Unlimited content ideas based on your specific niche and Dynamic Niche Identity.", icon: "💡" },
     { name: "Consistency Calendar", power: "30-day automated content plans with themed days to ensure you never go dark.", icon: "📆" },
     { name: "Million-Dollar Content Library", power: "Save, organize, and search all your generated high-status content. Nothing gets lost.", icon: "📚" },
@@ -73,7 +73,7 @@ export default function ViralEngineLP() {
         </p>
 
         <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-semibold italic">
-          No team. No chaos. No $5,000/month agencies. <span className="text-white">We pull real-time trends from Google, YouTube, Reddit, and Advanced Scraping Strategy</span> to build a week of viral content in 10 minutes.
+          No team. No chaos. No $5,000/month agencies. <span className="text-white">We pull real-time trends and precise engagement data across TikTok, YouTube, Instagram, and Twitter</span> to build a week of viral content in 10 minutes.
         </p>
 
         {/* Hero CTA */}
