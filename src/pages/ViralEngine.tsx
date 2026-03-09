@@ -11,7 +11,7 @@ export default function ViralEngineLP() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const engines = [
     { name: "14-Platform Content Engine", power: "Native, zero-placeholder content for Instagram, TikTok, LinkedIn, YouTube, X, and 9 more platforms.", icon: "🎯" },
-    { name: "Live Data & Scraping", power: "Real-time trends and precise engagement data from TikTok, YouTube, Instagram, and Twitter—not static AI guesses.", icon: "📊" },
+    { name: "Live Data & Scraping", power: "Real-time trends and precise engagement data from 20+ sources including TikTok, YouTube, Instagram, Twitter, LinkedIn, and Global Ad Libraries.", icon: "📊" },
     { name: "Global Arbitrage Advantage", power: "Native output in 10 major languages (Spanish, German, Japanese, etc.) to dominate non-English markets with million-dollar quality.", icon: "🌍" },
     { name: "Dynamic Niche Integration", power: "Weaves your Creator Identity, Authority Title, and Personal Bio (Dynamic Niche Integration) into every piece of content seamlessly.", icon: "🧬" },
     { name: "5-Step Campaign Wizard", power: "A high-status workflow: Discover, Identity, Context, Refine, and Draft. Zero overwhelm.", icon: "🪄" },
@@ -73,7 +73,7 @@ export default function ViralEngineLP() {
         </p>
 
         <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-semibold italic">
-          No team. No chaos. No $5,000/month agencies. <span className="text-white">We pull real-time trends and precise engagement data across TikTok, YouTube, Instagram, and Twitter</span> to build a week of viral content in 10 minutes.
+          No team. No chaos. No $5,000/month agencies. <span className="text-white">We pull real-time trends and precise engagement data across TikTok, YouTube, Instagram, Twitter, LinkedIn, Facebook, and Global Ad Libraries</span> to build a week of viral content in 10 minutes.
         </p>
 
         {/* Hero CTA */}
@@ -145,7 +145,7 @@ export default function ViralEngineLP() {
               </li>
               <li className="flex gap-2">
                 <span className="text-cyan-400 text-xl sm:text-2xl flex-shrink-0">✅</span>
-                <span><span className="font-bold">Real-Time Scouting</span> via Trends & Advanced Scraping.</span>
+                <span><span className="font-bold">Real-Time Scouting</span> via 20+ Platforms & Global Ad Libraries.</span>
               </li>
             </ul>
           </div>
