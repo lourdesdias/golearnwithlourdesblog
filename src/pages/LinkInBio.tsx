@@ -151,7 +151,7 @@ export default function LinkInBio() {
       subtitle: "File Your Business Taxes For $0 (Solopreneur Edition)",
       description: "Stop overpaying for tax software. Learn how to file Schedule C (US) or Form T2125 (Canada) for FREE. Master home office deductions, startup costs, and audit protection. Specifically for self-employed individuals (No Corporations).",
       cta: "Register for Masterclass",
-      subtext: "Pilot Session this Friday. Learn the exact process I use.",
+      subtext: "Limited enrollment session. Register to save your seat.",
       color: "from-yellow-500 to-amber-400",
       bgGradient: "from-yellow-600/20 to-amber-600/20",
       borderColor: "border-yellow-500/50",

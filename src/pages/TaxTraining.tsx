@@ -1,11 +1,41 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Zap, ArrowRight, FileText, Gift, Calculator, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ShieldCheck, Zap, ArrowRight, FileText, Gift, Calculator, CheckCircle2, AlertCircle, Globe, Mail } from 'lucide-react';
 import EmailOctopusSubscribeForm from '@/components/landing/EmailOctopusSubscribeForm';
 import logoImage from "@/assets/logo.png";
 import { Link } from 'react-router-dom';
 
 export default function TaxTraining() {
-  const [formId] = useState("a6a6a84a-1409-11f1-a407-514075e5d87e"); // Placeholder ID - user needs to provide new one
+  const [formId] = useState("a6a6a84a-1409-11f1-a407-514075e5d87e"); // Placeholder ID
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const eventTitle = "Master Your Taxes: US & Canada Free Filing Masterclass";
+  const eventDate = "20260327T150000Z"; // March 27, 2026, 10:00 AM EST
+  const eventEndDate = "20260327T163000Z";
+  const eventDetails = "Join Lourdes for a masterclass on how to file your business taxes for FREE in the US and Canada. Location: Online (Link provided after registration).";
+
+  const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventDate}/${eventEndDate}&details=${encodeURIComponent(eventDetails)}&location=Online`;
+  
+  const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-27T10:00:00&enddt=2026-03-27T11:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      // We use the EmailOctopus endpoint but with fetch to avoid the redirect
+      await fetch(`https://eomail5.com/form/${formId}`, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // EmailOctopus doesn't return CORS headers easily
+      });
+      setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      console.error("Submission error:", error);
+      // Fallback: standard submission if fetch fails
+      e.currentTarget.submit();
+    }
+  };
 
   const learningPoints = [
     {
@@ -48,7 +78,7 @@ export default function TaxTraining() {
       <section className="relative z-10 pt-12 pb-24 px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-8 animate-fade-in">
           <Zap className="w-4 h-4 text-yellow-400" />
-          <span className="text-xs uppercase tracking-widest font-bold text-yellow-400">Free Filing Masterclass</span>
+          <span className="text-xs uppercase tracking-widest font-bold text-yellow-400">Limited Enrollment Masterclass</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -58,22 +88,67 @@ export default function TaxTraining() {
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-          The step-by-step masterclass for solopreneurs and side hustlers to file for <strong>FREE</strong> in the US and Canada. Master the forms, maximize your deductions, and keep what you earn.
-        </p>
-
-        {/* Lead Form Card */}
-        <div className="max-w-xl mx-auto bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-8 rounded-3xl shadow-2xl relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
-          
-          <div className="relative">
-            <h2 className="text-2xl font-bold mb-6 text-white text-left">Secure Your Free Seat</h2>
-            <EmailOctopusSubscribeForm formId={formId} />
-            <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
-              Limited spots available for the Pilot Session this Friday
+        {!isSubmitted ? (
+          <>
+            <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-4 leading-relaxed">
+              The step-by-step masterclass for solopreneurs and side hustlers to file for <strong>FREE</strong> in the US and Canada. Master the forms, maximize your deductions, and keep what you earn.
             </p>
+            <div className="mb-12 flex justify-center items-center gap-4 text-yellow-400/80 font-bold uppercase tracking-widest text-sm">
+              <Calculator className="w-5 h-5" />
+              Friday, March 27th @ 10:00 AM EST
+            </div>
+
+            {/* Lead Form Card */}
+            <div className="max-w-xl mx-auto bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-8 rounded-3xl shadow-2xl relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+              
+              <div className="relative">
+                <h2 className="text-2xl font-bold mb-6 text-white text-left">Secure Your Free Seat</h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-3">
+                    <input name="field_1" type="text" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="First name" required />
+                    <input name="field_2" type="text" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="Last name" />
+                    <input name="field_0" type="email" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="Email address" required />
+                  </div>
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+                    <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
+                  </div>
+                  <button type="submit" className="w-full px-6 py-4 rounded-lg font-bold text-center text-sm uppercase tracking-wider transition-all duration-300 shadow-lg text-white hover:scale-105" style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}>
+                    Register for Masterclass
+                  </button>
+                </form>
+                <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
+                  Secure your spot on the live workshop
+                </p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="max-w-xl mx-auto bg-slate-900/80 backdrop-blur-xl border border-yellow-500/30 p-12 rounded-3xl shadow-2xl animate-fade-in">
+            <CheckCircle2 className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold mb-4">You're Registered!</h2>
+            <p className="text-slate-400 mb-8">
+              We've captured your information. You are set for <strong>Friday, March 27th @ 10:00 AM EST</strong>. 
+              Save this to your calendar so you don't miss it!
+            </p>
+            <div className="grid grid-cols-1 gap-4">
+              <a href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
+                <Globe className="w-5 h-5 text-yellow-400" />
+                Add to Google Calendar
+              </a>
+              <a href={outlookCalendarUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
+                <Mail className="w-5 h-5 text-cyan-400" />
+                Add to Outlook/iCal
+              </a>
+            </div>
+            <button
+               onClick={() => setIsSubmitted(false)}
+               className="mt-8 text-sm text-slate-500 hover:text-white transition-colors"
+            >
+              Back to training details
+            </button>
           </div>
-        </div>
+        )}
       </section>
 
       {/* Important Notice */}
@@ -115,13 +190,13 @@ export default function TaxTraining() {
       {/* Social Proof / Trust */}
       <section className="relative z-10 py-24 px-6 bg-slate-950/50 border-y border-slate-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">Why This Friday?</h2>
+          <h2 className="text-3xl font-bold mb-12">Why Join the Masterclass?</h2>
           <div className="grid md:grid-cols-2 gap-12 text-left">
             <div className="flex gap-4">
               <CheckCircle2 className="w-6 h-6 text-cyan-400 shrink-0" />
               <div>
-                <h4 className="font-bold mb-2">Live Training Trial</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">I'm teaching this strategy live to my inner team this Friday. You're getting the raw, unfiltered presentation before it goes public.</p>
+                <h4 className="font-bold mb-2">Strategic Training</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">I'm teaching the exact strategies I use for my own businesses. You're getting the raw, unfiltered knowledge you need to save thousands.</p>
               </div>
             </div>
             <div className="flex gap-4">
