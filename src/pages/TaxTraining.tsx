@@ -18,17 +18,34 @@ export default function TaxTraining() {
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
   React.useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      // Check for success message from our emailoctopus.html iframe
-      if (event.data.type === 'EO_SUCCESS' && event.data.formId === formId) {
-        setIsSubmitted(true);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
+    // Only inject if not submitted and list container exists
+    if (!isSubmitted) {
+      const script = document.createElement('script');
+      script.src = `https://eomail5.com/form/${formId}.js`;
+      script.setAttribute('data-form', formId);
+      script.async = true;
+      document.body.appendChild(script);
 
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [formId]);
+      // Listen for success message within the injected form
+      const observer = new MutationObserver(() => {
+        const successMsg = document.querySelector('.email-octopus-success-message');
+        if (successMsg && successMsg.innerHTML.trim().length > 0) {
+          setIsSubmitted(true);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      const target = document.querySelector(`.email-octopus-form-${formId}`);
+      if (target) {
+        observer.observe(target, { childList: true, subtree: true });
+      }
+
+      return () => {
+        document.body.removeChild(script);
+        observer.disconnect();
+      };
+    }
+  }, [formId, isSubmitted]);
 
   const learningPoints = [
     {
@@ -100,12 +117,11 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                {/* Official Email Octopus Form via Iframe (Handles Recaptcha & Validation) */}
-                <iframe 
-                  src={`/emailoctopus.html?id=${formId}`}
-                  className="w-full min-h-[350px] border-0 rounded-xl"
-                  title="Registration Form"
-                ></iframe>
+                {/* Official Email Octopus Form (Handles Recaptcha & Validation) */}
+                <div 
+                  className={`email-octopus-form-${formId} min-h-[350px]`}
+                  data-form={formId}
+                ></div>
 
                 <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
                   Secure your spot on the live workshop
