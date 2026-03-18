@@ -97,11 +97,11 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                {/* Native Email Octopus Form (100% Rendering Reliability) */}
+                {/* Native Email Octopus Form (Hidden Iframe Submission for 100% Reliability) */}
                 <form 
                   action={`https://eomail5.com/form/${formId}`} 
                   method="post" 
-                  target="_blank"
+                  target="eo-hidden-frame"
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
@@ -141,6 +141,9 @@ export default function TaxTraining() {
                     Register for Masterclass
                   </button>
                 </form>
+
+                {/* Hidden iframe to handle the submission in background */}
+                <iframe name="eo-hidden-frame" style={{ display: 'none' }}></iframe>
 
                 <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
                   Secure your spot on the live workshop
