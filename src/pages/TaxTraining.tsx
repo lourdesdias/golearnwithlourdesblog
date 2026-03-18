@@ -16,10 +16,17 @@ export default function TaxTraining() {
   
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
-  const handleSubmit = () => {
-    setIsSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  React.useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'registration-success' && event.data?.formId === formId) {
+        setIsSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [formId]);
 
   const learningPoints = [
     {
@@ -91,11 +98,13 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                <EmailOctopusSubscribeForm 
-                  formId={formId} 
-                  onSuccess={handleSubmit} 
-                  buttonText="Register for Masterclass"
-                />
+                <div className="w-full min-h-[350px]">
+                  <iframe 
+                    src={`/emailoctopus.html?id=${formId}`} 
+                    className="w-full min-h-[400px] border-none overflow-hidden"
+                    title="Registration Form"
+                  />
+                </div>
 
                 <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
                   Secure your spot on the live workshop

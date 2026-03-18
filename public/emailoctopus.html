@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscribe</title>
+    <title>Registration Form</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: white;
         }
-
-        /* Style adjustments to make it look great in the modal */
-        #form-container {
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-            box-sizing: border-box;
+        /* Custom styles to match the site's dark theme */
+        .email-octopus-form-wrapper {
+            max-width: 100% !important;
+            padding: 0 !important;
+        }
+        .email-octopus-form-row {
+            margin-bottom: 12px !important;
+        }
+        .email-octopus-form-row label {
+            display: none !important;
+        }
+        .email-octopus-form-row input {
+            width: 100% !important;
+            padding: 12px 16px !important;
+            border-radius: 6px !important;
+            background: rgba(30, 41, 59, 1) !important;
+            border: 1px solid rgba(51, 65, 85, 1) !important;
+            color: white !important;
+            font-size: 16px !important;
+            box-sizing: border-box !important;
+        }
+        .email-octopus-form-row input:focus {
+            border-color: #d1ad4f !important;
+            outline: none !important;
+        }
+        .email-octopus-form-row-subscribe button {
+            width: 100% !important;
+            padding: 16px !important;
+            border-radius: 8px !important;
+            background: linear-gradient(135deg, #d1ad4f, #aa8937) !important;
+            color: white !important;
+            font-weight: bold !important;
+            border: none !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            cursor: pointer !important;
+            transition: all 0.3s !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+        }
+        .email-octopus-form-row-subscribe button:hover {
+            transform: scale(1.02) !important;
+        }
+        .email-octopus-success-message {
+            display: none !important; /* We handle success in the parent */
+        }
+        .email-octopus-error-message {
+            color: #ef4444 !important;
+            font-size: 12px !important;
+            margin-top: 8px !important;
         }
     </style>
 </head>
-
 <body>
-    <div id="form-container">
-        <!-- The form wrapper that the script looks for -->
-        <p class="email-octopus-success-message"></p>
-        <p class="email-octopus-error-message"></p>
-        <!-- The script will be injected here via query params -->
-    </div>
+    <div id="form-container"></div>
+
     <script>
-        // Get the form ID from the query string (e.g. ?id=a6a6a84a-1409-11f1-a407-514075e5d87e)
+        // Get form ID from URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         const formId = urlParams.get('id');
 
         if (formId) {
-            // Clear any eo-form cookies to bypass 'already shown' local limits
-            document.cookie.split(";").forEach((c) => {
-                if (c.trim().startsWith("eo-form")) {
-                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-                }
-            });
+            // Create the container div
+            const container = document.getElementById('form-container');
+            container.className = `email-octopus-form-${formId}`;
+            container.setAttribute('data-form', formId);
 
-            // Create the container the script looks for
-            const formContainer = document.getElementById('form-container');
-            const targetDiv = document.createElement('div');
-            targetDiv.className = `email-octopus-form-${formId}`;
-            targetDiv.setAttribute('data-form', formId);
-            formContainer.appendChild(targetDiv);
-
-            // Inject the EmailOctopus script
+            // Load the script
             const script = document.createElement('script');
-            script.src = `https://eomail5.com/form/${formId}.js`;
-            script.setAttribute('data-form', formId);
             script.async = true;
+            script.src = `https://eomail5.com/form/${formId}.js`;
             document.body.appendChild(script);
 
-            // Listen for success message
+            // Observe for success message appearing in the DOM
             const observer = new MutationObserver((mutations) => {
                 const successMsg = document.querySelector('.email-octopus-success-message');
-                if (successMsg && successMsg.innerHTML.trim().length > 0) {
-                    window.parent.postMessage({ type: 'EO_SUCCESS', formId: formId }, '*');
-                    observer.disconnect();
+                if (successMsg && successMsg.innerText.trim().length > 0) {
+                    // Tell parent React window we are done!
+                    window.parent.postMessage({ type: 'registration-success', formId: formId }, '*');
                 }
             });
 
-            observer.observe(document.getElementById('form-container'), {
+            observer.observe(document.body, {
                 childList: true,
                 subtree: true
             });
-        } else {
-            document.getElementById('form-container').innerHTML = '<p style="color:red;text-align:center;">Form ID missing.</p>';
         }
     </script>
 </body>
-
 </html>
