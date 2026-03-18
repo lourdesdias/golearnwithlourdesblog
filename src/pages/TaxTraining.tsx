@@ -18,10 +18,13 @@ export default function TaxTraining() {
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // We let the form submit naturally to Email Octopus in a new tab
-    // while we show our custom success state in this tab
-    setIsSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // We let the form submit naturally to Email Octopus in a new tab.
+    // To prevent the browser from canceling the submission ("form is not connected"),
+    // we delay the React state change that removes the form from the DOM.
+    setTimeout(() => {
+      setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 500);
   };
 
   const learningPoints = [
