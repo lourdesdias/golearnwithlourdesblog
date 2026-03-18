@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function TaxTraining() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const formId = "a6a6a84a-1409-11f1-a407-514075e5d87e";
+  const formId = "bbd7ad2a-2324-11f1-8e5b-0b82699ab5a1";
   
   const eventTitle = "Tax Training Masterclass with Lourdes";
   const eventDetails = "Step-by-step masterclass for solopreneurs and side hustlers to file for FREE in the US and Canada. Master the forms, maximize your deductions, and keep what you earn.";
