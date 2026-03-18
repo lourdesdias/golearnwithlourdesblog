@@ -17,6 +17,12 @@ export default function TaxTraining() {
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
   React.useEffect(() => {
+    // Check if we just came back from a successful registration redirect
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('registered') === 'true') {
+      setIsSubmitted(true);
+    }
+
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type === 'registration-success' && event.data?.formId === formId) {
         setIsSubmitted(true);
@@ -98,10 +104,10 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                <div className="w-full min-h-[350px]">
+                <div className="w-full min-h-[400px] bg-white rounded-xl overflow-hidden shadow-2xl">
                   <iframe 
-                    src={`/emailoctopus.html?id=${formId}`} 
-                    className="w-full min-h-[400px] border-none overflow-hidden"
+                    src={`https://eomail5.com/form/${formId}`} 
+                    className="w-full min-h-[500px] border-none"
                     title="Registration Form"
                   />
                 </div>
