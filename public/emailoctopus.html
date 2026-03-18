@@ -65,6 +65,11 @@
     </style>
 </head>
 <body>
+    <!-- Diagnostic indicator -->
+    <div id="loading-indicator" style="text-align: center; padding: 20px; font-size: 14px; color: #aa8937;">
+        Loading secure registration...
+    </div>
+
     <div id="form-container"></div>
 
     <script>
@@ -73,10 +78,16 @@
         const formId = urlParams.get('id');
 
         if (formId) {
+            console.log("Loading form:", formId);
             // Create the container div
             const container = document.getElementById('form-container');
             container.className = `email-octopus-form-${formId}`;
             container.setAttribute('data-form', formId);
+
+            // Hide indicator when it looks like something happened
+            setTimeout(() => {
+                document.getElementById('loading-indicator').style.display = 'none';
+            }, 3000);
 
             // Load the script
             const script = document.createElement('script');
