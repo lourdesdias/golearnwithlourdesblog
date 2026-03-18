@@ -5,26 +5,20 @@ import logoImage from "@/assets/logo.png";
 import { Link } from 'react-router-dom';
 
 export default function TaxTraining() {
-  const [formId] = useState("a6a6a84a-1409-11f1-a407-514075e5d87e"); // Placeholder ID
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const eventTitle = "Master Your Taxes: US & Canada Free Filing Masterclass";
-  const eventDate = "20260321T030000Z"; // March 20, 2026, 8:00 PM MST (03:00 UTC next day)
-  const eventEndDate = "20260321T043000Z";
-  const eventDetails = "Join Lourdes for a masterclass on how to file your business taxes for FREE in the US and Canada. Location: Online (Link provided after registration).";
-
-  const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventDate}/${eventEndDate}&details=${encodeURIComponent(eventDetails)}&location=Online`;
+  const formId = "a6a6a84a-1409-11f1-a407-514075e5d87e";
+  
+  const eventTitle = "Tax Training Masterclass with Lourdes";
+  const eventDetails = "Step-by-step masterclass for solopreneurs and side hustlers to file for FREE in the US and Canada. Master the forms, maximize your deductions, and keep what you earn.";
+  const eventLocation = "Online";
+  
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=20260320T200000/20260320T213000&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
   
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // We let the form submit naturally to Email Octopus in a new tab.
-    // To prevent the browser from canceling the submission ("form is not connected"),
-    // we delay the React state change that removes the form from the DOM.
-    setTimeout(() => {
-      setIsSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 500);
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const learningPoints = [
@@ -97,53 +91,11 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                {/* Native Email Octopus Form (Hidden Iframe Submission for 100% Reliability) */}
-                <form 
-                  action={`https://eomail5.com/form/${formId}`} 
-                  method="post" 
-                  target="eo-hidden-frame"
-                  onSubmit={handleSubmit}
-                  className="space-y-4"
-                >
-                  <div className="space-y-3">
-                    <input 
-                      name="field_1" 
-                      type="text" 
-                      className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500/50 transition-all outline-none" 
-                      placeholder="First name" 
-                      required 
-                    />
-                    <input 
-                      name="field_2" 
-                      type="text" 
-                      className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500/50 transition-all outline-none" 
-                      placeholder="Last name" 
-                    />
-                    <input 
-                      name="field_0" 
-                      type="email" 
-                      className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500/50 transition-all outline-none" 
-                      placeholder="Email address" 
-                      required 
-                    />
-                  </div>
-                  
-                  {/* Honeypot for bot protection */}
-                  <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                    <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
-                  </div>
-
-                  <button 
-                    type="submit" 
-                    className="w-full px-6 py-4 rounded-lg font-bold text-center text-sm uppercase tracking-wider transition-all duration-300 shadow-lg text-white hover:scale-105 active:scale-95" 
-                    style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}
-                  >
-                    Register for Masterclass
-                  </button>
-                </form>
-
-                {/* Hidden iframe to handle the submission in background */}
-                <iframe name="eo-hidden-frame" style={{ display: 'none' }}></iframe>
+                <EmailOctopusSubscribeForm 
+                  formId={formId} 
+                  onSuccess={handleSubmit} 
+                  buttonText="Register for Masterclass"
+                />
 
                 <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
                   Secure your spot on the live workshop

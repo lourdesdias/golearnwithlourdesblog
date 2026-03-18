@@ -2,12 +2,27 @@ import React from "react";
 
 interface EmailOctopusSubscribeFormProps {
     formId: string;
+    onSuccess?: () => void;
+    buttonText?: string;
 }
 
-const EmailOctopusSubscribeForm = ({ formId }: EmailOctopusSubscribeFormProps) => {
+const EmailOctopusSubscribeForm = ({ formId, onSuccess, buttonText = "Download Checklist" }: EmailOctopusSubscribeFormProps) => {
+    const handleSubmit = () => {
+        if (onSuccess) {
+            // Delay to allow native submission to process
+            setTimeout(onSuccess, 500);
+        }
+    };
+
     return (
         <div className="w-full">
-            <form action={`https://eomail5.com/form/${formId}`} method="post" target="_blank" className="space-y-4">
+            <form 
+                action={`https://eomail5.com/form/${formId}`} 
+                method="post" 
+                target="_blank" 
+                className="space-y-4"
+                onSubmit={handleSubmit}
+            >
                 <p className="text-slate-300 text-sm mb-4">
                     Enter your best email below to receive the 5-step CRA checklist instantly 👇
                 </p>
@@ -54,7 +69,7 @@ const EmailOctopusSubscribeForm = ({ formId }: EmailOctopusSubscribeFormProps) =
                         className="w-full px-6 py-4 rounded-lg font-bold text-center text-sm uppercase tracking-wider transition-all duration-300 shadow-lg text-white hover:scale-105"
                         style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}
                     >
-                        Download Checklist
+                        {buttonText}
                     </button>
                 </div>
                 
