@@ -131,7 +131,9 @@ export default function TaxTraining() {
             <h2 className="text-3xl font-bold mb-4">You're Registered!</h2>
             <p className="text-slate-400 mb-8">
               We've captured your information. You are set for <strong>Friday, March 20th @ 8:00 PM MST</strong>. 
-              Save this to your calendar so you don't miss it!
+              Check your inbox shortly for your **Bonus "Pay Your Kids Legally" CRA Checklist**!
+              <br /><br />
+              Don't forget to save the masterclass to your calendar:
             </p>
             <div className="grid grid-cols-1 gap-4">
               <a href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
