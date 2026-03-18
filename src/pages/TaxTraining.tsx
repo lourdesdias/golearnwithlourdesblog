@@ -17,35 +17,12 @@ export default function TaxTraining() {
   
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
-  React.useEffect(() => {
-    // Only inject if not submitted and list container exists
-    if (!isSubmitted) {
-      const script = document.createElement('script');
-      script.src = `https://eomail5.com/form/${formId}.js`;
-      script.setAttribute('data-form', formId);
-      script.async = true;
-      document.body.appendChild(script);
-
-      // Listen for success message within the injected form
-      const observer = new MutationObserver(() => {
-        const successMsg = document.querySelector('.email-octopus-success-message');
-        if (successMsg && successMsg.innerHTML.trim().length > 0) {
-          setIsSubmitted(true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-
-      const target = document.querySelector(`.email-octopus-form-${formId}`);
-      if (target) {
-        observer.observe(target, { childList: true, subtree: true });
-      }
-
-      return () => {
-        document.body.removeChild(script);
-        observer.disconnect();
-      };
-    }
-  }, [formId, isSubmitted]);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // We let the form submit naturally to Email Octopus in a new tab
+    // while we show our custom success state in this tab
+    setIsSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const learningPoints = [
     {
@@ -117,11 +94,50 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                {/* Official Email Octopus Form (Handles Recaptcha & Validation) */}
-                <div 
-                  className={`email-octopus-form-${formId} min-h-[350px]`}
-                  data-form={formId}
-                ></div>
+                {/* Native Email Octopus Form (100% Rendering Reliability) */}
+                <form 
+                  action={`https://eomail5.com/form/${formId}`} 
+                  method="post" 
+                  target="_blank"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                  <div className="space-y-3">
+                    <input 
+                      name="field_1" 
+                      type="text" 
+                      className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500/50 transition-all outline-none" 
+                      placeholder="First name" 
+                      required 
+                    />
+                    <input 
+                      name="field_2" 
+                      type="text" 
+                      className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500/50 transition-all outline-none" 
+                      placeholder="Last name" 
+                    />
+                    <input 
+                      name="field_0" 
+                      type="email" 
+                      className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500/50 transition-all outline-none" 
+                      placeholder="Email address" 
+                      required 
+                    />
+                  </div>
+                  
+                  {/* Honeypot for bot protection */}
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+                    <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    className="w-full px-6 py-4 rounded-lg font-bold text-center text-sm uppercase tracking-wider transition-all duration-300 shadow-lg text-white hover:scale-105 active:scale-95" 
+                    style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}
+                  >
+                    Register for Masterclass
+                  </button>
+                </form>
 
                 <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
                   Secure your spot on the live workshop
