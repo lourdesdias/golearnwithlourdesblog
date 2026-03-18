@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown, Briefcase } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Globe, Mail, ChevronDown, Briefcase, Gift } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import profileImage from "@/assets/profile-linkinbio.png";
 import logoImage from "@/assets/logo.png";
@@ -35,7 +35,7 @@ interface Offering {
 export default function LinkInBio() {
   const [scrollY, setScrollY] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<'featured' | 'vault'>('featured');
+  const [activeTab, setActiveTab] = useState<'featured' | 'vault' | 'workshops'>('featured');
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -144,7 +144,29 @@ export default function LinkInBio() {
     }
   ];
 
-  const currentOfferings = activeTab === 'featured' ? offerings : vaultOfferings;
+  const workshopOfferings: Offering[] = [
+    {
+      id: 201,
+      title: "US-CAN Tax Filing Masterclass",
+      subtitle: "File Your Business Taxes For $0 (Solopreneur Edition)",
+      description: "Stop overpaying for tax software. Learn how to file Schedule C (US) or Form T2125 (Canada) for FREE. Master home office deductions, startup costs, and audit protection. Specifically for self-employed individuals (No Corporations).",
+      cta: "Register for Masterclass",
+      subtext: "Pilot Session this Friday. Learn the exact process I use.",
+      color: "from-yellow-500 to-amber-400",
+      bgGradient: "from-yellow-600/20 to-amber-600/20",
+      borderColor: "border-yellow-500/50",
+      badgeTextColor: "text-slate-900",
+      icon: Gift,
+      highlight: "Free Workshop",
+      url: "/tax-training"
+    }
+  ];
+
+  const currentOfferings = activeTab === 'featured' 
+    ? offerings 
+    : activeTab === 'vault' 
+      ? vaultOfferings 
+      : workshopOfferings;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 text-slate-900 overflow-hidden">
@@ -215,6 +237,15 @@ export default function LinkInBio() {
               }`}
           >
             The Free Vault 💎
+          </button>
+          <button
+            onClick={() => setActiveTab('workshops')}
+            className={`flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 uppercase tracking-wider ${activeTab === 'workshops'
+              ? 'bg-white text-slate-900 shadow-md'
+              : 'text-slate-500 hover:text-slate-700'
+              }`}
+          >
+            Workshops 🎓
           </button>
         </div>
       </div>
