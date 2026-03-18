@@ -92,7 +92,7 @@ export default function TaxTraining() {
           <>
             <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-4 leading-relaxed">
               The step-by-step masterclass for solopreneurs and side hustlers to file for <strong>FREE</strong> in the US and Canada. Master the forms, maximize your deductions, and keep what you earn. 
-              <br /><span className="text-yellow-400 font-semibold italic mt-2 block">🎁 BONUS: Get the "Pay Your Kids Legally" CRA/IRS Checklist instantly when you join!</span>
+              <br /><span className="text-yellow-400 font-semibold italic mt-2 block">🎁 BONUS: Get the "Pay Your Kids Legally" CRA Checklist (Canada) instantly when you join!</span>
             </p>
             <div className="mb-12 flex justify-center items-center gap-4 text-yellow-400/80 font-bold uppercase tracking-widest text-sm">
               <Calculator className="w-5 h-5" />
