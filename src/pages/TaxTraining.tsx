@@ -9,13 +9,13 @@ export default function TaxTraining() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const eventTitle = "Master Your Taxes: US & Canada Free Filing Masterclass";
-  const eventDate = "20260327T150000Z"; // March 27, 2026, 10:00 AM EST
-  const eventEndDate = "20260327T163000Z";
+  const eventDate = "20260321T030000Z"; // March 20, 2026, 8:00 PM MST (03:00 UTC next day)
+  const eventEndDate = "20260321T043000Z";
   const eventDetails = "Join Lourdes for a masterclass on how to file your business taxes for FREE in the US and Canada. Location: Online (Link provided after registration).";
 
   const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventDate}/${eventEndDate}&details=${encodeURIComponent(eventDetails)}&location=Online`;
   
-  const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-27T10:00:00&enddt=2026-03-27T11:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
+  const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -95,7 +95,7 @@ export default function TaxTraining() {
             </p>
             <div className="mb-12 flex justify-center items-center gap-4 text-yellow-400/80 font-bold uppercase tracking-widest text-sm">
               <Calculator className="w-5 h-5" />
-              Friday, March 27th @ 10:00 AM EST
+              Friday, March 20th @ 8:00 PM MST
             </div>
 
             {/* Lead Form Card */}
@@ -128,7 +128,7 @@ export default function TaxTraining() {
             <CheckCircle2 className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-4">You're Registered!</h2>
             <p className="text-slate-400 mb-8">
-              We've captured your information. You are set for <strong>Friday, March 27th @ 10:00 AM EST</strong>. 
+              We've captured your information. You are set for <strong>Friday, March 20th @ 8:00 PM MST</strong>. 
               Save this to your calendar so you don't miss it!
             </p>
             <div className="grid grid-cols-1 gap-4">
