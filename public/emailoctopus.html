@@ -59,6 +59,20 @@
             script.src = `https://eomail5.com/form/${formId}.js`;
             script.async = true;
             document.body.appendChild(script);
+
+            // Listen for success message
+            const observer = new MutationObserver((mutations) => {
+                const successMsg = document.querySelector('.email-octopus-success-message');
+                if (successMsg && successMsg.innerHTML.trim().length > 0) {
+                    window.parent.postMessage({ type: 'EO_SUCCESS', formId: formId }, '*');
+                    observer.disconnect();
+                }
+            });
+
+            observer.observe(document.getElementById('form-container'), {
+                childList: true,
+                subtree: true
+            });
         } else {
             document.getElementById('form-container').innerHTML = '<p style="color:red;text-align:center;">Form ID missing.</p>';
         }

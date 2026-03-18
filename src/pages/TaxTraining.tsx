@@ -17,25 +17,18 @@ export default function TaxTraining() {
   
   const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-03-20T20:00:00&enddt=2026-03-20T21:30:00&body=${encodeURIComponent(eventDetails)}&location=Online`;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    
-    try {
-      // We use the EmailOctopus endpoint but with fetch to avoid the redirect
-      await fetch(`https://eomail5.com/form/${formId}`, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // EmailOctopus doesn't return CORS headers easily
-      });
-      setIsSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch (error) {
-      console.error("Submission error:", error);
-      // Fallback: standard submission if fetch fails
-      e.currentTarget.submit();
-    }
-  };
+  React.useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // Check for success message from our emailoctopus.html iframe
+      if (event.data.type === 'EO_SUCCESS' && event.data.formId === formId) {
+        setIsSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [formId]);
 
   const learningPoints = [
     {
@@ -100,25 +93,20 @@ export default function TaxTraining() {
             </div>
 
             {/* Lead Form Card */}
-            <div className="max-w-xl mx-auto bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-8 rounded-3xl shadow-2xl relative group">
+            <div className="max-w-xl mx-auto bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-8 rounded-3xl shadow-2xl relative group min-h-[400px]">
               <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
               
               <div className="relative">
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-3">
-                    <input name="field_1" type="text" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="First name" required />
-                    <input name="field_2" type="text" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="Last name" />
-                    <input name="field_0" type="email" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="Email address" required />
-                  </div>
-                  <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                    <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
-                  </div>
-                  <button type="submit" className="w-full px-6 py-4 rounded-lg font-bold text-center text-sm uppercase tracking-wider transition-all duration-300 shadow-lg text-white hover:scale-105" style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}>
-                    Register for Masterclass
-                  </button>
-                </form>
+                
+                {/* Official Email Octopus Form via Iframe (Handles Recaptcha & Validation) */}
+                <iframe 
+                  src={`/emailoctopus.html?id=${formId}`}
+                  className="w-full min-h-[350px] border-0 rounded-xl"
+                  title="Registration Form"
+                ></iframe>
+
                 <p className="mt-4 text-[10px] text-slate-500 text-center uppercase tracking-widest">
                   Secure your spot on the live workshop
                 </p>
