@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/(.*)",
+            "source": "/((?!emailoctopus\\.html).*)",
             "destination": "/index.html"
         }
     ]
