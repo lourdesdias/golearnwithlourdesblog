@@ -91,7 +91,8 @@ export default function TaxTraining() {
         {!isSubmitted ? (
           <>
             <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-4 leading-relaxed">
-              The step-by-step masterclass for solopreneurs and side hustlers to file for <strong>FREE</strong> in the US and Canada. Master the forms, maximize your deductions, and keep what you earn.
+              The step-by-step masterclass for solopreneurs and side hustlers to file for <strong>FREE</strong> in the US and Canada. Master the forms, maximize your deductions, and keep what you earn. 
+              <br /><span className="text-yellow-400 font-semibold italic mt-2 block">🎁 BONUS: Get the "Pay Your Kids Legally" CRA/IRS Checklist instantly when you join!</span>
             </p>
             <div className="mb-12 flex justify-center items-center gap-4 text-yellow-400/80 font-bold uppercase tracking-widest text-sm">
               <Calculator className="w-5 h-5" />
@@ -103,7 +104,8 @@ export default function TaxTraining() {
               <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-cyan-500/20 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
               
               <div className="relative">
-                <h2 className="text-2xl font-bold mb-6 text-white text-left">Secure Your Free Seat</h2>
+                <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
+                <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-3">
                     <input name="field_1" type="text" className="w-full px-4 py-3 rounded-md bg-slate-800 border border-slate-700 text-white" placeholder="First name" required />
