@@ -57,6 +57,7 @@
             // Inject the EmailOctopus script
             const script = document.createElement('script');
             script.src = `https://eomail5.com/form/${formId}.js`;
+            script.setAttribute('data-form', formId);
             script.async = true;
             document.body.appendChild(script);
 
