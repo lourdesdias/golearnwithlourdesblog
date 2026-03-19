@@ -8,6 +8,11 @@ export default function TaxTraining() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const formId = "bbd7ad2a-2324-11f1-8e5b-0b82699ab5a1";
   
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   const eventTitle = "Tax Training Masterclass with Lourdes";
   const eventDetails = "Step-by-step masterclass for solopreneurs and side hustlers to file for FREE in the US and Canada. Master the forms, maximize your deductions, and keep what you earn.";
   const eventLocation = "Online";
@@ -104,11 +109,10 @@ export default function TaxTraining() {
                 <h2 className="text-2xl font-bold mb-2 text-white text-left">Secure Your Free Seat</h2>
                 <p className="text-xs text-slate-400 mb-6 text-left">Includes the masterclass link + bonus tax guide.</p>
                 
-                <div className="w-full min-h-[400px] bg-white rounded-xl overflow-hidden shadow-2xl">
-                  <iframe 
-                    src={`https://eomail5.com/form/${formId}`} 
-                    className="w-full min-h-[500px] border-none"
-                    title="Registration Form"
+                <div className="w-full">
+                  <EmailOctopusSubscribeForm 
+                    formId={formId} 
+                    onSuccess={handleSubmit} 
                   />
                 </div>
 
