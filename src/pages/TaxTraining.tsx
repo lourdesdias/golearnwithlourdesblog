@@ -115,6 +115,8 @@ export default function TaxTraining() {
                  buttonText="Register for Masterclass"
                  title="Register Now"
                  description="Secure your seat for the Tax Training Masterclass and get the PDF Guide immediately."
+                 successUrl={googleCalendarUrl}
+                 successButtonText="Add to My Calendar"
                />
 
                <p className="mt-6 text-[10px] text-slate-400 uppercase tracking-widest font-bold">

@@ -18,6 +18,8 @@ interface SubscriptionModalProps {
     title?: string;
     description?: string;
     variant?: "primary" | "secondary";
+    successUrl?: string;
+    successButtonText?: string;
 }
 
 const SubscriptionModal = ({
@@ -27,7 +29,9 @@ const SubscriptionModal = ({
     buttonText,
     title = "Join the Movement",
     description,
-    variant = "primary"
+    variant = "primary",
+    successUrl,
+    successButtonText
 }: SubscriptionModalProps) => {
     return (
         <Dialog>
@@ -55,7 +59,11 @@ const SubscriptionModal = ({
                 </DialogHeader>
                 <div className="py-4">
                     {provider === "safety-bridge" ? (
-                        <LeadSafetyForm offerName={offerName} />
+                        <LeadSafetyForm 
+                            offerName={offerName} 
+                            successUrl={successUrl}
+                            successButtonText={successButtonText}
+                        />
                     ) : provider === "beehiiv" ? (
                         <BeehiivSubscribeForm formId={formId || ""} />
                     ) : (

@@ -33,6 +33,32 @@ interface Offering {
   provider?: "beehiiv" | "email-octopus" | "safety-bridge";
   emailFormId?: string;
   offerName?: string;
+  successUrl?: string;
+  successButtonText?: string;
+}
+
+interface VaultOffering {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  cta: string;
+  subtext: string;
+  badge?: string;
+  badgeBg?: string;
+  color: string;
+  bgGradient: string;
+  borderColor: string;
+  badgeTextColor: string;
+  icon: React.ElementType;
+  highlight: string;
+  url: string;
+  isFreebie?: boolean;
+  provider?: "beehiiv" | "email-octopus" | "safety-bridge";
+  emailFormId?: string;
+  offerName?: string;
+  successUrl?: string;
+  successButtonText?: string;
 }
 
 export default function LinkInBio() {
@@ -143,7 +169,9 @@ export default function LinkInBio() {
       url: "/link-in-bio",
       isFreebie: true,
       provider: "safety-bridge",
-      offerName: "Pay Your Kids Checklist"
+      offerName: "Pay Your Kids Checklist",
+      successUrl: "/Pay_Your_Kids_Legally_Canada.pdf",
+      successButtonText: "Download PDF Now"
     }
   ];
 
