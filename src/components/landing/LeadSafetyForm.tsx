@@ -54,13 +54,15 @@ const LeadSafetyForm = ({
             // 2. REMOTE SYNC: Send via secure server-side API route
             try {
                 const groupId = OFFER_GROUPS[offerName];
+                const firstName = name.split(" ")[0]; // Extract just the first word
                 console.log(`[SafetyBridge] Syncing ${email} to Group: ${offerName} (${groupId || 'No Group ID'})`);
 
                 const response = await fetch("/api/subscribe", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email, name, groupId })
+                    body: JSON.stringify({ email, name, firstName, groupId })
                 });
+
 
                 if (!response.ok) {
                     const errorBody = await response.json().catch(() => ({}));
