@@ -24,6 +24,12 @@ const LeadSafetyForm = ({
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+    const MAILERLITE_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNWIzOTQzMzc1ZGY4MDIxMTBkNjk4M2Q5YzRmMGY3ZmE3NmQ2OWMwYjU1MGY5MTY1NDM4NDUzOTc5ODQ3MmQyOGQxODhhOTMwMmIwYThlOWUiLCJpYXQiOjE3NzM4OTQzMjIuMTc5MDMsIm5iZiI6MTc3Mzg5NDMyMi4xNzkwMzIsImV4cCI6NDkyOTU2NzkyMi4xNzIzMzEsInN1YiI6IjIyMjQ1MjgiLCJzY29wZXMiOltdfQ.XUpsRX2cpoR6XKtka71BoGYBGnIGeN4H5oEGjeEQDLl5eK0s8SMrHy2vQpMfF38-zWU-392CeUYX7LK2x3yU9yUCJWsrhCJKf8tuNjM0upLtn8NMIRRpoS30qXh0wBsduxxuWtb_tjoHAjGtrwW0b--YBETgwLVUpX9cTOOvyT38cfPzvommuhLsVsz8aGIycbhHRRa1GV9kLullPjGNC7cPkj_j595uRqKeFqHc2NwuDrd3J1CYR5D5XpYeeL4GtcHbvcbLhXgCM9xICEyjgGdpiRvz0BwIMDqChHs7ZzFwEkft0UgS27EgVew5RShrBSAm-1zBZW4SsEfGBOSNhVK79Bie2RRl24yJVWGsUMKLrwT74q7hD7VcWnQvzm_7bNg4fFoB8KLHsCGM7uqL9b6K7HTStJzMGqdjeBy997zOti4Z8uUFlqhxfFXK8JfpSMprzojmy65At_4U5Tw7as1QUdl9TwbLRkPLEV9I1K02r2IBWa8RBsA-VBqefHX4zdn2m27aC2017M9up_6GDOn_c8fY0TzQtUPFluo6nQyuLQBgPK1fkTEZJihFxo07NUN7QEwi7zgceVsGJUniRC3gr4wNINdIL4xYresShrZw3ybBO11-BoHfM3YgI_06H2kNCPKfGVR3HlqHQXsp5lBqS3DlyfqeSD9kcJTTNsc";
+    const OFFER_GROUPS: Record<string, string> = {
+        "Tax Masterclass": "182341455497397816",
+        "Pay Your Kids Checklist": "182341455801484918"
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -43,18 +49,35 @@ const LeadSafetyForm = ({
             const existingLeads = existingLeadsRaw ? JSON.parse(existingLeadsRaw) : [];
             localStorage.setItem('lourdes_leads_backup', JSON.stringify([...existingLeads, newLead]));
 
-            // 2. REMOTE SYNC: This part can be expanded once MailerLite is connected
-            // For now, we simulate a successful sync to keep the user moving
-            await new Promise(resolve => setTimeout(resolve, 1200));
+            // 2. REMOTE SYNC: Send to MailerLite
+            // We use a try-catch for the sync part so it doesn't block the success UI
+            try {
+                const groupId = OFFER_GROUPS[offerName];
+                await fetch("https://connect.mailerlite.com/api/subscribers", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "Authorization": `Bearer ${MAILERLITE_TOKEN}`
+                    },
+                    body: JSON.stringify({
+                        email,
+                        fields: {
+                            name: name
+                        },
+                        groups: groupId ? [groupId] : []
+                    })
+                });
+            } catch (syncErr) {
+                console.warn("MailerLite Sync failed, but lead is safe in Vault:", syncErr);
+            }
 
             setIsSuccess(true);
             if (onSuccess) {
-                // Delay success trigger slightly to let them see the confirmation
                 setTimeout(onSuccess, 1000);
             }
         } catch (err) {
             console.error("Safety Bridge caught an error:", err);
-            // Even if sync fails, the lead is already saved in localStorage!
             setIsSuccess(true); 
         } finally {
             setIsSubmitting(false);
