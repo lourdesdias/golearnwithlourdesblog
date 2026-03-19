@@ -111,7 +111,7 @@ export default function TaxTraining() {
                
                <div className="w-full max-w-sm mx-auto p-2 bg-slate-50 rounded-3xl border border-slate-100/50 shadow-inner">
                  <LeadSafetyForm 
-                   offerName="Tax Masterclass"
+                   offerName="Tax Training Masterclass"
                    buttonText="Register Now"
                    onSuccess={() => setIsSubmitted(true)}
                  />

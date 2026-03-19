@@ -26,7 +26,7 @@ const LeadSafetyForm = ({
 
     const MAILERLITE_TOKEN = import.meta.env.VITE_MAILERLITE_TOKEN;
     const OFFER_GROUPS: Record<string, string> = {
-        "Tax Masterclass": "182341455497397816",
+        "Tax Training Masterclass": "182341455497397816",
         "Pay Your Kids Checklist": "182341455801484918",
         "Lourdes Newsletter": "182342106779485795",
         "Vision Architect Waitlist": "182342994355029806",
@@ -53,10 +53,15 @@ const LeadSafetyForm = ({
             localStorage.setItem('lourdes_leads_backup', JSON.stringify([...existingLeads, newLead]));
 
             // 2. REMOTE SYNC: Send to MailerLite
-            // We use a try-catch for the sync part so it doesn't block the success UI
             try {
+                if (!MAILERLITE_TOKEN) {
+                    throw new Error("MAILERLITE_TOKEN is missing in environment variables.");
+                }
+
                 const groupId = OFFER_GROUPS[offerName];
-                await fetch("https://connect.mailerlite.com/api/subscribers", {
+                console.log(`[SafetyBridge] Syncing ${email} to Group: ${offerName} (${groupId || 'No Group ID'})`);
+
+                const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -71,6 +76,14 @@ const LeadSafetyForm = ({
                         groups: groupId ? [groupId] : []
                     })
                 });
+
+                if (!response.ok) {
+                    const errorBody = await response.json().catch(() => ({}));
+                    console.error(`[SafetyBridge] MailerLite API Error ${response.status}:`, errorBody);
+                    throw new Error(`MailerLite API responded with ${response.status}`);
+                }
+
+                console.log(`[SafetyBridge] ${email} successfully synced to MailerLite!`);
             } catch (syncErr) {
                 console.warn("MailerLite Sync failed, but lead is safe in Vault:", syncErr);
             }
