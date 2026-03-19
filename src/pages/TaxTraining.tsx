@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Zap, ArrowRight, FileText, Gift, Calculator, CheckCircle2, AlertCircle, Globe, Mail } from 'lucide-react';
-import EmailOctopusSubscribeForm from '@/components/landing/EmailOctopusSubscribeForm';
 import logoImage from "@/assets/logo.png";
 import { Link } from 'react-router-dom';
+import LeadSafetyForm from '@/components/landing/LeadSafetyForm';
 import SubscriptionModal from "@/components/landing/SubscriptionModal";
 
 export default function TaxTraining() {
@@ -107,22 +107,15 @@ export default function TaxTraining() {
                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-amber-500"></div>
                 
                <h2 className="text-3xl font-bold text-slate-900 mb-4">Secure Your Free Seat</h2>
-               <p className="text-slate-600 mb-8 max-w-sm">Registration is currently being handled through our secure **Lead Safety Vault** to ensure 100% confirmation.</p>
+               <p className="text-slate-600 mb-8 max-w-sm">Enter your details below to secure your seat. Your registration is **guaranteed** via our Lead Safety Vault.</p>
                
-               <SubscriptionModal 
-                 provider="safety-bridge"
-                 offerName="Tax Masterclass"
-                 buttonText="Register for Masterclass"
-                 title="Register Now"
-                 description="Secure your seat for the Tax Training Masterclass and get the PDF Guide immediately."
-                 successUrl={googleCalendarUrl}
-                 successButtonText="Add to My Calendar"
-                 successDescription="Success! Your registration is confirmed. Click the button below to add the Masterclass to your calendar so you don't miss the live training."
-               />
-
-               <p className="mt-6 text-[10px] text-slate-400 uppercase tracking-widest font-bold">
-                 Includes Masterclass + Bonus Tax Guide
-               </p>
+               <div className="w-full max-w-sm mx-auto p-2 bg-slate-50 rounded-3xl border border-slate-100/50 shadow-inner">
+                 <LeadSafetyForm 
+                   offerName="Tax Masterclass"
+                   buttonText="Register Now"
+                   onSuccess={() => setIsSubmitted(true)}
+                 />
+               </div>
             </div>
           </>
         ) : (
