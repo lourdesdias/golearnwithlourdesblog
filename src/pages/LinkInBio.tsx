@@ -354,33 +354,17 @@ export default function LinkInBio() {
                   {/* CTA Section */}
                   <div className="space-y-3 mt-auto">
                     {offering.isFreebie ? (
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <button
-                            className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
-                            style={{ background: `linear-gradient(135deg, #d1ad4f, #aa8937)` }}
-                          >
-                            <span className="relative z-10 flex items-center gap-2 pointer-events-none">
-                              {offering.cta}
-                              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </span>
-                            <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-20 bg-white"></div>
-                          </button>
-                        </DialogTrigger>
-                        <DialogContent className="sm:max-w-[500px] bg-slate-900 border-slate-800 text-white">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400">
-                              {offering.title}
-                            </DialogTitle>
-                            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
-                              {offering.description}
-                            </p>
-                          </DialogHeader>
-                          <div className="py-4">
-                            <EmailOctopusSubscribeForm formId={offering.emailFormId || ""} />
-                          </div>
-                        </DialogContent>
-                      </Dialog>
+                      <SubscriptionModal 
+                        provider={offering.provider}
+                        formId={offering.emailFormId}
+                        offerName={offering.offerName || offering.title}
+                        buttonText={offering.cta}
+                        title={offering.title}
+                        description={offering.description}
+                        successUrl={offering.successUrl}
+                        successButtonText={offering.successButtonText}
+                        successDescription={offering.successDescription}
+                      />
                     ) : (
                       <div
                         className="group/btn relative w-full px-6 py-3 rounded-lg font-semibold text-center text-sm uppercase tracking-wider transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 text-white"
