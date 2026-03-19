@@ -149,7 +149,7 @@ export default function VisionArchitectLP() {
         <div className="flex justify-center">
           <SubscriptionModal
             provider="safety-bridge"
-            offerName="Lourdes Waitlist"
+            offerName="Vision Architect Waitlist"
             buttonText="Join the Waitlist Now"
             title="Vision Architect Waitlist"
           />
@@ -388,7 +388,7 @@ export default function VisionArchitectLP() {
         <div className="flex justify-center">
           <SubscriptionModal
             provider="safety-bridge"
-            offerName="Lourdes Waitlist"
+            offerName="Vision Architect Waitlist"
             buttonText="Get Your Blueprint Now"
             title="Vision Architect Waitlist"
           />
