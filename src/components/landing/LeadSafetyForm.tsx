@@ -18,7 +18,8 @@ const LeadSafetyForm = ({
     successButtonText = "Download PDF Now",
     successDescription
 }: LeadSafetyFormProps) => {
-    const [name, setName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -39,10 +40,11 @@ const LeadSafetyForm = ({
 
         try {
             // 1. SAFETY BRIDGE: Immediate Local Backup
+            const fullName = `${firstName} ${lastName}`.trim();
             const newLead = {
                 timestamp: new Date().toISOString(),
                 offer: offerName,
-                name,
+                name: fullName,
                 email,
                 url: window.location.href
             };
@@ -54,14 +56,14 @@ const LeadSafetyForm = ({
             // 2. REMOTE SYNC: Send via secure server-side API route
             try {
                 const groupId = OFFER_GROUPS[offerName];
-                const firstName = name.split(" ")[0]; // Extract just the first word
                 console.log(`[SafetyBridge] Syncing ${email} to Group: ${offerName} (${groupId || 'No Group ID'})`);
 
                 const response = await fetch("/api/subscribe", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email, name, firstName, groupId })
+                    body: JSON.stringify({ email, name: fullName, firstName, lastName, groupId })
                 });
+
 
 
                 if (!response.ok) {
@@ -123,21 +125,36 @@ const LeadSafetyForm = ({
     return (
         <form onSubmit={handleSubmit} className="space-y-4 w-full text-left">
             <div className="space-y-4">
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">
-                        Full Name
-                    </label>
-                    <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g. Lourdes Dias"
-                        className="w-full px-5 py-4 bg-slate-900/50 border border-slate-700/50 rounded-2xl text-white focus:ring-2 focus:ring-yellow-500/50 outline-none transition-all placeholder:text-slate-600 shadow-inner"
-                    />
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2 text-left">
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">
+                            First Name
+                        </label>
+                        <input
+                            type="text"
+                            required
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            placeholder="e.g. Lourdes"
+                            className="w-full px-5 py-4 bg-slate-900/50 border border-slate-700/50 rounded-2xl text-white focus:ring-2 focus:ring-yellow-500/50 outline-none transition-all placeholder:text-slate-600 shadow-inner"
+                        />
+                    </div>
+                    <div className="space-y-2 text-left">
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">
+                            Last Name
+                        </label>
+                        <input
+                            type="text"
+                            required
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            placeholder="e.g. Dias"
+                            className="w-full px-5 py-4 bg-slate-900/50 border border-slate-700/50 rounded-2xl text-white focus:ring-2 focus:ring-yellow-500/50 outline-none transition-all placeholder:text-slate-600 shadow-inner"
+                        />
+                    </div>
                 </div>
                 
-                <div className="space-y-2">
+                <div className="space-y-2 text-left">
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">
                         Email Address
                     </label>

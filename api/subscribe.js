@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: "Method not allowed" });
     }
 
-    const { email, name, firstName, groupId } = req.body;
+    const { email, name, firstName, lastName, groupId } = req.body;
 
     if (!email) {
         return res.status(400).json({ error: "Email is required" });
@@ -36,13 +36,14 @@ export default async function handler(req, res) {
             body: JSON.stringify({
                 email,
                 fields: { 
-                    name: name || "",
-                    last_name: name && name.includes(" ") ? name.split(" ").slice(1).join(" ") : "",
+                    name: name || `${firstName} ${lastName}`.trim(),
+                    last_name: lastName || (name && name.includes(" ") ? name.split(" ").slice(1).join(" ") : ""),
                     first_name: firstName || (name ? name.split(" ")[0] : "")
                 },
                 groups: groupId ? [groupId] : []
             })
         });
+
 
 
         const data = await response.json();
