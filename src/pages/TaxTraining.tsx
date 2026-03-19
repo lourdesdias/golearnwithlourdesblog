@@ -3,6 +3,7 @@ import { ShieldCheck, Zap, ArrowRight, FileText, Gift, Calculator, CheckCircle2,
 import EmailOctopusSubscribeForm from '@/components/landing/EmailOctopusSubscribeForm';
 import logoImage from "@/assets/logo.png";
 import { Link } from 'react-router-dom';
+import SubscriptionModal from "@/components/landing/SubscriptionModal";
 
 export default function TaxTraining() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -106,15 +107,15 @@ export default function TaxTraining() {
                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-amber-500"></div>
                 
                <h2 className="text-3xl font-bold text-slate-900 mb-4">Secure Your Free Seat</h2>
-               <p className="text-slate-600 mb-8 max-w-sm">Registration is currently being handled through our secure **Wealth Builder** platform to ensure 100% confirmation.</p>
+               <p className="text-slate-600 mb-8 max-w-sm">Registration is currently being handled through our secure **Lead Safety Vault** to ensure 100% confirmation.</p>
                
-               <a 
-                 href="/newsletter"
-                 className="w-full py-5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-950 font-black rounded-2xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3 group"
-               >
-                 Register via The Wealth Builder
-                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-               </a>
+               <SubscriptionModal 
+                 provider="safety-bridge"
+                 offerName="Tax Masterclass"
+                 buttonText="Register for Masterclass"
+                 title="Register Now"
+                 description="Secure your seat for the Tax Training Masterclass and get the PDF Guide immediately."
+               />
 
                <p className="mt-6 text-[10px] text-slate-400 uppercase tracking-widest font-bold">
                  Includes Masterclass + Bonus Tax Guide

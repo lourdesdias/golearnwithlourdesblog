@@ -7,11 +7,13 @@ import {
 } from "@/components/ui/dialog";
 import BeehiivSubscribeForm from "./BeehiivSubscribeForm";
 import EmailOctopusSubscribeForm from "./EmailOctopusSubscribeForm";
+import LeadSafetyForm from "./LeadSafetyForm";
 import { ArrowRight } from "lucide-react";
 
 interface SubscriptionModalProps {
-    provider?: "beehiiv" | "email-octopus";
-    formId: string;
+    provider?: "beehiiv" | "email-octopus" | "safety-bridge";
+    formId?: string;
+    offerName?: string;
     buttonText: string;
     title?: string;
     description?: string;
@@ -21,6 +23,7 @@ interface SubscriptionModalProps {
 const SubscriptionModal = ({
     provider = "beehiiv",
     formId,
+    offerName = "General Inquiry",
     buttonText,
     title = "Join the Movement",
     description,
@@ -51,10 +54,12 @@ const SubscriptionModal = ({
                     )}
                 </DialogHeader>
                 <div className="py-4">
-                    {provider === "beehiiv" ? (
-                        <BeehiivSubscribeForm formId={formId} />
+                    {provider === "safety-bridge" ? (
+                        <LeadSafetyForm offerName={offerName} />
+                    ) : provider === "beehiiv" ? (
+                        <BeehiivSubscribeForm formId={formId || ""} />
                     ) : (
-                        <EmailOctopusSubscribeForm formId={formId} />
+                        <EmailOctopusSubscribeForm formId={formId || ""} />
                     )}
                 </div>
             </DialogContent>

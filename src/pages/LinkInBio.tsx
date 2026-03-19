@@ -20,6 +20,8 @@ interface Offering {
   description: string;
   cta: string;
   subtext: string;
+  badge?: string;
+  badgeBg?: string;
   color: string;
   bgGradient: string;
   borderColor: string;
@@ -28,8 +30,9 @@ interface Offering {
   highlight: string;
   url: string;
   isFreebie?: boolean;
-  provider?: "beehiiv" | "email-octopus";
+  provider?: "beehiiv" | "email-octopus" | "safety-bridge";
   emailFormId?: string;
+  offerName?: string;
 }
 
 export default function LinkInBio() {
@@ -137,8 +140,10 @@ export default function LinkInBio() {
       badgeTextColor: "text-white",
       icon: Mail,
       highlight: "Tax Guide",
-      url: "/newsletter",
-      isFreebie: true
+      url: "/link-in-bio",
+      isFreebie: true,
+      provider: "safety-bridge",
+      offerName: "Pay Your Kids Checklist"
     }
   ];
 

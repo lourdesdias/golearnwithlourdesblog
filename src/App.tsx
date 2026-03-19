@@ -16,6 +16,7 @@ import TermsOfService from "./pages/TermsOfService";
 import IncomeDisclosure from "./pages/IncomeDisclosure";
 import NotFound from "./pages/NotFound";
 import TaxTraining from "./pages/TaxTraining";
+import ExportLeads from "./pages/ExportLeads";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/income-disclosure" element={<IncomeDisclosure />} />
           <Route path="/tax-training" element={<TaxTraining />} />
+          <Route path="/export-leads" element={<ExportLeads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
