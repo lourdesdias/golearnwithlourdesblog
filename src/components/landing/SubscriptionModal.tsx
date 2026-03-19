@@ -20,6 +20,7 @@ interface SubscriptionModalProps {
     variant?: "primary" | "secondary";
     successUrl?: string;
     successButtonText?: string;
+    successDescription?: string;
 }
 
 const SubscriptionModal = ({
@@ -31,7 +32,8 @@ const SubscriptionModal = ({
     description,
     variant = "primary",
     successUrl,
-    successButtonText
+    successButtonText,
+    successDescription
 }: SubscriptionModalProps) => {
     return (
         <Dialog>
@@ -63,6 +65,7 @@ const SubscriptionModal = ({
                             offerName={offerName} 
                             successUrl={successUrl}
                             successButtonText={successButtonText}
+                            successDescription={successDescription}
                         />
                     ) : provider === "beehiiv" ? (
                         <BeehiivSubscribeForm formId={formId || ""} />

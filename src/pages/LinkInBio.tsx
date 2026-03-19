@@ -35,6 +35,7 @@ interface Offering {
   offerName?: string;
   successUrl?: string;
   successButtonText?: string;
+  successDescription?: string;
 }
 
 interface VaultOffering {
@@ -59,6 +60,7 @@ interface VaultOffering {
   offerName?: string;
   successUrl?: string;
   successButtonText?: string;
+  successDescription?: string;
 }
 
 export default function LinkInBio() {
@@ -171,7 +173,8 @@ export default function LinkInBio() {
       provider: "safety-bridge",
       offerName: "Pay Your Kids Checklist",
       successUrl: "/Pay_Your_Kids_Legally_Canada.pdf",
-      successButtonText: "Download PDF Now"
+      successButtonText: "Download PDF Now",
+      successDescription: "Success! Your checklist is ready. Click the button below to download it immediately."
     }
   ];
 

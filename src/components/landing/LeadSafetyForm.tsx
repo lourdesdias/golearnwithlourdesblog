@@ -7,6 +7,7 @@ interface LeadSafetyFormProps {
     buttonText?: string;
     successUrl?: string;
     successButtonText?: string;
+    successDescription?: string;
 }
 
 const LeadSafetyForm = ({ 
@@ -14,7 +15,8 @@ const LeadSafetyForm = ({
     onSuccess, 
     buttonText = "Register for Free",
     successUrl,
-    successButtonText = "Download PDF Now"
+    successButtonText = "Download PDF Now",
+    successDescription
 }: LeadSafetyFormProps) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -67,7 +69,7 @@ const LeadSafetyForm = ({
                 </div>
                 <h3 className="text-3xl font-black text-white mb-2">You're Registered!</h3>
                 <p className="text-slate-400 max-w-[320px] mb-8">
-                    Your registration for **{offerName}** has been securely backed up.
+                    {successDescription || `Your registration for **${offerName}** has been securely backed up.`}
                 </p>
                 
                 {successUrl && (
