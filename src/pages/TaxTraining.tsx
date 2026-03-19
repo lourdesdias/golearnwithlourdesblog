@@ -102,32 +102,23 @@ export default function TaxTraining() {
             </div>
 
             {/* Lead Form Card */}
-            <div className="max-w-xl mx-auto bg-white border border-slate-200 p-2 rounded-3xl shadow-2xl relative group min-h-[450px] overflow-hidden">
+            <div className="max-w-xl mx-auto bg-white border border-slate-200 p-10 rounded-3xl shadow-2xl relative group min-h-[300px] flex flex-col items-center justify-center text-center overflow-hidden">
                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-amber-500"></div>
                 
-               <div className="relative">
-                <div className="p-4 border-b border-slate-100 flex justify-between items-center">
-                    <div>
-                        <h2 className="text-xl font-bold text-slate-900">Secure Your Free Seat</h2>
-                        <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Includes Masterclass + Bonus Tax Guide</p>
-                    </div>
-                </div>
-                
-                <div className="w-full flex justify-center">
-                  <iframe
-                    src="https://subscribe-forms.beehiiv.com/21ef0f03-f951-4638-8680-b26df65bbe16"
-                    data-test-id="beehiiv-embed"
-                    frameBorder="0"
-                    scrolling="no"
-                    style={{
-                      width: "100%",
-                      height: "380px",
-                      margin: 0,
-                      backgroundColor: "transparent",
-                    }}
-                  />
-                </div>
-              </div>
+               <h2 className="text-3xl font-bold text-slate-900 mb-4">Secure Your Free Seat</h2>
+               <p className="text-slate-600 mb-8 max-w-sm">Registration is currently being handled through our secure **Wealth Builder** platform to ensure 100% confirmation.</p>
+               
+               <a 
+                 href="/newsletter"
+                 className="w-full py-5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-950 font-black rounded-2xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3 group"
+               >
+                 Register via The Wealth Builder
+                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+               </a>
+
+               <p className="mt-6 text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                 Includes Masterclass + Bonus Tax Guide
+               </p>
             </div>
           </>
         ) : (

@@ -137,10 +137,8 @@ export default function LinkInBio() {
       badgeTextColor: "text-white",
       icon: Mail,
       highlight: "Tax Guide",
-      url: "/Pay_Your_Kids_Legally_Canada.pdf",
-      isFreebie: true,
-      provider: "beehiiv",
-      emailFormId: "21ef0f03-f951-4638-8680-b26df65bbe16"
+      url: "/newsletter",
+      isFreebie: true
     }
   ];
 
