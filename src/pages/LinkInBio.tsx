@@ -139,8 +139,8 @@ export default function LinkInBio() {
       highlight: "Tax Guide",
       url: "/Pay_Your_Kids_Legally_Canada.pdf",
       isFreebie: true,
-      provider: "email-octopus",
-      emailFormId: "a6a6a84a-1409-11f1-a407-514075e5d87e"
+      provider: "beehiiv",
+      emailFormId: "21ef0f03-f951-4638-8680-b26df65bbe16"
     }
   ];
 
