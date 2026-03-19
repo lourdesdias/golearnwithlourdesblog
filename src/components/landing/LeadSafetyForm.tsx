@@ -27,7 +27,10 @@ const LeadSafetyForm = ({
     const MAILERLITE_TOKEN = import.meta.env.VITE_MAILERLITE_TOKEN;
     const OFFER_GROUPS: Record<string, string> = {
         "Tax Masterclass": "182341455497397816",
-        "Pay Your Kids Checklist": "182341455801484918"
+        "Pay Your Kids Checklist": "182341455801484918",
+        "Lourdes Newsletter": "182342106779485795",
+        "Vision Architect Waitlist": "182342994355029806",
+        "Viral Engine Waitlist": "182342994661213303"
     };
 
     const handleSubmit = async (e: React.FormEvent) => {

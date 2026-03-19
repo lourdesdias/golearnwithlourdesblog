@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
-import BeehiivModal from "@/components/landing/BeehiivModal";
+import SubscriptionModal from "@/components/landing/SubscriptionModal";
 import logoImage from "@/assets/logo.png";
 
 export default function ViralEngineLP() {
@@ -78,9 +78,10 @@ export default function ViralEngineLP() {
 
         {/* Hero CTA */}
         <div className="flex justify-center">
-          <BeehiivModal
-            formId="555585ed-0d1f-4ab5-b90a-b3946e20c082"
+          <SubscriptionModal
+            provider="safety-bridge"
             buttonText="Join the Waitlist Now"
+            offerName="Viral Engine Waitlist"
             title="Viral Engine Waitlist"
           />
         </div>
@@ -232,9 +233,10 @@ export default function ViralEngineLP() {
           Unlock the full Million-Dollar suite with a 7-day free trial. Built on enterprise neural engines for creators who value speed, authority, and data privacy.
         </p>
         <div className="flex justify-center flex-col items-center gap-6">
-          <BeehiivModal
-            formId="555585ed-0d1f-4ab5-b90a-b3946e20c082" // Official ID
+          <SubscriptionModal
+            provider="safety-bridge"
             buttonText="Start Your Free Trial Now"
+            offerName="Viral Engine Waitlist"
             title="Viral Engine Waitlist"
           />
           <div className="flex items-center gap-4 text-slate-500 text-xs">

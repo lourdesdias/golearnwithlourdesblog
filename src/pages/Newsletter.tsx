@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, Zap, Heart, TrendingUp } from 'lucide-react';
-import BeehiivModal from '@/components/landing/BeehiivModal';
+import SubscriptionModal from '@/components/landing/SubscriptionModal';
 import logoImage from "@/assets/logo.png";
 
 export default function NewsletterLP() {
@@ -74,8 +74,9 @@ export default function NewsletterLP() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <BeehiivModal
-            formId="21ef0f03-f951-4638-8680-b26df65bbe16"
+          <SubscriptionModal
+            provider="safety-bridge"
+            offerName="Lourdes Newsletter"
             buttonText="Join The Wealth Builder"
             title="Subscribe to The Wealth Builder"
           />
@@ -225,8 +226,9 @@ export default function NewsletterLP() {
         </h2>
         <p className="text-slate-300 text-lg mb-8">Join founders and parents building intentionally. New issue every Monday.</p>
         <div className="flex justify-center">
-          <BeehiivModal
-            formId="21ef0f03-f951-4638-8680-b26df65bbe16"
+          <SubscriptionModal
+            provider="safety-bridge"
+            offerName="Lourdes Newsletter"
             buttonText="Build My Wealth Legacy"
             title="Subscribe to The Wealth Builder"
           />

@@ -64,6 +64,14 @@ const ExportLeads = () => {
         }
     };
 
+    const deleteSingleLead = (email: string, timestamp: string) => {
+        if (window.confirm(`Are you sure you want to delete ${email} from the vault?`)) {
+            const newLeads = leads.filter(l => !(l.email === email && l.timestamp === timestamp));
+            setLeads(newLeads);
+            localStorage.setItem('lourdes_leads_backup', JSON.stringify(newLeads));
+        }
+    };
+
     return (
         <div className="min-h-screen bg-slate-950 text-white p-6 sm:p-12 font-sans">
             <div className="max-w-5xl mx-auto space-y-12">
@@ -130,6 +138,7 @@ const ExportLeads = () => {
                                     <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Offer</th>
                                     <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Name</th>
                                     <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Email</th>
+                                    <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-800">
@@ -145,6 +154,15 @@ const ExportLeads = () => {
                                         </td>
                                         <td className="px-6 py-4 font-bold text-sm">{lead.name}</td>
                                         <td className="px-6 py-4 text-sm text-slate-300">{lead.email}</td>
+                                        <td className="px-6 py-4 text-right">
+                                            <button 
+                                                onClick={() => deleteSingleLead(lead.email, lead.timestamp)}
+                                                className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors"
+                                                title="Delete this lead"
+                                            >
+                                                <Trash2 className="w-4 h-4" />
+                                            </button>
+                                        </td>
                                     </tr>
                                 )) : (
                                     <tr>
