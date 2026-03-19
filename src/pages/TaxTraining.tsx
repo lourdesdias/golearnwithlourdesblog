@@ -219,9 +219,15 @@ export default function TaxTraining() {
         </button>
       </section>
 
-      <footer className="relative z-10 py-12 px-6 border-t border-slate-900 text-center text-slate-500 text-xs">
-        <p className="mb-4">© 2026 Learn With Lourdes. Not affiliated with the IRS or CRA. Individual results may vary.</p>
-        <p>Built for Kingdom Builders, Solopreneurs, and Side Hustlers.</p>
+      <footer className="relative z-10 py-12 px-6 border-t border-slate-900 text-center text-slate-500 text-[10px] sm:text-xs leading-relaxed">
+        <div className="max-w-3xl mx-auto space-y-4">
+          <p className="opacity-70 italic uppercase tracking-wider">
+            Disclaimer: This training is for educational purposes only. Lourdes is not a tax accountant or financial advisor. 
+            The information provided does not constitute legal, tax, or financial advice. Please consult with a professional for your specific situation.
+          </p>
+          <p>© 2026 Learn With Lourdes. Not affiliated with the IRS or CRA. Individual results may vary.</p>
+          <p>Built for Kingdom Builders, Solopreneurs, and Side Hustlers.</p>
+        </div>
       </footer>
 
       <style>{`
