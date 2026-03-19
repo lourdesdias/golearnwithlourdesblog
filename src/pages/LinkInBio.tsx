@@ -174,7 +174,7 @@ export default function LinkInBio() {
       offerName: "Pay Your Kids Checklist",
       successUrl: "/Pay_Your_Kids_Legally_Canada.pdf",
       successButtonText: "Download PDF Now",
-      successDescription: "Success! Your checklist is ready. Click the button below to download it immediately."
+      successDescription: "Success! Your checklist is ready. (Be sure to check your Promotions or Spam folder for the copy I sent you!) Click the button below to download it immediately."
     }
   ];
 

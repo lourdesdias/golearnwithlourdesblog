@@ -123,8 +123,7 @@ export default function TaxTraining() {
             <CheckCircle2 className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-4">You're Registered!</h2>
             <p className="text-slate-400 mb-8">
-              We've captured your information. You are set for <strong>Friday, March 20th @ 8:00 PM MST</strong>. 
-              Check your inbox shortly for your **Bonus "Pay Your Kids Legally" CRA Checklist**!
+              We've captured your information. You are set for <strong>Friday, March 20th @ 8:00 PM MST</strong>.                    Check your inbox shortly for your **Bonus "Pay Your Kids Legally" CRA Checklist**! (Be sure to check your **Promotions** or **Spam** folder if you don't see it!)
               <br /><br />
               Don't forget to save the masterclass to your calendar:
             </p>
