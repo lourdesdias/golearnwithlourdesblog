@@ -3,61 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Bridge</title>
+    <title>Secure Registration</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: transparent;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+        body { margin: 0; padding: 0; background: transparent; overflow: hidden; font-family: sans-serif; }
+        .email-octopus-form-wrapper { background: transparent !important; }
+        #loading-indicator {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 200px; color: #4b5563; font-size: 14px; gap: 12px;
         }
-        /* Style the EO form to be dark-mode friendly */
-        .email-octopus-form-wrapper {
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            background: transparent !important;
+        .spinner {
+            width: 24px; height: 24px; border: 3px solid rgba(234, 179, 8, 0.1);
+            border-top-color: #eab308; border-radius: 50%; animation: spin 1s linear infinite;
         }
-        /* Ensure the form doesn't have a white background */
-        iframe, form, .email-octopus-form {
-            background: transparent !important;
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
+    <div id="loading-indicator">
+        <div class="spinner"></div>
+        <div>Initializing secure form...</div>
+    </div>
+
     <div id="form-container"></div>
     
     <script>
-        // Get the form ID from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const formId = urlParams.get('id');
 
         if (formId) {
+            // Pre-initialize the container
             const container = document.getElementById('form-container');
             container.className = `email-octopus-form-${formId}`;
             container.setAttribute('data-form', formId);
 
-            // Load official EO script
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = `https://eomail5.com/form/${formId}.js`;
-            script.setAttribute('data-form', formId);
-            document.body.appendChild(script);
+            // Give the DOM a moment to settle before script injection
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = `https://eomail5.com/form/${formId}.js`;
+                script.setAttribute('data-form', formId);
+                
+                script.onload = () => {
+                   document.getElementById('loading-indicator').style.display = 'none';
+                };
 
-            // Listen for success message from EO script
-            // and notify the parent (React) to show the calendar links
-            const observer = new MutationObserver(() => {
-                const successMsg = document.querySelector('.email-octopus-success-message');
-                if (successMsg && successMsg.innerHTML.trim() !== '') {
-                    window.parent.postMessage({ type: 'registration-success', formId: formId }, '*');
-                }
-            });
+                document.body.appendChild(script);
 
-            observer.observe(document.body, { childList: true, subtree: true });
+                // Success detection
+                const observer = new MutationObserver(() => {
+                    const successMsg = document.querySelector('.email-octopus-success-message');
+                    if (successMsg && successMsg.innerHTML.trim() !== '') {
+                        window.parent.postMessage({ type: 'registration-success', formId: formId }, '*');
+                    }
+                });
+                observer.observe(document.body, { childList: true, subtree: true });
+            }, 500);
         }
     </script>
 </body>
