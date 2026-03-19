@@ -93,9 +93,9 @@ const LeadSafetyForm = ({
                     <CheckCircle2 className="w-10 h-10 text-green-500" />
                 </div>
                 <h3 className="text-3xl font-black text-white mb-2">You're Registered!</h3>
-                <p className="text-slate-600 mb-2">Check your inbox shortly for your first email. (Make sure to check your **Promotions** or **Spam** folder if you don't see it!)</p>
+                <p className="text-slate-600 mb-2">Check your inbox shortly for your first email. (Make sure to check your Promotions or Spam folder if you don't see it!)</p>
                 <p className="text-slate-400 max-w-[320px] mb-8">
-                    {successDescription || `Your registration for **${offerName}** has been securely backed up.`}
+                    {successDescription || `Your registration for ${offerName} has been securely backed up.`}
                 </p>
                 
                 {successUrl && (
