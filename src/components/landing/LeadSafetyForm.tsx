@@ -24,7 +24,6 @@ const LeadSafetyForm = ({
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const MAILERLITE_TOKEN = import.meta.env.VITE_MAILERLITE_TOKEN;
     const OFFER_GROUPS: Record<string, string> = {
         "Tax Training Masterclass": "182341455497397816",
         "Pay Your Kids Checklist": "182341455801484918",
@@ -52,41 +51,28 @@ const LeadSafetyForm = ({
             const existingLeads = existingLeadsRaw ? JSON.parse(existingLeadsRaw) : [];
             localStorage.setItem('lourdes_leads_backup', JSON.stringify([...existingLeads, newLead]));
 
-            // 2. REMOTE SYNC: Send to MailerLite
+            // 2. REMOTE SYNC: Send via secure server-side API route
             try {
-                if (!MAILERLITE_TOKEN) {
-                    throw new Error("MAILERLITE_TOKEN is missing in environment variables.");
-                }
-
                 const groupId = OFFER_GROUPS[offerName];
                 console.log(`[SafetyBridge] Syncing ${email} to Group: ${offerName} (${groupId || 'No Group ID'})`);
 
-                const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
+                const response = await fetch("/api/subscribe", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "Authorization": `Bearer ${MAILERLITE_TOKEN}`
-                    },
-                    body: JSON.stringify({
-                        email,
-                        fields: {
-                            name: name
-                        },
-                        groups: groupId ? [groupId] : []
-                    })
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, name, groupId })
                 });
 
                 if (!response.ok) {
                     const errorBody = await response.json().catch(() => ({}));
-                    console.error(`[SafetyBridge] MailerLite API Error ${response.status}:`, errorBody);
-                    throw new Error(`MailerLite API responded with ${response.status}`);
+                    console.error(`[SafetyBridge] API Error ${response.status}:`, errorBody);
+                    throw new Error(`API responded with ${response.status}`);
                 }
 
                 console.log(`[SafetyBridge] ${email} successfully synced to MailerLite!`);
             } catch (syncErr) {
                 console.warn("MailerLite Sync failed, but lead is safe in Vault:", syncErr);
             }
+
 
             setIsSuccess(true);
             if (onSuccess) {
