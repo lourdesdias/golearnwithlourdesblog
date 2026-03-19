@@ -4,6 +4,7 @@ import logoImage from "@/assets/logo.png";
 
 const ExportLeads = () => {
     const [leads, setLeads] = useState<any[]>([]);
+    const [filterDuplicates, setFilterDuplicates] = useState(false);
 
     useEffect(() => {
         const savedLeads = localStorage.getItem('lourdes_leads_backup');
@@ -12,11 +13,27 @@ const ExportLeads = () => {
         }
     }, []);
 
+    const getFilteredLeads = () => {
+        if (!filterDuplicates) return leads;
+        
+        // Reverse to prioritize most recent, then map unique by email
+        const unique = new Map();
+        [...leads].reverse().forEach(l => {
+            if (!unique.has(l.email.toLowerCase())) {
+                unique.set(l.email.toLowerCase(), l);
+            }
+        });
+        return Array.from(unique.values());
+    };
+
+    const filteredLeads = getFilteredLeads();
+
     const downloadCSV = () => {
-        if (leads.length === 0) return;
+        const dataToExport = getFilteredLeads();
+        if (dataToExport.length === 0) return;
 
         const headers = ["Timestamp", "Offer", "Name", "Email", "URL"];
-        const rows = leads.map(l => [
+        const rows = dataToExport.map(l => [
             l.timestamp,
             l.offer,
             l.name,
@@ -33,7 +50,7 @@ const ExportLeads = () => {
         const link = document.createElement("a");
         const url = URL.createObjectURL(blob);
         link.setAttribute("href", url);
-        link.setAttribute("download", `lourdes_leads_backup_${new Date().toISOString().split('T')[0]}.csv`);
+        link.setAttribute("download", `lourdes_leads_${filterDuplicates ? 'unique_' : 'all_'}${new Date().toISOString().split('T')[0]}.csv`);
         link.style.visibility = 'hidden';
         document.body.appendChild(link);
         link.click();
@@ -58,7 +75,7 @@ const ExportLeads = () => {
                             Lead Safety Vault
                         </h1>
                         <p className="text-slate-400 max-w-lg">
-                            This is your local browser backup. Every person who signs up on your site is saved here automatically to ensure zero data loss.
+                            This is your local browser backup. Every person who signs up on your site is saved here automatically.
                         </p>
                     </div>
 
@@ -69,7 +86,7 @@ const ExportLeads = () => {
                             className="px-8 py-4 bg-yellow-500 text-slate-950 font-black rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center justify-center gap-2 disabled:opacity-50"
                         >
                             <Download className="w-5 h-5" />
-                            Download CSV
+                            Download CSV ({filteredLeads.length})
                         </button>
                         <button 
                             onClick={clearLeads}
@@ -82,29 +99,25 @@ const ExportLeads = () => {
                     </div>
                 </div>
 
-                {/* Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl space-y-2">
-                        <div className="w-12 h-12 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-4">
-                            <Users className="w-6 h-6 text-yellow-500" />
+                {/* Filters */}
+                <div className="flex flex-wrap items-center justify-between gap-4 p-6 bg-slate-900/50 border border-slate-800 rounded-3xl">
+                    <div className="flex items-center gap-3">
+                        <ShieldCheck className="w-5 h-5 text-green-500" />
+                        <div>
+                            <p className="font-bold text-sm">Duplicate Shield</p>
+                            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Only Download Unique Emails</p>
                         </div>
-                        <p className="text-4xl font-black">{leads.length}</p>
-                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Total Saved Leads</p>
                     </div>
-                    <div className="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl space-y-2">
-                        <div className="w-12 h-12 bg-green-500/10 rounded-2xl flex items-center justify-center mb-4">
-                            <ShieldCheck className="w-6 h-6 text-green-500" />
-                        </div>
-                        <p className="text-4xl font-black text-green-500">100%</p>
-                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Data Integrity Status</p>
-                    </div>
-                    <div className="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl space-y-2 md:col-span-2 lg:col-span-1">
-                        <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-4">
-                            <Table className="w-6 h-6 text-cyan-500" />
-                        </div>
-                        <p className="text-xl font-bold">Ready for Import</p>
-                        <p className="text-xs text-slate-400">Compatible with MailerLite, Beehiiv, & Email Octopus.</p>
-                    </div>
+                    <button 
+                        onClick={() => setFilterDuplicates(!filterDuplicates)}
+                        className={`px-6 py-2 rounded-full font-black text-xs transition-all border ${
+                            filterDuplicates 
+                            ? 'bg-green-500/20 border-green-500 text-green-500' 
+                            : 'bg-slate-800 border-slate-700 text-slate-400'
+                        }`}
+                    >
+                        {filterDuplicates ? 'FILTER ON' : 'FILTER OFF'}
+                    </button>
                 </div>
 
                 {/* Table */}
@@ -120,7 +133,7 @@ const ExportLeads = () => {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-800">
-                                {leads.length > 0 ? [...leads].reverse().map((lead, idx) => (
+                                {filteredLeads.length > 0 ? (filterDuplicates ? filteredLeads : [...filteredLeads].reverse()).map((lead, idx) => (
                                     <tr key={idx} className="hover:bg-white/5 transition-colors">
                                         <td className="px-6 py-4 text-sm text-slate-400">
                                             {new Date(lead.timestamp).toLocaleDateString()}
@@ -136,7 +149,7 @@ const ExportLeads = () => {
                                 )) : (
                                     <tr>
                                         <td colSpan={4} className="px-6 py-20 text-center text-slate-500 italic">
-                                            No leads saved in the vault yet. Start testing your forms!
+                                            No leads match the current filters.
                                         </td>
                                     </tr>
                                 )}

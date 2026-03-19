@@ -97,14 +97,14 @@ const LeadSafetyForm = ({
             <div className="space-y-4">
                 <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">
-                        First Name
+                        Full Name
                     </label>
                     <input
                         type="text"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g. Lourdes"
+                        placeholder="e.g. Lourdes Dias"
                         className="w-full px-5 py-4 bg-slate-900/50 border border-slate-700/50 rounded-2xl text-white focus:ring-2 focus:ring-yellow-500/50 outline-none transition-all placeholder:text-slate-600 shadow-inner"
                     />
                 </div>
