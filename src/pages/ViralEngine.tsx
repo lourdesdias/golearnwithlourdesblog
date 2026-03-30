@@ -1,15 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
 import SubscriptionModal from "@/components/landing/SubscriptionModal";
 import logoImage from "@/assets/logo.png";
 
 export default function ViralEngineLP() {
-  useEffect(() => {
-    // Redirect to the external sales page
-    window.location.href = 'https://viralengine.app';
-  }, []);
-
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -58,8 +53,8 @@ export default function ViralEngineLP() {
       {/* Hero */}
       <div className="relative pt-6 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-4 sm:mb-6 text-xs sm:text-sm">
-          <Lock className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 flex-shrink-0" />
-          <span className="text-white font-medium">23 Engines. 1 Dashboard. Q1 2026.</span>
+          <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 flex-shrink-0 animate-pulse" />
+          <span className="text-white font-medium uppercase tracking-wider">23+ Engines. Now Live!</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -83,12 +78,15 @@ export default function ViralEngineLP() {
 
         {/* Hero CTA */}
         <div className="flex justify-center">
-          <SubscriptionModal
-            provider="safety-bridge"
-            buttonText="Join the Waitlist Now"
-            offerName="Viral Engine Waitlist"
-            title="Viral Engine Waitlist"
-          />
+          <a 
+            href="https://viralengine.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-yellow-400 to-cyan-400 text-black font-extrabold text-xl uppercase tracking-tighter hover:scale-105 transition-all shadow-[0_0_50px_rgba(240,217,118,0.3)] animate-pulse"
+          >
+            Start for FREE
+            <ArrowRight className="ml-2 w-6 h-6" />
+          </a>
         </div>
       </div>
 
@@ -238,12 +236,15 @@ export default function ViralEngineLP() {
           Unlock the full Million-Dollar suite with a 7-day free trial. Built on enterprise neural engines for creators who value speed, authority, and data privacy.
         </p>
         <div className="flex justify-center flex-col items-center gap-6">
-          <SubscriptionModal
-            provider="safety-bridge"
-            buttonText="Start Your Free Trial Now"
-            offerName="Viral Engine Waitlist"
-            title="Viral Engine Waitlist"
-          />
+          <a 
+            href="https://viralengine.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-yellow-400 to-cyan-400 text-black font-extrabold text-xl uppercase tracking-tighter hover:scale-105 transition-all shadow-[0_0_50px_rgba(240,217,118,0.3)]"
+          >
+            Start for FREE
+            <ArrowRight className="ml-2 w-6 h-6" />
+          </a>
           <div className="flex items-center gap-4 text-slate-500 text-xs">
             <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> No Credit Card Required</span>
             <span className="flex items-center gap-1"><Shield className="w-3 h-3" /> Enterprise Neural Privacy</span>
