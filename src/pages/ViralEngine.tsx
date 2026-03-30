@@ -1,10 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, Zap, Sparkles, TrendingUp, Target, BarChart, Rocket, Shield, Lock } from "lucide-react";
 import SubscriptionModal from "@/components/landing/SubscriptionModal";
 import logoImage from "@/assets/logo.png";
 
 export default function ViralEngineLP() {
+  useEffect(() => {
+    // Redirect to the external sales page
+    window.location.href = 'https://viralengine.app';
+  }, []);
+
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
