@@ -78,6 +78,21 @@ export default function LinkInBio() {
 
   const offerings: Offering[] = [
     {
+      id: 2,
+      title: "Viral Engine",
+      subtitle: "Replace Your $5K/Month Agency Team—Build With Kingdom Principles",
+      description: "Stop bleeding money on scattered tools. 23 AI engines create a week of viral content in 10 minutes. Rainmaker turns that attention into revenue. Product Forge creates 12 digital products per keyword. Build a PROFITABLE business that honors God and reflects your Kingdom values.",
+      cta: "Starts at $20",
+      subtext: "23 engines, 1 dashboard. Launching April 1st—Lock in founding pricing.",
+      color: "from-cyan-500 to-yellow-500",
+      bgGradient: "from-cyan-600/20 to-yellow-600/20",
+      borderColor: "border-cyan-500/50",
+      badgeTextColor: "text-white",
+      icon: Zap,
+      highlight: "Now Live!",
+      url: "https://viralengine.app"
+    },
+    {
       id: 1,
       title: "Vision Architect",
       subtitle: "Get CLARITY In 6 Days (Build Your Kingdom Blueprint)",
@@ -91,21 +106,6 @@ export default function LinkInBio() {
       icon: Sparkles,
       highlight: "Lifetime Updates",
       url: "/vision-architect"
-    },
-    {
-      id: 2,
-      title: "Viral Engine",
-      subtitle: "Replace Your $5K/Month Agency Team—Build With Kingdom Principles",
-      description: "Stop bleeding money on scattered tools. 19 AI engines create a week of viral content in 10 minutes. Rainmaker turns that attention into revenue. Product Forge creates 12 digital products per keyword. Build a PROFITABLE business that honors God and reflects your Kingdom values.",
-      cta: "Get Waitlist Access",
-      subtext: "19 engines, 1 dashboard. Lock in founder pricing (100 spots only).",
-      color: "from-cyan-500 to-yellow-500",
-      bgGradient: "from-cyan-600/20 to-yellow-600/20",
-      borderColor: "border-cyan-500/50",
-      badgeTextColor: "text-white",
-      icon: Zap,
-      highlight: "Q1 2026 Launch",
-      url: "/viral-engine"
     },
     {
       id: 3,
