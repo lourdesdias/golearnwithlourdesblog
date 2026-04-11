@@ -65,7 +65,7 @@ export default function ViralEngineLP() {
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-cyan-400 uppercase tracking-tighter">
             Viral Engine
           </span>
-          <span className="text-white block text-2xl sm:text-3xl md:text-4xl mt-2 italic font-medium">Attention into Authority.</span>
+          <span className="text-white block text-2xl sm:text-3xl md:text-4xl mt-2 italic font-medium">Attention into Authority and Post into Profit.</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-3xl mx-auto mb-4 sm:mb-6 leading-relaxed">
