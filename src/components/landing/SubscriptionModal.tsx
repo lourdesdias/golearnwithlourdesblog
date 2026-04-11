@@ -14,39 +14,45 @@ interface SubscriptionModalProps {
     provider?: "beehiiv" | "email-octopus" | "safety-bridge";
     formId?: string;
     offerName?: string;
-    buttonText: string;
+    buttonText?: string;
     title?: string;
     description?: string;
-    variant?: "primary" | "secondary";
+    variant?: "primary" | "secondary" | "ghost";
     successUrl?: string;
     successButtonText?: string;
     successDescription?: string;
+    children?: React.ReactNode;
 }
 
 const SubscriptionModal = ({
     provider = "beehiiv",
     formId,
     offerName = "General Inquiry",
-    buttonText,
+    buttonText = "Subscribe",
     title = "Join the Movement",
     description,
     variant = "primary",
     successUrl,
     successButtonText,
-    successDescription
+    successDescription,
+    children
 }: SubscriptionModalProps) => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <button
-                    className={`w-full sm:w-auto px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${variant === "primary"
-                        ? "bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 hover:scale-105"
-                        : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
-                        }`}
-                >
-                    {buttonText}
-                    <ArrowRight className="w-5 h-5" />
-                </button>
+                {children ? children : (
+                    <button
+                        className={`w-full sm:w-auto px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${variant === "primary"
+                            ? "bg-gradient-to-r from-yellow-500 to-cyan-400 text-slate-950 hover:scale-105"
+                            : variant === "secondary"
+                                ? "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+                                : "bg-transparent p-0 shadow-none hover:shadow-none"
+                            }`}
+                    >
+                        {buttonText}
+                        {variant !== "ghost" && <ArrowRight className="w-5 h-5" />}
+                    </button>
+                )}
             </DialogTrigger>
             <DialogContent className="sm:max-w-[500px] bg-slate-900 border-slate-800 text-white">
                 <DialogHeader>
@@ -59,6 +65,7 @@ const SubscriptionModal = ({
                         </p>
                     )}
                 </DialogHeader>
+
                 <div className="py-4">
                     {provider === "safety-bridge" ? (
                         <LeadSafetyForm 
