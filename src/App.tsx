@@ -43,6 +43,7 @@ const App = () => (
           <Route path="/income-disclosure" element={<IncomeDisclosure />} />
           <Route path="/tax-training" element={<TaxTraining />} />
           <Route path="/export-leads" element={<ExportLeads />} />
+          <Route path="/exportleads" element={<ExportLeads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
