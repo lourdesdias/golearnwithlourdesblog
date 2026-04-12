@@ -7,9 +7,18 @@ const ExportLeads = () => {
     const [filterDuplicates, setFilterDuplicates] = useState(false);
 
     useEffect(() => {
-        const savedLeads = localStorage.getItem('lourdes_leads_backup');
-        if (savedLeads) {
-            setLeads(JSON.parse(savedLeads));
+        try {
+            const savedLeads = localStorage.getItem('lourdes_leads_backup');
+            if (savedLeads) {
+                const parsed = JSON.parse(savedLeads);
+                if (Array.isArray(parsed)) {
+                    setLeads(parsed);
+                } else {
+                    console.error("Local storage leads backup is not an array:", parsed);
+                }
+            }
+        } catch (e) {
+            console.error("Failed to parse leads backup:", e);
         }
     }, []);
 
