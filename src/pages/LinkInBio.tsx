@@ -215,10 +215,10 @@ export default function LinkInBio() {
 
 
       {/* Hero Section with Profile */}
-      <div className="relative pt-4 pb-6 px-4 max-w-xl mx-auto text-center">
+      <div className="relative pt-2 pb-3 px-4 max-w-xl mx-auto text-center">
         {/* Profile Image */}
-        <div className="mb-4 animate-fadeInDown">
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 shadow-xl ring-4 ring-yellow-400/20" style={{ borderColor: '#d1ad4f' }}>
+        <div className="mb-2 animate-fadeInDown">
+          <div className="w-16 h-16 mx-auto mb-2 rounded-full overflow-hidden border-2 shadow-md ring-2 ring-yellow-400/20" style={{ borderColor: '#d1ad4f' }}>
             <img
               src={profileImage}
               alt="Lourdes Dias"
@@ -227,25 +227,25 @@ export default function LinkInBio() {
             />
           </div>
 
-          <p className="text-xl font-bold mb-0 text-slate-900" style={{ fontFamily: 'Playfair Display, serif' }}>Lourdes Dias</p>
-          <p className="text-sm font-semibold mb-2 opacity-90" style={{ color: '#d1ad4f' }}>@learnwithlourdes</p>
-          <h1 className="text-2xl sm:text-3xl font-bold mb-1 leading-tight" style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>
+          <p className="text-lg font-bold mb-0 text-slate-900 leading-none" style={{ fontFamily: 'Playfair Display, serif' }}>Lourdes Dias</p>
+          <p className="text-xs font-semibold mb-1 opacity-90" style={{ color: '#d1ad4f' }}>@learnwithlourdes</p>
+          <h1 className="text-xl sm:text-2xl font-bold mb-0.5 leading-none" style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>
             Reclaim Time. Multiply Income.
           </h1>
-          <p className="text-lg sm:text-xl font-semibold mb-3" style={{ fontFamily: 'Playfair Display, serif', color: '#d1ad4f' }}>
+          <p className="text-base sm:text-lg font-semibold mb-1.5" style={{ fontFamily: 'Playfair Display, serif', color: '#d1ad4f' }}>
             Architect Freedom (The Kingdom Way).
           </p>
-          <p className="text-[11px] sm:text-sm text-slate-700 max-w-[90%] mx-auto leading-relaxed">
-            Hi, I'm <span className="font-semibold">Lourdes</span>—Mom. Entrepreneur. Christian Business Builder. The one who said <span className="italic">"I'm not choosing between my kids, my faith, and my goals."</span> <br className="hidden sm:block" />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact. Now I'm showing YOU how to do the same.
+          <p className="text-[11px] sm:text-sm text-slate-700 max-w-[95%] mx-auto leading-snug">
+            Hi, I'm <span className="font-semibold">Lourdes</span>—Mom. Entrepreneur. Christian Business Builder. The one who said <span className="italic">"I'm not choosing between my kids, my faith, and my goals."</span> <br className="hidden sm:block" />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact.
           </p>
-          <p className="text-[9px] sm:text-xs text-slate-600 mt-3 font-semibold italic text-center max-w-[95%] mx-auto">
-            📖 "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." — Colossians 3:23
+          <p className="text-[9px] sm:text-[10px] text-slate-500 mt-1.5 font-bold italic text-center max-w-[95%] mx-auto leading-tight">
+            📖 "Whatever you do, work at it with all your heart, as working for the Lord..." — Colossians 3:23
           </p>
         </div>
       </div>
 
       {/* Tab Switcher */}
-      <div className="relative px-4 max-w-xl mx-auto mb-8">
+      <div className="relative px-4 max-w-xl mx-auto mb-3">
         <div className="bg-slate-200/50 backdrop-blur-md p-1 rounded-xl flex border border-slate-300/50 shadow-inner">
           <button
             onClick={() => setActiveTab('featured')}
@@ -279,21 +279,21 @@ export default function LinkInBio() {
 
       {/* Cards List */}
       <div className="relative px-4 pb-12 max-w-xl mx-auto">
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2">
           {currentOfferings.map((offering, index) => {
             const Icon = offering.icon;
             
             const CardContent = (
               <div
-                className={`w-full relative bg-white/80 backdrop-blur-md rounded-2xl p-3.5 transition-all duration-300 flex items-center gap-4 shadow-sm hover:shadow-md border cursor-pointer group`}
+                className={`w-full relative bg-white/80 backdrop-blur-md rounded-2xl p-2.5 transition-all duration-300 flex items-center gap-3 shadow-sm hover:shadow-md border cursor-pointer group`}
                 style={{ borderColor: offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f' }}
               >
                 {/* Icon side */}
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-sm"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-sm"
                   style={{ background: `linear-gradient(135deg, ${offering.id === 2 || offering.id === 4 ? '#13b6a4' : '#d1ad4f'}, ${offering.id === 2 || offering.id === 4 ? '#16b9a7' : '#aa8937'})` }}
                 >
-                  <Icon className="w-6 h-6" />
+                  <Icon className="w-5 h-5" />
                 </div>
 
                 {/* Text Content */}
