@@ -233,22 +233,27 @@ export default function LinkInBio() {
           </div>
 
           <p className="text-xl font-bold mb-1" style={{ color: '#d1ad4f' }}>@LourdesDias</p>
-          <h1 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight" style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1 leading-tight" style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>
             Reclaim Time. Multiply Income.
           </h1>
-          <p className="text-sm text-slate-700 max-w-sm mx-auto leading-relaxed">
-            I help parents architect freedom the Kingdom way. Faith. Family. Freedom.
+          <p className="text-lg sm:text-xl font-semibold mb-3" style={{ fontFamily: 'Playfair Display, serif', color: '#d1ad4f' }}>
+            Architect Freedom (The Kingdom Way).
+          </p>
+          <p className="text-[11px] sm:text-sm text-slate-700 max-w-[90%] mx-auto leading-relaxed">
+            Hi, I'm <span className="font-semibold">Lourdes</span>—Mom. Entrepreneur. Christian Business Builder. The one who said <span className="italic">"I'm not choosing between my kids, my faith, and my goals."</span> <br className="hidden sm:block" />I build businesses that <span className="font-bold">honor God</span>, strengthen my family, and create lasting Kingdom impact. Now I'm showing YOU how to do the same.
+          </p>
+          <p className="text-[9px] sm:text-xs text-slate-600 mt-3 font-semibold italic text-center max-w-[95%] mx-auto">
+            📖 "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." — Colossians 3:23
           </p>
         </div>
       </div>
 
-
       {/* Tab Switcher */}
       <div className="relative px-4 max-w-xl mx-auto mb-8">
-        <div className="bg-slate-200/50 backdrop-blur-md p-1.5 rounded-2xl flex border border-slate-300/50 shadow-inner">
+        <div className="bg-slate-200/50 backdrop-blur-md p-1 rounded-xl flex border border-slate-300/50 shadow-inner">
           <button
             onClick={() => setActiveTab('featured')}
-            className={`flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 uppercase tracking-wider ${activeTab === 'featured'
+            className={`flex-1 py-2 px-1 rounded-lg font-bold text-[9px] sm:text-xs transition-all duration-300 uppercase tracking-tight ${activeTab === 'featured'
               ? 'bg-white text-slate-900 shadow-md'
               : 'text-slate-500 hover:text-slate-700'
               }`}
@@ -257,7 +262,7 @@ export default function LinkInBio() {
           </button>
           <button
             onClick={() => setActiveTab('vault')}
-            className={`flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 uppercase tracking-wider ${activeTab === 'vault'
+            className={`flex-1 py-2 px-1 rounded-lg font-bold text-[9px] sm:text-xs transition-all duration-300 uppercase tracking-tight flex items-center justify-center gap-1 sm:gap-2 ${activeTab === 'vault'
               ? 'bg-white text-slate-900 shadow-md'
               : 'text-slate-500 hover:text-slate-700'
               }`}
@@ -266,7 +271,7 @@ export default function LinkInBio() {
           </button>
           <button
             onClick={() => setActiveTab('workshops')}
-            className={`flex-1 py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 uppercase tracking-wider ${activeTab === 'workshops'
+            className={`flex-1 py-2 px-1 rounded-lg font-bold text-[9px] sm:text-xs transition-all duration-300 uppercase tracking-tight flex items-center justify-center gap-1 sm:gap-2 ${activeTab === 'workshops'
               ? 'bg-white text-slate-900 shadow-md'
               : 'text-slate-500 hover:text-slate-700'
               }`}
