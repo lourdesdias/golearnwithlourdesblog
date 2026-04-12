@@ -296,16 +296,16 @@ export default function LinkInBio() {
                 </div>
 
                 {/* Text Content */}
-                <div className="flex-grow min-w-0 text-left">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-base font-bold truncate text-slate-900" style={{ fontFamily: 'Playfair Display, serif' }}>{offering.title}</h3>
+                <div className="flex-grow min-w-0 text-left py-0.5">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <h3 className="text-base font-bold text-slate-900 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>{offering.title}</h3>
                     {offering.highlight && (
-                      <span className="text-[9px] px-1.5 py-0.5 rounded-md bg-slate-100 font-bold uppercase tracking-tight text-slate-500 border border-slate-200">
+                      <span className="text-[9px] px-1.5 py-0.5 rounded-md bg-slate-100 font-bold uppercase tracking-tight text-slate-500 border border-slate-200 shrink-0 whitespace-nowrap">
                         {offering.highlight}
                       </span>
                     )}
                   </div>
-                  <p className="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+                  <p className="text-[11px] text-slate-500 font-medium leading-snug mt-1 pr-2">
                     {offering.subtitle}
                   </p>
                 </div>
