@@ -212,12 +212,7 @@ export default function LinkInBio() {
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-yellow-100/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* Logo Header */}
-      <div className="relative pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="flex justify-center">
-          <img src={logoImage} alt="Learn With Lourdes" className="h-16 w-auto" />
-        </div>
-      </div>
+
 
       {/* Hero Section with Profile */}
       <div className="relative pt-4 pb-6 px-4 max-w-xl mx-auto text-center">
@@ -232,7 +227,8 @@ export default function LinkInBio() {
             />
           </div>
 
-          <p className="text-xl font-bold mb-1" style={{ color: '#d1ad4f' }}>@LourdesDias</p>
+          <p className="text-xl font-bold mb-0 text-slate-900" style={{ fontFamily: 'Playfair Display, serif' }}>Lourdes Dias</p>
+          <p className="text-sm font-semibold mb-2 opacity-90" style={{ color: '#d1ad4f' }}>@learnwithlourdes</p>
           <h1 className="text-2xl sm:text-3xl font-bold mb-1 leading-tight" style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>
             Reclaim Time. Multiply Income.
           </h1>
@@ -393,7 +389,10 @@ export default function LinkInBio() {
       </div>
 
       {/* Footer */}
-      <footer className="relative border-t border-slate-200 py-8 px-4 text-center text-slate-500 text-sm">
+      <footer className="relative border-t border-slate-200 pt-10 pb-8 px-4 text-center text-slate-500 text-sm">
+        <div className="flex justify-center mb-6">
+          <img src={logoImage} alt="Learn With Lourdes" className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+        </div>
         <p>Built by Lourdes Dias for parents who refuse to choose. © 2026. All rights reserved.</p>
       </footer>
 
